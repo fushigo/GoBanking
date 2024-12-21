@@ -1,0 +1,17 @@
+# MODULES
+rest-api/node_modules/
+
+# BUILD
+app/.vs
+app/x64
+app/GoBanking/.vs
+app/GoBanking/x64
+
+# OUTPUT
+rest-api/dist/
+
+# ENV
+rest-api/.env
+
+#JSON
+rest-api/package-lock.json
