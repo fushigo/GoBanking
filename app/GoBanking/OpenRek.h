@@ -59,32 +59,13 @@ namespace GoBanking {
 	private: System::Windows::Forms::TextBox^ nikInput;
 	private: System::Windows::Forms::Label^ fullname;
 	private: System::Windows::Forms::TextBox^ fullnameInput;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ pin;
+	private: System::Windows::Forms::TextBox^ pinInput;
+	private: System::Windows::Forms::Panel^ panel7;
+	private: System::Windows::Forms::Label^ deposit;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::TextBox^ depositoInput;
 
 	protected:
 
@@ -102,8 +83,13 @@ namespace GoBanking {
 		void InitializeComponent(void)
 		{
 			this->openrekMainPanel = (gcnew System::Windows::Forms::Panel());
-			this->openrekHeadingLabel = (gcnew System::Windows::Forms::Label());
 			this->openrekInputPanel = (gcnew System::Windows::Forms::Panel());
+			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->deposit = (gcnew System::Windows::Forms::Label());
+			this->depositoInput = (gcnew System::Windows::Forms::TextBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pin = (gcnew System::Windows::Forms::Label());
+			this->pinInput = (gcnew System::Windows::Forms::TextBox());
 			this->btnOpenRek = (gcnew System::Windows::Forms::Button());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->address = (gcnew System::Windows::Forms::Label());
@@ -123,6 +109,7 @@ namespace GoBanking {
 			this->nikInput = (gcnew System::Windows::Forms::TextBox());
 			this->fullname = (gcnew System::Windows::Forms::Label());
 			this->fullnameInput = (gcnew System::Windows::Forms::TextBox());
+			this->openrekHeadingLabel = (gcnew System::Windows::Forms::Label());
 			this->openrekMainPanel->SuspendLayout();
 			this->openrekInputPanel->SuspendLayout();
 			this->SuspendLayout();
@@ -138,19 +125,14 @@ namespace GoBanking {
 			this->openrekMainPanel->Size = System::Drawing::Size(1050, 900);
 			this->openrekMainPanel->TabIndex = 0;
 			// 
-			// openrekHeadingLabel
-			// 
-			this->openrekHeadingLabel->AutoSize = true;
-			this->openrekHeadingLabel->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 36, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->openrekHeadingLabel->Location = System::Drawing::Point(64, 60);
-			this->openrekHeadingLabel->Name = L"openrekHeadingLabel";
-			this->openrekHeadingLabel->Size = System::Drawing::Size(807, 70);
-			this->openrekHeadingLabel->TabIndex = 0;
-			this->openrekHeadingLabel->Text = L"Buka Rekening GoBanking";
-			// 
 			// openrekInputPanel
 			// 
+			this->openrekInputPanel->Controls->Add(this->panel7);
+			this->openrekInputPanel->Controls->Add(this->deposit);
+			this->openrekInputPanel->Controls->Add(this->depositoInput);
+			this->openrekInputPanel->Controls->Add(this->panel1);
+			this->openrekInputPanel->Controls->Add(this->pin);
+			this->openrekInputPanel->Controls->Add(this->pinInput);
 			this->openrekInputPanel->Controls->Add(this->btnOpenRek);
 			this->openrekInputPanel->Controls->Add(this->panel5);
 			this->openrekInputPanel->Controls->Add(this->address);
@@ -170,10 +152,78 @@ namespace GoBanking {
 			this->openrekInputPanel->Controls->Add(this->nikInput);
 			this->openrekInputPanel->Controls->Add(this->fullname);
 			this->openrekInputPanel->Controls->Add(this->fullnameInput);
-			this->openrekInputPanel->Location = System::Drawing::Point(76, 175);
+			this->openrekInputPanel->Location = System::Drawing::Point(50, 175);
 			this->openrekInputPanel->Name = L"openrekInputPanel";
-			this->openrekInputPanel->Size = System::Drawing::Size(500, 675);
+			this->openrekInputPanel->Size = System::Drawing::Size(950, 675);
 			this->openrekInputPanel->TabIndex = 1;
+			// 
+			// panel7
+			// 
+			this->panel7->BackColor = System::Drawing::Color::White;
+			this->panel7->Location = System::Drawing::Point(521, 116);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(300, 5);
+			this->panel7->TabIndex = 44;
+			// 
+			// deposit
+			// 
+			this->deposit->AutoSize = true;
+			this->deposit->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
+			this->deposit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->deposit->Location = System::Drawing::Point(517, 54);
+			this->deposit->Name = L"deposit";
+			this->deposit->Size = System::Drawing::Size(118, 20);
+			this->deposit->TabIndex = 43;
+			this->deposit->Text = L"Deposit Awal";
+			// 
+			// depositoInput
+			// 
+			this->depositoInput->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(56)));
+			this->depositoInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->depositoInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->depositoInput->ForeColor = System::Drawing::Color::White;
+			this->depositoInput->Location = System::Drawing::Point(521, 85);
+			this->depositoInput->MaxLength = 50;
+			this->depositoInput->Name = L"depositoInput";
+			this->depositoInput->Size = System::Drawing::Size(300, 20);
+			this->depositoInput->TabIndex = 42;
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->Location = System::Drawing::Point(521, 194);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(200, 5);
+			this->panel1->TabIndex = 41;
+			// 
+			// pin
+			// 
+			this->pin->AutoSize = true;
+			this->pin->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
+			this->pin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->pin->Location = System::Drawing::Point(517, 132);
+			this->pin->Name = L"pin";
+			this->pin->Size = System::Drawing::Size(162, 20);
+			this->pin->TabIndex = 40;
+			this->pin->Text = L"Buat PIN Rekening";
+			// 
+			// pinInput
+			// 
+			this->pinInput->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(56)));
+			this->pinInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->pinInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->pinInput->ForeColor = System::Drawing::Color::White;
+			this->pinInput->Location = System::Drawing::Point(521, 163);
+			this->pinInput->MaxLength = 15;
+			this->pinInput->Name = L"pinInput";
+			this->pinInput->Size = System::Drawing::Size(200, 20);
+			this->pinInput->TabIndex = 39;
 			// 
 			// btnOpenRek
 			// 
@@ -396,6 +446,17 @@ namespace GoBanking {
 			this->fullnameInput->Name = L"fullnameInput";
 			this->fullnameInput->Size = System::Drawing::Size(450, 20);
 			this->fullnameInput->TabIndex = 20;
+			// 
+			// openrekHeadingLabel
+			// 
+			this->openrekHeadingLabel->AutoSize = true;
+			this->openrekHeadingLabel->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 36, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->openrekHeadingLabel->Location = System::Drawing::Point(38, 60);
+			this->openrekHeadingLabel->Name = L"openrekHeadingLabel";
+			this->openrekHeadingLabel->Size = System::Drawing::Size(807, 70);
+			this->openrekHeadingLabel->TabIndex = 0;
+			this->openrekHeadingLabel->Text = L"Buka Rekening GoBanking";
 			// 
 			// OpenRek
 			// 

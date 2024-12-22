@@ -39,6 +39,12 @@
     <ClCompile Include="CheckSavings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CustomerData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StaffActivity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -62,10 +68,13 @@
     <ClInclude Include="CheckSavings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RoundedControls.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
     <ClInclude Include="Api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomerData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StaffActivity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

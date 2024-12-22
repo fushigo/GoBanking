@@ -122,10 +122,12 @@
   <ItemGroup>
     <ClCompile Include="AddSavingsFunds.cpp" />
     <ClCompile Include="CheckSavings.cpp" />
+    <ClCompile Include="CustomerData.cpp" />
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OpenRek.cpp" />
+    <ClCompile Include="StaffActivity.cpp" />
     <ClCompile Include="Transfer.cpp" />
     <ClCompile Include="Withdraw.cpp" />
   </ItemGroup>
@@ -137,6 +139,9 @@
     <ClInclude Include="CheckSavings.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CustomerData.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Home.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -146,7 +151,9 @@
     <ClInclude Include="OpenRek.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="RoundedControls.h" />
+    <ClInclude Include="StaffActivity.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Transfer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -161,6 +168,9 @@
     <EmbeddedResource Include="CheckSavings.resx">
       <DependentUpon>CheckSavings.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerData.resx">
+      <DependentUpon>CustomerData.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.h</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OpenRek.resx">
       <DependentUpon>OpenRek.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffActivity.resx">
+      <DependentUpon>StaffActivity.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transfer.resx">
       <DependentUpon>Transfer.h</DependentUpon>

@@ -111,10 +111,10 @@ namespace GoBanking {
 			this->loginForm->Controls->Add(this->loginLabelUsername);
 			this->loginForm->Controls->Add(this->loginLabel);
 			this->loginForm->Controls->Add(this->loginTitle);
-			this->loginForm->Location = System::Drawing::Point(551, 60);
-			this->loginForm->Margin = System::Windows::Forms::Padding(2);
+			this->loginForm->Location = System::Drawing::Point(735, 74);
+			this->loginForm->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->loginForm->Name = L"loginForm";
-			this->loginForm->Size = System::Drawing::Size(450, 609);
+			this->loginForm->Size = System::Drawing::Size(600, 750);
 			this->loginForm->TabIndex = 1;
 			// 
 			// showPassword
@@ -125,10 +125,10 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->showPassword->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->showPassword->Location = System::Drawing::Point(60, 416);
-			this->showPassword->Margin = System::Windows::Forms::Padding(2);
+			this->showPassword->Location = System::Drawing::Point(80, 512);
+			this->showPassword->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->showPassword->Name = L"showPassword";
-			this->showPassword->Size = System::Drawing::Size(120, 18);
+			this->showPassword->Size = System::Drawing::Size(145, 21);
 			this->showPassword->TabIndex = 9;
 			this->showPassword->Text = L"Show password";
 			this->showPassword->UseVisualStyleBackColor = true;
@@ -144,10 +144,10 @@ namespace GoBanking {
 			this->loginButton->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->loginButton->ForeColor = System::Drawing::Color::White;
-			this->loginButton->Location = System::Drawing::Point(60, 462);
-			this->loginButton->Margin = System::Windows::Forms::Padding(2);
+			this->loginButton->Location = System::Drawing::Point(80, 569);
+			this->loginButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->loginButton->Name = L"loginButton";
-			this->loginButton->Size = System::Drawing::Size(141, 44);
+			this->loginButton->Size = System::Drawing::Size(188, 54);
 			this->loginButton->TabIndex = 8;
 			this->loginButton->Text = L"Login";
 			this->loginButton->UseVisualStyleBackColor = false;
@@ -157,10 +157,10 @@ namespace GoBanking {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->panel1->Location = System::Drawing::Point(60, 387);
-			this->panel1->Margin = System::Windows::Forms::Padding(2);
+			this->panel1->Location = System::Drawing::Point(80, 476);
+			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(292, 4);
+			this->panel1->Size = System::Drawing::Size(389, 5);
 			this->panel1->TabIndex = 7;
 			// 
 			// passwordInput
@@ -170,10 +170,10 @@ namespace GoBanking {
 			this->passwordInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 11));
 			this->passwordInput->ForeColor = System::Drawing::Color::White;
-			this->passwordInput->Location = System::Drawing::Point(60, 364);
-			this->passwordInput->Margin = System::Windows::Forms::Padding(2);
+			this->passwordInput->Location = System::Drawing::Point(80, 448);
+			this->passwordInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->passwordInput->Name = L"passwordInput";
-			this->passwordInput->Size = System::Drawing::Size(292, 17);
+			this->passwordInput->Size = System::Drawing::Size(389, 22);
 			this->passwordInput->TabIndex = 6;
 			this->passwordInput->UseSystemPasswordChar = true;
 			this->passwordInput->TextChanged += gcnew System::EventHandler(this, &Login::passwordInput_TextChanged);
@@ -183,10 +183,9 @@ namespace GoBanking {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 11));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(57, 329);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(76, 405);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(80, 17);
+			this->label1->Size = System::Drawing::Size(100, 22);
 			this->label1->TabIndex = 5;
 			this->label1->Text = L"Password";
 			// 
@@ -194,10 +193,10 @@ namespace GoBanking {
 			// 
 			this->underlineLoginForm->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->underlineLoginForm->Location = System::Drawing::Point(60, 297);
-			this->underlineLoginForm->Margin = System::Windows::Forms::Padding(2);
+			this->underlineLoginForm->Location = System::Drawing::Point(80, 366);
+			this->underlineLoginForm->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->underlineLoginForm->Name = L"underlineLoginForm";
-			this->underlineLoginForm->Size = System::Drawing::Size(292, 4);
+			this->underlineLoginForm->Size = System::Drawing::Size(389, 5);
 			this->underlineLoginForm->TabIndex = 4;
 			// 
 			// usernameInput
@@ -207,10 +206,10 @@ namespace GoBanking {
 			this->usernameInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 11));
 			this->usernameInput->ForeColor = System::Drawing::Color::White;
-			this->usernameInput->Location = System::Drawing::Point(60, 275);
-			this->usernameInput->Margin = System::Windows::Forms::Padding(2);
+			this->usernameInput->Location = System::Drawing::Point(80, 338);
+			this->usernameInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->usernameInput->Name = L"usernameInput";
-			this->usernameInput->Size = System::Drawing::Size(292, 17);
+			this->usernameInput->Size = System::Drawing::Size(389, 22);
 			this->usernameInput->TabIndex = 3;
 			this->usernameInput->TextChanged += gcnew System::EventHandler(this, &Login::usernameInput_TextChanged);
 			// 
@@ -219,10 +218,9 @@ namespace GoBanking {
 			this->loginLabelUsername->AutoSize = true;
 			this->loginLabelUsername->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 11));
 			this->loginLabelUsername->ForeColor = System::Drawing::Color::White;
-			this->loginLabelUsername->Location = System::Drawing::Point(57, 240);
-			this->loginLabelUsername->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->loginLabelUsername->Location = System::Drawing::Point(76, 295);
 			this->loginLabelUsername->Name = L"loginLabelUsername";
-			this->loginLabelUsername->Size = System::Drawing::Size(83, 17);
+			this->loginLabelUsername->Size = System::Drawing::Size(103, 22);
 			this->loginLabelUsername->TabIndex = 2;
 			this->loginLabelUsername->Text = L"Username";
 			// 
@@ -232,10 +230,9 @@ namespace GoBanking {
 			this->loginLabel->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->loginLabel->ForeColor = System::Drawing::Color::White;
-			this->loginLabel->Location = System::Drawing::Point(57, 159);
-			this->loginLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->loginLabel->Location = System::Drawing::Point(76, 196);
 			this->loginLabel->Name = L"loginLabel";
-			this->loginLabel->Size = System::Drawing::Size(330, 18);
+			this->loginLabel->Size = System::Drawing::Size(402, 23);
 			this->loginLabel->TabIndex = 1;
 			this->loginLabel->Text = L"Login with your account to enter the app";
 			// 
@@ -244,10 +241,9 @@ namespace GoBanking {
 			this->loginTitle->AutoSize = true;
 			this->loginTitle->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 32.8F));
 			this->loginTitle->ForeColor = System::Drawing::Color::White;
-			this->loginTitle->Location = System::Drawing::Point(52, 100);
-			this->loginTitle->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->loginTitle->Location = System::Drawing::Point(69, 123);
 			this->loginTitle->Name = L"loginTitle";
-			this->loginTitle->Size = System::Drawing::Size(292, 51);
+			this->loginTitle->Size = System::Drawing::Size(360, 64);
 			this->loginTitle->TabIndex = 0;
 			this->loginTitle->Text = L"Admin Login";
 			// 
@@ -257,10 +253,10 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->loginImage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"loginImage.BackgroundImage")));
 			this->loginImage->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->loginImage->Location = System::Drawing::Point(71, 162);
-			this->loginImage->Margin = System::Windows::Forms::Padding(2);
+			this->loginImage->Location = System::Drawing::Point(95, 199);
+			this->loginImage->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->loginImage->Name = L"loginImage";
-			this->loginImage->Size = System::Drawing::Size(375, 406);
+			this->loginImage->Size = System::Drawing::Size(500, 500);
 			this->loginImage->TabIndex = 1;
 			// 
 			// panel2
@@ -269,31 +265,37 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->panel2->Controls->Add(this->loginImage);
 			this->panel2->Location = System::Drawing::Point(-1, -1);
-			this->panel2->Margin = System::Windows::Forms::Padding(2);
+			this->panel2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(518, 731);
+			this->panel2->Size = System::Drawing::Size(691, 900);
 			this->panel2->TabIndex = 2;
+			this->panel2->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::panelWindow_MouseDown);
+			this->panel2->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::panelWindow_MouseMove);
+			this->panel2->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::panelWindow_MouseUp);
 			// 
 			// panelWindow
 			// 
 			this->panelWindow->Controls->Add(this->btnMinimizeWindow);
 			this->panelWindow->Controls->Add(this->btnCloseWindow);
-			this->panelWindow->Location = System::Drawing::Point(518, 0);
-			this->panelWindow->Margin = System::Windows::Forms::Padding(2);
+			this->panelWindow->Location = System::Drawing::Point(691, 0);
+			this->panelWindow->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panelWindow->Name = L"panelWindow";
-			this->panelWindow->Size = System::Drawing::Size(532, 32);
+			this->panelWindow->Size = System::Drawing::Size(709, 39);
 			this->panelWindow->TabIndex = 2;
+			this->panelWindow->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::panelWindow_MouseDown);
+			this->panelWindow->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::panelWindow_MouseMove);
+			this->panelWindow->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::panelWindow_MouseUp);
 			// 
 			// btnMinimizeWindow
 			// 
 			this->btnMinimizeWindow->FlatAppearance->BorderSize = 0;
 			this->btnMinimizeWindow->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnMinimizeWindow->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnMinimizeWindow.Image")));
-			this->btnMinimizeWindow->Location = System::Drawing::Point(453, 0);
-			this->btnMinimizeWindow->Margin = System::Windows::Forms::Padding(2);
+			this->btnMinimizeWindow->Location = System::Drawing::Point(624, 0);
+			this->btnMinimizeWindow->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnMinimizeWindow->Name = L"btnMinimizeWindow";
-			this->btnMinimizeWindow->Padding = System::Windows::Forms::Padding(8);
-			this->btnMinimizeWindow->Size = System::Drawing::Size(30, 32);
+			this->btnMinimizeWindow->Padding = System::Windows::Forms::Padding(11, 10, 11, 10);
+			this->btnMinimizeWindow->Size = System::Drawing::Size(40, 39);
 			this->btnMinimizeWindow->TabIndex = 10;
 			this->btnMinimizeWindow->UseVisualStyleBackColor = true;
 			this->btnMinimizeWindow->Click += gcnew System::EventHandler(this, &Login::btnMinimizeWindow_Click);
@@ -303,27 +305,27 @@ namespace GoBanking {
 			this->btnCloseWindow->FlatAppearance->BorderSize = 0;
 			this->btnCloseWindow->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnCloseWindow->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCloseWindow.Image")));
-			this->btnCloseWindow->Location = System::Drawing::Point(487, 0);
-			this->btnCloseWindow->Margin = System::Windows::Forms::Padding(2);
+			this->btnCloseWindow->Location = System::Drawing::Point(669, 0);
+			this->btnCloseWindow->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnCloseWindow->Name = L"btnCloseWindow";
-			this->btnCloseWindow->Padding = System::Windows::Forms::Padding(8);
-			this->btnCloseWindow->Size = System::Drawing::Size(30, 32);
+			this->btnCloseWindow->Padding = System::Windows::Forms::Padding(11, 10, 11, 10);
+			this->btnCloseWindow->Size = System::Drawing::Size(40, 39);
 			this->btnCloseWindow->TabIndex = 9;
 			this->btnCloseWindow->UseVisualStyleBackColor = true;
 			this->btnCloseWindow->Click += gcnew System::EventHandler(this, &Login::btnCloseWindow_Click);
 			// 
 			// Login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->ClientSize = System::Drawing::Size(1040, 640);
+			this->ClientSize = System::Drawing::Size(1400, 900);
 			this->Controls->Add(this->panelWindow);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->loginForm);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->MaximizeBox = false;
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -363,5 +365,23 @@ namespace GoBanking {
 		System::Void usernameInput_TextChanged(System::Object^ sender, System::EventArgs^ e);
 		System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void passwordInput_TextChanged(System::Object^ sender, System::EventArgs^ e);
-};
+
+	// dragging
+		bool dragging;
+		Point offset;
+	private: System::Void panelWindow_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		dragging = true;
+		offset.X = e->X;
+		offset.Y = e->Y;
+	}
+	private: System::Void panelWindow_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		if (dragging) {
+			Point currentScreenPosition = PointToScreen(Point(e->X, e->Y));
+			Location = Point(currentScreenPosition.X - offset.X, currentScreenPosition.Y - offset.Y);
+		}
+	}
+	private: System::Void panelWindow_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		dragging = false;
+	}
+	};
 }
