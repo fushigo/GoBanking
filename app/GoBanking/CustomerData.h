@@ -18,9 +18,7 @@ namespace GoBanking {
 		CustomerData(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			
 		}
 
 	protected:

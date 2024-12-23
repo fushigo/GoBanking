@@ -45,6 +45,9 @@
     <ClCompile Include="StaffActivity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Api.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">

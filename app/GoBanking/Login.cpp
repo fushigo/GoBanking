@@ -6,24 +6,24 @@
 using namespace std;
 using json = nlohmann::json;
 
+static string getData() {
+	API api;
+	string endpoint = "/karyawan";
+	string response;
+
+	try {
+		response = api.GET(endpoint);
+	}
+	catch (string err) {
+		cout << "error while login" << err;
+	}
+
+	return response.data();
+}
+
 namespace GoBanking {
 	string textUsername;
 	string textPassword;
-
-	string getData() {
-		API api;
-		string endpoint = "/karyawan";
-		string response;
-
-		try {
-			response = api.GET(endpoint);
-		}
-		catch (string err) {
-			cout << "error while login" << err;
-		}
-
-		return response.data();
-	}
 
 	System::Void Login::usernameInput_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		textUsername = msclr::interop::marshal_as<std::string>(usernameInput->Text);
@@ -44,7 +44,7 @@ namespace GoBanking {
 			try {
 				auto json_data = json::parse(data_karyawan);
 
-				auto data = json_data["data"];
+				auto& data = json_data["data"];
 
 				bool validLogin = false;
 				json matchedItem;
