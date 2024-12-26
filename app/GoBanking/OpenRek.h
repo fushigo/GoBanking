@@ -121,7 +121,7 @@ namespace GoBanking {
 			this->openrekMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
 			this->openrekMainPanel->ForeColor = System::Drawing::Color::White;
 			this->openrekMainPanel->Location = System::Drawing::Point(252, 0);
-			this->openrekMainPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->openrekMainPanel->Margin = System::Windows::Forms::Padding(2);
 			this->openrekMainPanel->Name = L"openrekMainPanel";
 			this->openrekMainPanel->Size = System::Drawing::Size(788, 640);
 			this->openrekMainPanel->TabIndex = 0;
@@ -154,7 +154,7 @@ namespace GoBanking {
 			this->openrekInputPanel->Controls->Add(this->fullname);
 			this->openrekInputPanel->Controls->Add(this->fullnameInput);
 			this->openrekInputPanel->Location = System::Drawing::Point(38, 142);
-			this->openrekInputPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->openrekInputPanel->Margin = System::Windows::Forms::Padding(2);
 			this->openrekInputPanel->Name = L"openrekInputPanel";
 			this->openrekInputPanel->Size = System::Drawing::Size(712, 548);
 			this->openrekInputPanel->TabIndex = 1;
@@ -164,7 +164,7 @@ namespace GoBanking {
 			// 
 			this->panel7->BackColor = System::Drawing::Color::White;
 			this->panel7->Location = System::Drawing::Point(391, 94);
-			this->panel7->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel7->Margin = System::Windows::Forms::Padding(2);
 			this->panel7->Name = L"panel7";
 			this->panel7->Size = System::Drawing::Size(225, 4);
 			this->panel7->TabIndex = 44;
@@ -191,7 +191,7 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->depositoInput->ForeColor = System::Drawing::Color::White;
 			this->depositoInput->Location = System::Drawing::Point(391, 69);
-			this->depositoInput->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->depositoInput->Margin = System::Windows::Forms::Padding(2);
 			this->depositoInput->MaxLength = 50;
 			this->depositoInput->Name = L"depositoInput";
 			this->depositoInput->Size = System::Drawing::Size(225, 16);
@@ -201,7 +201,7 @@ namespace GoBanking {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::White;
 			this->panel1->Location = System::Drawing::Point(391, 158);
-			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(150, 4);
 			this->panel1->TabIndex = 41;
@@ -228,7 +228,7 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->pinInput->ForeColor = System::Drawing::Color::White;
 			this->pinInput->Location = System::Drawing::Point(391, 132);
-			this->pinInput->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pinInput->Margin = System::Windows::Forms::Padding(2);
 			this->pinInput->MaxLength = 15;
 			this->pinInput->Name = L"pinInput";
 			this->pinInput->Size = System::Drawing::Size(150, 16);
@@ -242,7 +242,7 @@ namespace GoBanking {
 			this->btnOpenRek->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnOpenRek->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 14));
 			this->btnOpenRek->Location = System::Drawing::Point(20, 455);
-			this->btnOpenRek->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnOpenRek->Margin = System::Windows::Forms::Padding(2);
 			this->btnOpenRek->Name = L"btnOpenRek";
 			this->btnOpenRek->Size = System::Drawing::Size(165, 49);
 			this->btnOpenRek->TabIndex = 38;
@@ -253,7 +253,7 @@ namespace GoBanking {
 			// 
 			this->panel5->BackColor = System::Drawing::Color::White;
 			this->panel5->Location = System::Drawing::Point(20, 405);
-			this->panel5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel5->Margin = System::Windows::Forms::Padding(2);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(338, 4);
 			this->panel5->TabIndex = 37;
@@ -280,7 +280,7 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->addressInput->ForeColor = System::Drawing::Color::White;
 			this->addressInput->Location = System::Drawing::Point(20, 379);
-			this->addressInput->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->addressInput->Margin = System::Windows::Forms::Padding(2);
 			this->addressInput->MaxLength = 100;
 			this->addressInput->Name = L"addressInput";
 			this->addressInput->Size = System::Drawing::Size(338, 16);
@@ -290,7 +290,7 @@ namespace GoBanking {
 			// 
 			this->panel4->BackColor = System::Drawing::Color::White;
 			this->panel4->Location = System::Drawing::Point(20, 284);
-			this->panel4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel4->Margin = System::Windows::Forms::Padding(2);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(188, 4);
 			this->panel4->TabIndex = 34;
@@ -299,7 +299,7 @@ namespace GoBanking {
 			// 
 			this->panel3->BackColor = System::Drawing::Color::White;
 			this->panel3->Location = System::Drawing::Point(20, 221);
-			this->panel3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel3->Margin = System::Windows::Forms::Padding(2);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(225, 4);
 			this->panel3->TabIndex = 33;
@@ -308,7 +308,7 @@ namespace GoBanking {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::White;
 			this->panel2->Location = System::Drawing::Point(20, 158);
-			this->panel2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel2->Margin = System::Windows::Forms::Padding(2);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(338, 4);
 			this->panel2->TabIndex = 32;
@@ -317,7 +317,7 @@ namespace GoBanking {
 			// 
 			this->panel6->BackColor = System::Drawing::Color::White;
 			this->panel6->Location = System::Drawing::Point(20, 94);
-			this->panel6->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel6->Margin = System::Windows::Forms::Padding(2);
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(338, 4);
 			this->panel6->TabIndex = 31;
@@ -341,7 +341,7 @@ namespace GoBanking {
 			this->femaleRadButton->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->femaleRadButton->Location = System::Drawing::Point(107, 323);
-			this->femaleRadButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->femaleRadButton->Margin = System::Windows::Forms::Padding(2);
 			this->femaleRadButton->Name = L"femaleRadButton";
 			this->femaleRadButton->Size = System::Drawing::Size(87, 16);
 			this->femaleRadButton->TabIndex = 29;
@@ -355,7 +355,7 @@ namespace GoBanking {
 			this->maleRadButton->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->maleRadButton->Location = System::Drawing::Point(20, 323);
-			this->maleRadButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maleRadButton->Margin = System::Windows::Forms::Padding(2);
 			this->maleRadButton->Name = L"maleRadButton";
 			this->maleRadButton->Size = System::Drawing::Size(69, 16);
 			this->maleRadButton->TabIndex = 28;
@@ -385,7 +385,7 @@ namespace GoBanking {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->phoneNumberInput->ForeColor = System::Drawing::Color::White;
 			this->phoneNumberInput->Location = System::Drawing::Point(20, 259);
-			this->phoneNumberInput->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->phoneNumberInput->Margin = System::Windows::Forms::Padding(2);
 			this->phoneNumberInput->MaxLength = 15;
 			this->phoneNumberInput->Name = L"phoneNumberInput";
 			this->phoneNumberInput->Size = System::Drawing::Size(188, 16);
@@ -413,7 +413,7 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->emailInput->ForeColor = System::Drawing::Color::White;
 			this->emailInput->Location = System::Drawing::Point(20, 196);
-			this->emailInput->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->emailInput->Margin = System::Windows::Forms::Padding(2);
 			this->emailInput->MaxLength = 100;
 			this->emailInput->Name = L"emailInput";
 			this->emailInput->Size = System::Drawing::Size(225, 16);
@@ -441,7 +441,7 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->nikInput->ForeColor = System::Drawing::Color::White;
 			this->nikInput->Location = System::Drawing::Point(20, 132);
-			this->nikInput->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->nikInput->Margin = System::Windows::Forms::Padding(2);
 			this->nikInput->MaxLength = 16;
 			this->nikInput->Name = L"nikInput";
 			this->nikInput->Size = System::Drawing::Size(338, 16);
@@ -469,11 +469,12 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->fullnameInput->ForeColor = System::Drawing::Color::White;
 			this->fullnameInput->Location = System::Drawing::Point(20, 69);
-			this->fullnameInput->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->fullnameInput->Margin = System::Windows::Forms::Padding(2);
 			this->fullnameInput->MaxLength = 50;
 			this->fullnameInput->Name = L"fullnameInput";
 			this->fullnameInput->Size = System::Drawing::Size(338, 16);
 			this->fullnameInput->TabIndex = 20;
+			this->fullnameInput->TextChanged += gcnew System::EventHandler(this, &OpenRek::fullnameInput_TextChanged);
 			// 
 			// openrekHeadingLabel
 			// 
@@ -496,7 +497,7 @@ namespace GoBanking {
 			this->ClientSize = System::Drawing::Size(1040, 640);
 			this->Controls->Add(this->openrekMainPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"OpenRek";
 			this->Text = L"OpenRek";
 			this->openrekMainPanel->ResumeLayout(false);
@@ -509,5 +510,7 @@ namespace GoBanking {
 #pragma endregion
 	private: System::Void openrekInputPanel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
+	private: 
+		System::Void fullnameInput_TextChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }

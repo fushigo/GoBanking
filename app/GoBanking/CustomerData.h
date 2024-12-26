@@ -56,6 +56,8 @@ namespace GoBanking {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ phoneNumber;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ createdAt;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ updatedAt;
+	private: System::Windows::Forms::Button^ btn_reset;
+
 
 
 
@@ -145,10 +147,6 @@ namespace GoBanking {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CustomerData::typeid));
 			this->customerDataMainPanel = (gcnew System::Windows::Forms::Panel());
 			this->dataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
-			this->btnSearch = (gcnew System::Windows::Forms::Button());
 			this->identityNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->customerName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->gender = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -156,6 +154,11 @@ namespace GoBanking {
 			this->phoneNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->createdAt = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->updatedAt = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btn_reset = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
+			this->btnSearch = (gcnew System::Windows::Forms::Button());
 			this->customerDataMainPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -226,68 +229,6 @@ namespace GoBanking {
 			this->dataGridView->TabIndex = 3;
 			this->dataGridView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CustomerData::dataGridView_CellContentClick);
 			// 
-			// panel1
-			// 
-			this->panel1->Controls->Add(this->textBox1);
-			this->panel1->Controls->Add(this->dateTimePicker);
-			this->panel1->Controls->Add(this->btnSearch);
-			this->panel1->Location = System::Drawing::Point(0, 132);
-			this->panel1->Margin = System::Windows::Forms::Padding(2);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(742, 41);
-			this->panel1->TabIndex = 4;
-			// 
-			// textBox1
-			// 
-			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
-				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->ForeColor = System::Drawing::Color::White;
-			this->textBox1->Location = System::Drawing::Point(488, 10);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2);
-			this->textBox1->MaxLength = 255;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(226, 23);
-			this->textBox1->TabIndex = 1;
-			// 
-			// dateTimePicker
-			// 
-			this->dateTimePicker->CalendarMonthBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
-				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->dateTimePicker->CalendarTitleBackColor = System::Drawing::SystemColors::ControlText;
-			this->dateTimePicker->CalendarTitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
-				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->dateTimePicker->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->dateTimePicker->Location = System::Drawing::Point(0, 10);
-			this->dateTimePicker->Margin = System::Windows::Forms::Padding(2);
-			this->dateTimePicker->MaxDate = System::DateTime(2045, 12, 31, 0, 0, 0, 0);
-			this->dateTimePicker->MinDate = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
-			this->dateTimePicker->Name = L"dateTimePicker";
-			this->dateTimePicker->Size = System::Drawing::Size(245, 23);
-			this->dateTimePicker->TabIndex = 0;
-			this->dateTimePicker->Value = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
-			this->dateTimePicker->ValueChanged += gcnew System::EventHandler(this, &CustomerData::dateTimePicker_ValueChanged);
-			// 
-			// btnSearch
-			// 
-			this->btnSearch->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
-				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->btnSearch->FlatAppearance->BorderSize = 0;
-			this->btnSearch->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnSearch->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnSearch->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearch.Image")));
-			this->btnSearch->Location = System::Drawing::Point(712, 10);
-			this->btnSearch->Margin = System::Windows::Forms::Padding(2);
-			this->btnSearch->Name = L"btnSearch";
-			this->btnSearch->Size = System::Drawing::Size(30, 22);
-			this->btnSearch->TabIndex = 2;
-			this->btnSearch->UseVisualStyleBackColor = false;
-			this->btnSearch->Click += gcnew System::EventHandler(this, &CustomerData::btnSearch_Click);
-			// 
 			// identityNumber
 			// 
 			this->identityNumber->HeaderText = L"Nomor Identitas";
@@ -329,6 +270,82 @@ namespace GoBanking {
 			this->updatedAt->Name = L"updatedAt";
 			this->updatedAt->Width = 125;
 			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->btn_reset);
+			this->panel1->Controls->Add(this->textBox1);
+			this->panel1->Controls->Add(this->dateTimePicker);
+			this->panel1->Controls->Add(this->btnSearch);
+			this->panel1->Location = System::Drawing::Point(0, 86);
+			this->panel1->Margin = System::Windows::Forms::Padding(2);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(742, 77);
+			this->panel1->TabIndex = 4;
+			// 
+			// btn_reset
+			// 
+			this->btn_reset->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_reset->Location = System::Drawing::Point(0, 38);
+			this->btn_reset->Name = L"btn_reset";
+			this->btn_reset->Size = System::Drawing::Size(115, 36);
+			this->btn_reset->TabIndex = 3;
+			this->btn_reset->Text = L"Reset Filter";
+			this->btn_reset->UseVisualStyleBackColor = true;
+			this->btn_reset->Click += gcnew System::EventHandler(this, &CustomerData::button1_Click);
+			// 
+			// textBox1
+			// 
+			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(56)));
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->ForeColor = System::Drawing::Color::White;
+			this->textBox1->Location = System::Drawing::Point(488, 10);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
+			this->textBox1->MaxLength = 255;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(226, 23);
+			this->textBox1->TabIndex = 1;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &CustomerData::textBox1_TextChanged);
+			// 
+			// dateTimePicker
+			// 
+			this->dateTimePicker->CalendarMonthBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->dateTimePicker->CalendarTitleBackColor = System::Drawing::SystemColors::ControlText;
+			this->dateTimePicker->CalendarTitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->dateTimePicker->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker->Location = System::Drawing::Point(0, 10);
+			this->dateTimePicker->Margin = System::Windows::Forms::Padding(2);
+			this->dateTimePicker->MaxDate = System::DateTime(2045, 12, 31, 0, 0, 0, 0);
+			this->dateTimePicker->MinDate = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
+			this->dateTimePicker->Name = L"dateTimePicker";
+			this->dateTimePicker->Size = System::Drawing::Size(245, 23);
+			this->dateTimePicker->TabIndex = 0;
+			this->dateTimePicker->Value = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
+			this->dateTimePicker->ValueChanged += gcnew System::EventHandler(this, &CustomerData::dateTimePicker_ValueChanged);
+			// 
+			// btnSearch
+			// 
+			this->btnSearch->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->btnSearch->FlatAppearance->BorderSize = 0;
+			this->btnSearch->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSearch->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSearch->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearch.Image")));
+			this->btnSearch->Location = System::Drawing::Point(712, 10);
+			this->btnSearch->Margin = System::Windows::Forms::Padding(2);
+			this->btnSearch->Name = L"btnSearch";
+			this->btnSearch->Size = System::Drawing::Size(30, 22);
+			this->btnSearch->TabIndex = 2;
+			this->btnSearch->UseVisualStyleBackColor = false;
+			this->btnSearch->Click += gcnew System::EventHandler(this, &CustomerData::btnSearch_Click);
+			// 
 			// CustomerData
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -341,6 +358,7 @@ namespace GoBanking {
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"CustomerData";
 			this->Text = L"CustomerData";
+			this->Load += gcnew System::EventHandler(this, &CustomerData::CustomerData_Load);
 			this->customerDataMainPanel->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->EndInit();
 			this->panel1->ResumeLayout(false);
@@ -349,14 +367,16 @@ namespace GoBanking {
 
 		}
 #pragma endregion
-	private: System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-
 private: System::Void customerDataMainPanel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void dataGridView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
-private: System::Void dateTimePicker_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+
+private: 
+	System::Void CustomerData_Load(System::Object^ sender, System::EventArgs^ e);
+	System::Void dateTimePicker_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

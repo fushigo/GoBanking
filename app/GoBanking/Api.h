@@ -15,6 +15,7 @@ public:
     string api_url = "https://go-banking-api.vercel.app";
 
     string GET(const string& endpoint) const;
+    string POST(const string& endpoint, const string& payload) const;
 };
 
 #endif
