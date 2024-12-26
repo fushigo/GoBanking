@@ -1,4 +1,5 @@
 #pragma once
+#include "PopupForm.h"
 
 namespace GoBanking {
 
@@ -153,6 +154,7 @@ namespace GoBanking {
 			this->btnTransfer->TabIndex = 38;
 			this->btnTransfer->Text = L"Transfer";
 			this->btnTransfer->UseVisualStyleBackColor = false;
+			this->btnTransfer->Click += gcnew System::EventHandler(this, &Transfer::btnTransfer_Click);
 			// 
 			// panel4
 			// 
@@ -323,5 +325,79 @@ namespace GoBanking {
 
 		}
 #pragma endregion
-	};
+private: PopupForm^ currentPopup;
+
+	   // ============================ btnTransfer ==========================
+private:
+	System::Void btnTransfer_Click(System::Object^ sender, System::EventArgs^ e) {
+		ShowConfirmationPopup();
+	}
+
+	System::Void ShowConfirmationPopup() {
+		CloseCurrentPopup();
+
+		currentPopup = gcnew PopupForm();
+		currentPopup->SetMessage("Apakah Anda yakin ingin melanjutkan transfer?");
+		currentPopup->SetActionButton1("Konfirmasi", gcnew EventHandler(this, &Transfer::OnConfirmTransfer));
+		currentPopup->SetActionButton2("Batal", gcnew EventHandler(this, &Transfer::OnClose));
+		currentPopup->ShowPopup();
+	}
+
+	System::Void OnConfirmTransfer(System::Object^ sender, System::EventArgs^ e) {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+			ProcessTransfer();
+		}
+	}
+
+	System::Void ProcessTransfer() {
+		// Random success/fail simulation
+		Random^ rand = gcnew Random();
+		bool isSuccess = (rand->Next(100) < 70); // 70% success rate
+		ShowResultPopup(isSuccess);
+	}
+
+	System::Void ShowResultPopup(bool isSuccess) {
+		currentPopup = gcnew PopupForm();
+		if (isSuccess) {
+			currentPopup->SetMessage("Transfer berhasil!");
+			currentPopup->SetActionButton1("OK", gcnew EventHandler(this, &Transfer::OnResultConfirmed));
+		}
+		else {
+			currentPopup->SetMessage("Transfer gagal!");
+			currentPopup->SetActionButton1("Coba Lagi", gcnew EventHandler(this, &Transfer::OnRetryTransfer));
+		}
+		currentPopup->SetActionButton2("Tutup", gcnew EventHandler(this, &Transfer::OnClose));
+		currentPopup->ShowPopup();
+	}
+
+	System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e) {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+		}
+	}
+
+	System::Void OnRetryTransfer(System::Object^ sender, System::EventArgs^ e) {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+			ShowConfirmationPopup();
+		}
+	}
+
+	System::Void OnClose(System::Object^ sender, System::EventArgs^ e) {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+		}
+	}
+
+	System::Void CloseCurrentPopup() {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+			currentPopup = nullptr;
+		}
+	}
+	// ============================ btnTransfer End ==========================
+
+
+};
 }

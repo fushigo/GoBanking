@@ -48,6 +48,9 @@
     <ClCompile Include="Api.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PopupForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StaffActivity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PopupForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,4 +8,8 @@ namespace GoBanking {
 	static string postData() {
 
 	}
+	System::Void OpenRek::fullnameInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		return System::Void();
+	}
 }

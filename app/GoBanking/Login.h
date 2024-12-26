@@ -21,9 +21,7 @@ namespace GoBanking {
 		Login(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			this->AcceptButton = this->loginButton;
 		}
 
 	protected:

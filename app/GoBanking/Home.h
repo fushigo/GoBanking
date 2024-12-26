@@ -154,7 +154,7 @@ namespace GoBanking {
 			this->sideBarPanel->Location = System::Drawing::Point(0, 0);
 			this->sideBarPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->sideBarPanel->Name = L"sideBarPanel";
-			this->sideBarPanel->Size = System::Drawing::Size(309, 900);
+			this->sideBarPanel->Size = System::Drawing::Size(310, 900);
 			this->sideBarPanel->TabIndex = 0;
 			this->sideBarPanel->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Home::homeTopPanel_MouseDown);
 			this->sideBarPanel->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Home::homeTopPanel_MouseMove);
@@ -266,7 +266,7 @@ namespace GoBanking {
 			this->btnLogout->Location = System::Drawing::Point(0, 834);
 			this->btnLogout->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnLogout->Name = L"btnLogout";
-			this->btnLogout->Padding = System::Windows::Forms::Padding(29, 0, 11, 0);
+			this->btnLogout->Padding = System::Windows::Forms::Padding(20, 0, 20, 0);
 			this->btnLogout->Size = System::Drawing::Size(309, 55);
 			this->btnLogout->TabIndex = 2;
 			this->btnLogout->Text = L"Logout";
@@ -486,11 +486,6 @@ namespace GoBanking {
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
-
-			this->dailyReports->Image = (gcnew System::Drawing::Bitmap(
-				this->dailyReports->Image,
-				System::Drawing::Size(25, 25)
-			));
 
 		}
 #pragma endregion
