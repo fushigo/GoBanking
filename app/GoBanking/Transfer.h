@@ -350,12 +350,14 @@ private:
 		}
 	}
 
+	// ===================================== Random simulation for test ======================================
 	System::Void ProcessTransfer() {
 		// Random success/fail simulation
 		Random^ rand = gcnew Random();
 		bool isSuccess = (rand->Next(100) < 70); // 70% success rate
 		ShowResultPopup(isSuccess);
 	}
+	// ===================================== Random simulation for test end ======================================
 
 	System::Void ShowResultPopup(bool isSuccess) {
 		currentPopup = gcnew PopupForm();
