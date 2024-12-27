@@ -48,7 +48,7 @@ namespace GoBanking {
 
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Panel^ panel6;
+
 
 
 
@@ -65,7 +65,7 @@ namespace GoBanking {
 
 
 	private: System::Windows::Forms::Label^ recipientsAccNum;
-	private: System::Windows::Forms::TextBox^ recipientsAccInput;
+
 	private: System::Windows::Forms::Label^ customerAccNum;
 
 
@@ -82,7 +82,10 @@ namespace GoBanking {
 
 	private: System::Windows::Forms::Panel^ recipientsAccInputPanel;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::ComboBox^ dropDownMenu;
+	private: System::Windows::Forms::ComboBox^ dropDownMenuSend;
+	private: System::Windows::Forms::ComboBox^ dropDownMenuReceive;
+
+
 
 	protected:
 
@@ -111,12 +114,11 @@ namespace GoBanking {
 			this->nominalInput = (gcnew System::Windows::Forms::TextBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->recipientsAccInputPanel = (gcnew System::Windows::Forms::Panel());
+			this->dropDownMenuReceive = (gcnew System::Windows::Forms::ComboBox());
 			this->recipientsAccNum = (gcnew System::Windows::Forms::Label());
-			this->recipientsAccInput = (gcnew System::Windows::Forms::TextBox());
-			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->btnTransfer = (gcnew System::Windows::Forms::Button());
 			this->customerAccInputPanel = (gcnew System::Windows::Forms::Panel());
-			this->dropDownMenu = (gcnew System::Windows::Forms::ComboBox());
+			this->dropDownMenuSend = (gcnew System::Windows::Forms::ComboBox());
 			this->customerAccNum = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->transferMainPanel->SuspendLayout();
@@ -255,13 +257,30 @@ namespace GoBanking {
 			// 
 			// recipientsAccInputPanel
 			// 
+			this->recipientsAccInputPanel->Controls->Add(this->dropDownMenuReceive);
 			this->recipientsAccInputPanel->Controls->Add(this->recipientsAccNum);
-			this->recipientsAccInputPanel->Controls->Add(this->recipientsAccInput);
-			this->recipientsAccInputPanel->Controls->Add(this->panel6);
 			this->recipientsAccInputPanel->Location = System::Drawing::Point(22, 113);
 			this->recipientsAccInputPanel->Name = L"recipientsAccInputPanel";
 			this->recipientsAccInputPanel->Size = System::Drawing::Size(460, 70);
 			this->recipientsAccInputPanel->TabIndex = 40;
+			// 
+			// dropDownMenuReceive
+			// 
+			this->dropDownMenuReceive->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->dropDownMenuReceive->DrawMode = System::Windows::Forms::DrawMode::OwnerDrawFixed;
+			this->dropDownMenuReceive->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->dropDownMenuReceive->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dropDownMenuReceive->ForeColor = System::Drawing::Color::White;
+			this->dropDownMenuReceive->FormattingEnabled = true;
+			this->dropDownMenuReceive->Location = System::Drawing::Point(5, 39);
+			this->dropDownMenuReceive->MaxDropDownItems = 100;
+			this->dropDownMenuReceive->Name = L"dropDownMenuReceive";
+			this->dropDownMenuReceive->Size = System::Drawing::Size(450, 28);
+			this->dropDownMenuReceive->TabIndex = 43;
+			this->dropDownMenuReceive->Tag = L"";
+			this->dropDownMenuReceive->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &Transfer::dropDownMenuReceive_DrawItem);
+			this->dropDownMenuReceive->SelectedIndexChanged += gcnew System::EventHandler(this, &Transfer::dropDownMenuReceive_SelectedIndexChanged);
 			// 
 			// recipientsAccNum
 			// 
@@ -274,28 +293,6 @@ namespace GoBanking {
 			this->recipientsAccNum->Size = System::Drawing::Size(201, 20);
 			this->recipientsAccNum->TabIndex = 23;
 			this->recipientsAccNum->Text = L"No. Rekening Penerima";
-			// 
-			// recipientsAccInput
-			// 
-			this->recipientsAccInput->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
-				static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->recipientsAccInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->recipientsAccInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->recipientsAccInput->ForeColor = System::Drawing::Color::White;
-			this->recipientsAccInput->Location = System::Drawing::Point(4, 31);
-			this->recipientsAccInput->MaxLength = 16;
-			this->recipientsAccInput->Name = L"recipientsAccInput";
-			this->recipientsAccInput->Size = System::Drawing::Size(450, 20);
-			this->recipientsAccInput->TabIndex = 22;
-			// 
-			// panel6
-			// 
-			this->panel6->BackColor = System::Drawing::Color::White;
-			this->panel6->Location = System::Drawing::Point(4, 62);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(450, 5);
-			this->panel6->TabIndex = 32;
 			// 
 			// btnTransfer
 			// 
@@ -314,30 +311,30 @@ namespace GoBanking {
 			// 
 			// customerAccInputPanel
 			// 
-			this->customerAccInputPanel->Controls->Add(this->dropDownMenu);
+			this->customerAccInputPanel->Controls->Add(this->dropDownMenuSend);
 			this->customerAccInputPanel->Controls->Add(this->customerAccNum);
 			this->customerAccInputPanel->Location = System::Drawing::Point(21, 20);
 			this->customerAccInputPanel->Name = L"customerAccInputPanel";
 			this->customerAccInputPanel->Size = System::Drawing::Size(460, 70);
 			this->customerAccInputPanel->TabIndex = 39;
 			// 
-			// dropDownMenu
+			// dropDownMenuSend
 			// 
-			this->dropDownMenu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
-				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->dropDownMenu->DrawMode = System::Windows::Forms::DrawMode::OwnerDrawFixed;
-			this->dropDownMenu->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->dropDownMenu->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->dropDownMenu->ForeColor = System::Drawing::Color::White;
-			this->dropDownMenu->FormattingEnabled = true;
-			this->dropDownMenu->Location = System::Drawing::Point(5, 39);
-			this->dropDownMenu->MaxDropDownItems = 100;
-			this->dropDownMenu->Name = L"dropDownMenu";
-			this->dropDownMenu->Size = System::Drawing::Size(450, 28);
-			this->dropDownMenu->TabIndex = 3;
-			this->dropDownMenu->Tag = L"";
-			this->dropDownMenu->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &Transfer::dropDownMenu_DrawItem);
-			this->dropDownMenu->SelectedIndexChanged += gcnew System::EventHandler(this, &Transfer::dropDownMenu_SelectedIndexChanged);
+			this->dropDownMenuSend->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->dropDownMenuSend->DrawMode = System::Windows::Forms::DrawMode::OwnerDrawFixed;
+			this->dropDownMenuSend->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->dropDownMenuSend->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dropDownMenuSend->ForeColor = System::Drawing::Color::White;
+			this->dropDownMenuSend->FormattingEnabled = true;
+			this->dropDownMenuSend->Location = System::Drawing::Point(5, 39);
+			this->dropDownMenuSend->MaxDropDownItems = 100;
+			this->dropDownMenuSend->Name = L"dropDownMenuSend";
+			this->dropDownMenuSend->Size = System::Drawing::Size(450, 28);
+			this->dropDownMenuSend->TabIndex = 3;
+			this->dropDownMenuSend->Tag = L"";
+			this->dropDownMenuSend->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &Transfer::dropDownMenuSend_DrawItem);
+			this->dropDownMenuSend->SelectedIndexChanged += gcnew System::EventHandler(this, &Transfer::dropDownMenuSend_SelectedIndexChanged);
 			// 
 			// customerAccNum
 			// 
@@ -395,22 +392,26 @@ private: PopupForm^ currentPopup;
 
 // Transfer base Form
 private: System::Void Transfer_Load(System::Object^ sender, System::EventArgs^ e) {
-	// Clear existing items first
-	this->dropDownMenu->Items->Clear();
-
-	// Add the default prompt
-	this->dropDownMenu->Items->Insert(0, "-- Pilih Nasabah --");
-
-	// Add your nasabah items
-	this->dropDownMenu->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+	// dropDownMenuSend
+	this->dropDownMenuSend->Items->Clear();
+	this->dropDownMenuSend->Items->Insert(0, "-- Pilih Nasabah --");
+	this->dropDownMenuSend->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
 		L"Nasabah1", L"Nasabah2", L"Nasabah3", L"Nasabah4", L"Nasabah5",
 			L"Nasabah6", L"Nasabah7", L"Nasabah8", L"Nasabah9", L"Nasabah10"
 	});
+	this->dropDownMenuSend->SelectedIndex = 0;
 
-	// Set default selection
-	this->dropDownMenu->SelectedIndex = 0;
+	// dropDownMenuReceive
+	this->dropDownMenuReceive->Items->Clear();
+	this->dropDownMenuReceive->Items->Insert(0, "-- Pilih Penerima --");
+	this->dropDownMenuReceive->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+		L"Penerima1", L"Penerima2", L"Penerima3", L"Penerima4", L"Penerima5",
+			L"Penerima6", L"Penerima7", L"Penerima8", L"Penerima9", L"Penerima10"
+	});
+	this->dropDownMenuReceive->SelectedIndex = 0;
 }
-	   // ============================ btnTransfer ==========================
+
+// ============================ btnTransfer ==========================
 private:
 	System::Void btnTransfer_Click(System::Object^ sender, System::EventArgs^ e) {
 		ShowConfirmationPopup();
@@ -483,14 +484,14 @@ private:
 	}
 	// ============================ btnTransfer End ==========================
 
-	// ============================ dropDownMenu =============================
-	private: System::Void dropDownMenu_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (dropDownMenu->SelectedIndex > 0) {
+	// ============================ dropDownMenuSend =============================
+	private: System::Void dropDownMenuSend_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (dropDownMenuSend->SelectedIndex > 0) {
 			// Handle actual selection
-			String^ selectedNasabah = dropDownMenu->SelectedItem->ToString();
+			String^ selectedNasabah = dropDownMenuSend->SelectedItem->ToString();
 		}
 	}
-	private: System::Void dropDownMenu_DrawItem(System::Object^ sender, DrawItemEventArgs^ e) {
+	private: System::Void dropDownMenuSend_DrawItem(System::Object^ sender, DrawItemEventArgs^ e) {
 		if (e->Index < 0) return;
 
 		// Custom colors
@@ -505,10 +506,38 @@ private:
 			e->Graphics->FillRectangle(gcnew SolidBrush(normalColor), e->Bounds);
 
 		// Draw the text
-		e->Graphics->DrawString(dropDownMenu->Items[e->Index]->ToString(),
+		e->Graphics->DrawString(dropDownMenuSend->Items[e->Index]->ToString(),
 			e->Font, gcnew SolidBrush(textColor),
 			e->Bounds, StringFormat::GenericDefault);
 	}
-	// ============================ dropDownMenu End =============================
+	// ============================ dropDownMenuSend End =============================
+
+	// ============================ dropDownMenuReceive =============================
+	private: System::Void dropDownMenuReceive_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (dropDownMenuReceive->SelectedIndex > 0) {
+			// Handle actual selection
+			String^ selectedNasabah = dropDownMenuReceive->SelectedItem->ToString();
+		}
+	}
+	private: System::Void dropDownMenuReceive_DrawItem(System::Object^ sender, DrawItemEventArgs^ e) {
+		if (e->Index < 0) return;
+
+		// Custom colors
+		Color normalColor = Color::FromArgb(110, 84, 181);      // Normal background
+		Color hoverColor = Color::FromArgb(128, 128, 255);      // Hover/Selected background
+		Color textColor = Color::White;                         // Text color
+
+		// Set the background color based on selection state
+		if ((e->State & DrawItemState::Selected) == DrawItemState::Selected)
+			e->Graphics->FillRectangle(gcnew SolidBrush(hoverColor), e->Bounds);
+		else
+			e->Graphics->FillRectangle(gcnew SolidBrush(normalColor), e->Bounds);
+
+		// Draw the text
+		e->Graphics->DrawString(dropDownMenuReceive->Items[e->Index]->ToString(),
+			e->Font, gcnew SolidBrush(textColor),
+			e->Bounds, StringFormat::GenericDefault);
+	}
+	// ============================ dropDownMenuSend End =============================
 	};
 }
