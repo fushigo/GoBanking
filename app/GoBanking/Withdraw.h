@@ -87,9 +87,9 @@ namespace GoBanking {
 			this->withdrawMainPanel->Controls->Add(this->withdrw);
 			this->withdrawMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
 			this->withdrawMainPanel->ForeColor = System::Drawing::Color::White;
-			this->withdrawMainPanel->Location = System::Drawing::Point(350, 0);
+			this->withdrawMainPanel->Location = System::Drawing::Point(310, 0);
 			this->withdrawMainPanel->Name = L"withdrawMainPanel";
-			this->withdrawMainPanel->Size = System::Drawing::Size(1050, 900);
+			this->withdrawMainPanel->Size = System::Drawing::Size(1090, 900);
 			this->withdrawMainPanel->TabIndex = 0;
 			// 
 			// transferInputPanel

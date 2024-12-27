@@ -88,9 +88,9 @@ namespace GoBanking {
 			this->addSavingsMainPanel->Controls->Add(this->withdrw);
 			this->addSavingsMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
 			this->addSavingsMainPanel->ForeColor = System::Drawing::Color::White;
-			this->addSavingsMainPanel->Location = System::Drawing::Point(350, 0);
+			this->addSavingsMainPanel->Location = System::Drawing::Point(310, 0);
 			this->addSavingsMainPanel->Name = L"addSavingsMainPanel";
-			this->addSavingsMainPanel->Size = System::Drawing::Size(1050, 900);
+			this->addSavingsMainPanel->Size = System::Drawing::Size(1090, 900);
 			this->addSavingsMainPanel->TabIndex = 0;
 			// 
 			// transferInputPanel

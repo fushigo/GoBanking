@@ -86,8 +86,7 @@ namespace GoBanking {
         void FadeOut(System::Object^ sender, System::EventArgs^ e) {
             if (this->Opacity > 0.0) {
                 this->Opacity = Math::Max(0.0, this->Opacity - opacityIncrement);
-            }
-            else {
+            } else {
                 fadeOutTimer->Stop();
                 this->Close();
             }

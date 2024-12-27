@@ -120,10 +120,10 @@ namespace GoBanking {
 			this->openrekMainPanel->Controls->Add(this->openrekHeadingLabel);
 			this->openrekMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
 			this->openrekMainPanel->ForeColor = System::Drawing::Color::White;
-			this->openrekMainPanel->Location = System::Drawing::Point(349, 0);
+			this->openrekMainPanel->Location = System::Drawing::Point(310, 0);
 			this->openrekMainPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->openrekMainPanel->Name = L"openrekMainPanel";
-			this->openrekMainPanel->Size = System::Drawing::Size(1051, 900);
+			this->openrekMainPanel->Size = System::Drawing::Size(1090, 900);
 			this->openrekMainPanel->TabIndex = 0;
 			// 
 			// openrekInputPanel
@@ -153,7 +153,7 @@ namespace GoBanking {
 			this->openrekInputPanel->Controls->Add(this->nikInput);
 			this->openrekInputPanel->Controls->Add(this->fullname);
 			this->openrekInputPanel->Controls->Add(this->fullnameInput);
-			this->openrekInputPanel->Location = System::Drawing::Point(51, 175);
+			this->openrekInputPanel->Location = System::Drawing::Point(71, 175);
 			this->openrekInputPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->openrekInputPanel->Name = L"openrekInputPanel";
 			this->openrekInputPanel->Size = System::Drawing::Size(949, 674);
@@ -474,7 +474,7 @@ namespace GoBanking {
 			this->openrekHeadingLabel->AutoSize = true;
 			this->openrekHeadingLabel->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 36, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->openrekHeadingLabel->Location = System::Drawing::Point(37, 60);
+			this->openrekHeadingLabel->Location = System::Drawing::Point(59, 61);
 			this->openrekHeadingLabel->Name = L"openrekHeadingLabel";
 			this->openrekHeadingLabel->Size = System::Drawing::Size(807, 70);
 			this->openrekHeadingLabel->TabIndex = 0;
