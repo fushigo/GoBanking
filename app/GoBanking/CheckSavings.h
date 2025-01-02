@@ -99,19 +99,19 @@ namespace GoBanking {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CheckSavings::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle22 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle26 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle23 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle24 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle25 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle21 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle17 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle18 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle19 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle20 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->checkSavingsMainPanel = (gcnew System::Windows::Forms::Panel());
 			this->checkSavingsSearchBar = (gcnew System::Windows::Forms::TextBox());
 			this->btnSearchCheckSavings = (gcnew System::Windows::Forms::Button());
@@ -123,11 +123,6 @@ namespace GoBanking {
 			this->detailCreatedAt = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->btnCloseDetailPanel = (gcnew System::Windows::Forms::Button());
 			this->dataGridViewAccount = (gcnew System::Windows::Forms::DataGridView());
-			this->btnCheckSavings = (gcnew System::Windows::Forms::Button());
-			this->panel7 = (gcnew System::Windows::Forms::Panel());
-			this->customerAccNum = (gcnew System::Windows::Forms::Label());
-			this->customerAccInput = (gcnew System::Windows::Forms::TextBox());
-			this->checkSav = (gcnew System::Windows::Forms::Label());
 			this->accountNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->savingsType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->jumlahSaldo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -136,6 +131,11 @@ namespace GoBanking {
 			this->createdAt = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->updatedAt = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->details = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			this->btnCheckSavings = (gcnew System::Windows::Forms::Button());
+			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->customerAccNum = (gcnew System::Windows::Forms::Label());
+			this->customerAccInput = (gcnew System::Windows::Forms::TextBox());
+			this->checkSav = (gcnew System::Windows::Forms::Label());
 			this->checkSavingsMainPanel->SuspendLayout();
 			this->detailPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDetail))->BeginInit();
@@ -156,10 +156,10 @@ namespace GoBanking {
 			this->checkSavingsMainPanel->Controls->Add(this->checkSav);
 			this->checkSavingsMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
 			this->checkSavingsMainPanel->ForeColor = System::Drawing::Color::White;
-			this->checkSavingsMainPanel->Location = System::Drawing::Point(222, 0);
-			this->checkSavingsMainPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->checkSavingsMainPanel->Location = System::Drawing::Point(309, 0);
+			this->checkSavingsMainPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->checkSavingsMainPanel->Name = L"checkSavingsMainPanel";
-			this->checkSavingsMainPanel->Size = System::Drawing::Size(818, 640);
+			this->checkSavingsMainPanel->Size = System::Drawing::Size(1091, 900);
 			this->checkSavingsMainPanel->TabIndex = 0;
 			// 
 			// checkSavingsSearchBar
@@ -170,11 +170,11 @@ namespace GoBanking {
 			this->checkSavingsSearchBar->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->checkSavingsSearchBar->ForeColor = System::Drawing::Color::White;
-			this->checkSavingsSearchBar->Location = System::Drawing::Point(526, 176);
-			this->checkSavingsSearchBar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->checkSavingsSearchBar->Location = System::Drawing::Point(701, 217);
+			this->checkSavingsSearchBar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->checkSavingsSearchBar->MaxLength = 255;
 			this->checkSavingsSearchBar->Name = L"checkSavingsSearchBar";
-			this->checkSavingsSearchBar->Size = System::Drawing::Size(226, 23);
+			this->checkSavingsSearchBar->Size = System::Drawing::Size(301, 27);
 			this->checkSavingsSearchBar->TabIndex = 41;
 			// 
 			// btnSearchCheckSavings
@@ -186,10 +186,10 @@ namespace GoBanking {
 			this->btnSearchCheckSavings->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->btnSearchCheckSavings->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearchCheckSavings.Image")));
-			this->btnSearchCheckSavings->Location = System::Drawing::Point(749, 176);
-			this->btnSearchCheckSavings->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnSearchCheckSavings->Location = System::Drawing::Point(999, 217);
+			this->btnSearchCheckSavings->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnSearchCheckSavings->Name = L"btnSearchCheckSavings";
-			this->btnSearchCheckSavings->Size = System::Drawing::Size(30, 22);
+			this->btnSearchCheckSavings->Size = System::Drawing::Size(40, 27);
 			this->btnSearchCheckSavings->TabIndex = 42;
 			this->btnSearchCheckSavings->UseVisualStyleBackColor = false;
 			// 
@@ -198,10 +198,10 @@ namespace GoBanking {
 			this->detailPanel->Controls->Add(this->label1);
 			this->detailPanel->Controls->Add(this->dataGridViewDetail);
 			this->detailPanel->Controls->Add(this->btnCloseDetailPanel);
-			this->detailPanel->Location = System::Drawing::Point(165, 243);
-			this->detailPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->detailPanel->Location = System::Drawing::Point(220, 299);
+			this->detailPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->detailPanel->Name = L"detailPanel";
-			this->detailPanel->Size = System::Drawing::Size(488, 447);
+			this->detailPanel->Size = System::Drawing::Size(651, 550);
 			this->detailPanel->TabIndex = 1;
 			// 
 			// label1
@@ -211,10 +211,9 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(14, 50);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(19, 62);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(130, 26);
+			this->label1->Size = System::Drawing::Size(167, 32);
 			this->label1->TabIndex = 41;
 			this->label1->Text = L"Detail Data";
 			// 
@@ -223,17 +222,17 @@ namespace GoBanking {
 			this->dataGridViewDetail->AllowUserToOrderColumns = true;
 			this->dataGridViewDetail->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridViewDetail->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle22->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle22->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle22->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle22->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle22->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle22->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle22->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridViewDetail->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridViewDetail->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridViewDetail->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridViewDetail->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
 				this->activityType,
@@ -241,22 +240,22 @@ namespace GoBanking {
 			});
 			this->dataGridViewDetail->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->dataGridViewDetail->Location = System::Drawing::Point(19, 112);
-			this->dataGridViewDetail->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridViewDetail->Location = System::Drawing::Point(25, 138);
+			this->dataGridViewDetail->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridViewDetail->Name = L"dataGridViewDetail";
 			this->dataGridViewDetail->RowHeadersVisible = false;
 			this->dataGridViewDetail->RowHeadersWidth = 51;
-			dataGridViewCellStyle26->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle26->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle26->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle26->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle26->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			dataGridViewCellStyle5->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle26->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle26->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridViewDetail->RowsDefaultCellStyle = dataGridViewCellStyle26;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridViewDetail->RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this->dataGridViewDetail->RowTemplate->DefaultCellStyle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->dataGridViewDetail->RowTemplate->DefaultCellStyle->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
@@ -267,13 +266,13 @@ namespace GoBanking {
 			this->dataGridViewDetail->RowTemplate->DefaultCellStyle->SelectionForeColor = System::Drawing::Color::White;
 			this->dataGridViewDetail->RowTemplate->Height = 24;
 			this->dataGridViewDetail->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridViewDetail->Size = System::Drawing::Size(450, 244);
+			this->dataGridViewDetail->Size = System::Drawing::Size(600, 300);
 			this->dataGridViewDetail->TabIndex = 41;
 			// 
 			// activityType
 			// 
-			dataGridViewCellStyle23->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->activityType->DefaultCellStyle = dataGridViewCellStyle23;
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->activityType->DefaultCellStyle = dataGridViewCellStyle2;
 			this->activityType->HeaderText = L"Jenis Aktivitas";
 			this->activityType->MinimumWidth = 6;
 			this->activityType->Name = L"activityType";
@@ -281,8 +280,8 @@ namespace GoBanking {
 			// 
 			// totalBalanceDetail
 			// 
-			dataGridViewCellStyle24->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->totalBalanceDetail->DefaultCellStyle = dataGridViewCellStyle24;
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->totalBalanceDetail->DefaultCellStyle = dataGridViewCellStyle3;
 			this->totalBalanceDetail->HeaderText = L"Jumlah Dana";
 			this->totalBalanceDetail->MinimumWidth = 6;
 			this->totalBalanceDetail->Name = L"totalBalanceDetail";
@@ -290,8 +289,8 @@ namespace GoBanking {
 			// 
 			// detailCreatedAt
 			// 
-			dataGridViewCellStyle25->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->detailCreatedAt->DefaultCellStyle = dataGridViewCellStyle25;
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->detailCreatedAt->DefaultCellStyle = dataGridViewCellStyle4;
 			this->detailCreatedAt->HeaderText = L"Tgl. Dibuat";
 			this->detailCreatedAt->MinimumWidth = 6;
 			this->detailCreatedAt->Name = L"detailCreatedAt";
@@ -304,10 +303,10 @@ namespace GoBanking {
 			this->btnCloseDetailPanel->FlatAppearance->BorderSize = 0;
 			this->btnCloseDetailPanel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnCloseDetailPanel->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
-			this->btnCloseDetailPanel->Location = System::Drawing::Point(2, 404);
-			this->btnCloseDetailPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnCloseDetailPanel->Location = System::Drawing::Point(3, 497);
+			this->btnCloseDetailPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnCloseDetailPanel->Name = L"btnCloseDetailPanel";
-			this->btnCloseDetailPanel->Size = System::Drawing::Size(75, 41);
+			this->btnCloseDetailPanel->Size = System::Drawing::Size(100, 50);
 			this->btnCloseDetailPanel->TabIndex = 40;
 			this->btnCloseDetailPanel->Text = L"Close";
 			this->btnCloseDetailPanel->UseVisualStyleBackColor = false;
@@ -318,17 +317,17 @@ namespace GoBanking {
 			this->dataGridViewAccount->AllowUserToOrderColumns = true;
 			this->dataGridViewAccount->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridViewAccount->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle14->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle14->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			dataGridViewCellStyle6->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridViewAccount->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+			dataGridViewCellStyle6->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle6->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridViewAccount->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this->dataGridViewAccount->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridViewAccount->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
 				this->accountNumber,
@@ -336,22 +335,22 @@ namespace GoBanking {
 			});
 			this->dataGridViewAccount->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->dataGridViewAccount->Location = System::Drawing::Point(39, 216);
-			this->dataGridViewAccount->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridViewAccount->Location = System::Drawing::Point(52, 266);
+			this->dataGridViewAccount->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridViewAccount->Name = L"dataGridViewAccount";
 			this->dataGridViewAccount->RowHeadersVisible = false;
 			this->dataGridViewAccount->RowHeadersWidth = 51;
-			dataGridViewCellStyle21->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle21->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle13->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle21->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle21->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle21->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			dataGridViewCellStyle13->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle21->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle21->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridViewAccount->RowsDefaultCellStyle = dataGridViewCellStyle21;
+			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridViewAccount->RowsDefaultCellStyle = dataGridViewCellStyle13;
 			this->dataGridViewAccount->RowTemplate->DefaultCellStyle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->dataGridViewAccount->RowTemplate->DefaultCellStyle->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
@@ -362,85 +361,17 @@ namespace GoBanking {
 			this->dataGridViewAccount->RowTemplate->DefaultCellStyle->SelectionForeColor = System::Drawing::Color::White;
 			this->dataGridViewAccount->RowTemplate->Height = 24;
 			this->dataGridViewAccount->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridViewAccount->Size = System::Drawing::Size(740, 492);
+			this->dataGridViewAccount->Size = System::Drawing::Size(987, 606);
 			this->dataGridViewAccount->TabIndex = 40;
 			this->dataGridViewAccount->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CheckSavings::dataGridViewAccount_CellContentClick);
 			this->dataGridViewAccount->CellFormatting += gcnew System::Windows::Forms::DataGridViewCellFormattingEventHandler(this, &CheckSavings::dataGridViewAccount_CellFormatting);
 			// 
-			// btnCheckSavings
-			// 
-			this->btnCheckSavings->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
-				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->btnCheckSavings->FlatAppearance->BorderSize = 0;
-			this->btnCheckSavings->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnCheckSavings->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
-			this->btnCheckSavings->Location = System::Drawing::Point(389, 158);
-			this->btnCheckSavings->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->btnCheckSavings->Name = L"btnCheckSavings";
-			this->btnCheckSavings->Size = System::Drawing::Size(75, 41);
-			this->btnCheckSavings->TabIndex = 39;
-			this->btnCheckSavings->Text = L"Cek";
-			this->btnCheckSavings->UseVisualStyleBackColor = false;
-			this->btnCheckSavings->Click += gcnew System::EventHandler(this, &CheckSavings::btnCheckSavings_Click);
-			// 
-			// panel7
-			// 
-			this->panel7->BackColor = System::Drawing::Color::White;
-			this->panel7->Location = System::Drawing::Point(39, 195);
-			this->panel7->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(338, 4);
-			this->panel7->TabIndex = 34;
-			// 
-			// customerAccNum
-			// 
-			this->customerAccNum->AutoSize = true;
-			this->customerAccNum->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
-			this->customerAccNum->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
-				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->customerAccNum->Location = System::Drawing::Point(36, 145);
-			this->customerAccNum->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->customerAccNum->Name = L"customerAccNum";
-			this->customerAccNum->Size = System::Drawing::Size(157, 16);
-			this->customerAccNum->TabIndex = 33;
-			this->customerAccNum->Text = L"No. Identitas Nasabah";
-			// 
-			// customerAccInput
-			// 
-			this->customerAccInput->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
-				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->customerAccInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->customerAccInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->customerAccInput->ForeColor = System::Drawing::Color::White;
-			this->customerAccInput->Location = System::Drawing::Point(39, 170);
-			this->customerAccInput->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->customerAccInput->MaxLength = 50;
-			this->customerAccInput->Name = L"customerAccInput";
-			this->customerAccInput->Size = System::Drawing::Size(338, 16);
-			this->customerAccInput->TabIndex = 32;
-			this->customerAccInput->TextChanged += gcnew System::EventHandler(this, &CheckSavings::customerAccInput_TextChanged);
-			// 
-			// checkSav
-			// 
-			this->checkSav->AutoSize = true;
-			this->checkSav->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
-				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->checkSav->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->checkSav->Location = System::Drawing::Point(30, 51);
-			this->checkSav->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->checkSav->Name = L"checkSav";
-			this->checkSav->Size = System::Drawing::Size(682, 55);
-			this->checkSav->TabIndex = 6;
-			this->checkSav->Text = L"Data dan Riwayat Tabungan";
-			// 
 			// accountNumber
 			// 
-			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->accountNumber->DefaultCellStyle = dataGridViewCellStyle15;
+			this->accountNumber->DefaultCellStyle = dataGridViewCellStyle7;
 			this->accountNumber->HeaderText = L"Nomor Rekening";
 			this->accountNumber->MinimumWidth = 6;
 			this->accountNumber->Name = L"accountNumber";
@@ -449,8 +380,8 @@ namespace GoBanking {
 			// 
 			// savingsType
 			// 
-			dataGridViewCellStyle16->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->savingsType->DefaultCellStyle = dataGridViewCellStyle16;
+			dataGridViewCellStyle8->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->savingsType->DefaultCellStyle = dataGridViewCellStyle8;
 			this->savingsType->HeaderText = L"Jenis Tabungan";
 			this->savingsType->MinimumWidth = 6;
 			this->savingsType->Name = L"savingsType";
@@ -458,8 +389,8 @@ namespace GoBanking {
 			// 
 			// jumlahSaldo
 			// 
-			dataGridViewCellStyle17->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->jumlahSaldo->DefaultCellStyle = dataGridViewCellStyle17;
+			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->jumlahSaldo->DefaultCellStyle = dataGridViewCellStyle9;
 			this->jumlahSaldo->HeaderText = L"Jumlah Saldo";
 			this->jumlahSaldo->MinimumWidth = 6;
 			this->jumlahSaldo->Name = L"jumlahSaldo";
@@ -481,8 +412,8 @@ namespace GoBanking {
 			// 
 			// createdAt
 			// 
-			dataGridViewCellStyle18->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->createdAt->DefaultCellStyle = dataGridViewCellStyle18;
+			dataGridViewCellStyle10->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->createdAt->DefaultCellStyle = dataGridViewCellStyle10;
 			this->createdAt->HeaderText = L"Tgl. Dibuat";
 			this->createdAt->MinimumWidth = 6;
 			this->createdAt->Name = L"createdAt";
@@ -490,8 +421,8 @@ namespace GoBanking {
 			// 
 			// updatedAt
 			// 
-			dataGridViewCellStyle19->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->updatedAt->DefaultCellStyle = dataGridViewCellStyle19;
+			dataGridViewCellStyle11->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->updatedAt->DefaultCellStyle = dataGridViewCellStyle11;
 			this->updatedAt->HeaderText = L"Tgl. Diubah";
 			this->updatedAt->MinimumWidth = 6;
 			this->updatedAt->Name = L"updatedAt";
@@ -499,16 +430,16 @@ namespace GoBanking {
 			// 
 			// details
 			// 
-			dataGridViewCellStyle20->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle20->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
+			dataGridViewCellStyle12->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle12->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
 				static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			dataGridViewCellStyle20->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle20->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle20->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			dataGridViewCellStyle12->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle12->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle20->SelectionForeColor = System::Drawing::Color::White;
-			this->details->DefaultCellStyle = dataGridViewCellStyle20;
+			dataGridViewCellStyle12->SelectionForeColor = System::Drawing::Color::White;
+			this->details->DefaultCellStyle = dataGridViewCellStyle12;
 			this->details->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->details->HeaderText = L"Detail";
 			this->details->MinimumWidth = 6;
@@ -517,16 +448,82 @@ namespace GoBanking {
 			this->details->UseColumnTextForButtonValue = true;
 			this->details->Width = 125;
 			// 
+			// btnCheckSavings
+			// 
+			this->btnCheckSavings->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->btnCheckSavings->FlatAppearance->BorderSize = 0;
+			this->btnCheckSavings->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnCheckSavings->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
+			this->btnCheckSavings->Location = System::Drawing::Point(519, 194);
+			this->btnCheckSavings->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnCheckSavings->Name = L"btnCheckSavings";
+			this->btnCheckSavings->Size = System::Drawing::Size(100, 50);
+			this->btnCheckSavings->TabIndex = 39;
+			this->btnCheckSavings->Text = L"Cek";
+			this->btnCheckSavings->UseVisualStyleBackColor = false;
+			this->btnCheckSavings->Click += gcnew System::EventHandler(this, &CheckSavings::btnCheckSavings_Click);
+			// 
+			// panel7
+			// 
+			this->panel7->BackColor = System::Drawing::Color::White;
+			this->panel7->Location = System::Drawing::Point(52, 240);
+			this->panel7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(451, 5);
+			this->panel7->TabIndex = 34;
+			// 
+			// customerAccNum
+			// 
+			this->customerAccNum->AutoSize = true;
+			this->customerAccNum->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
+			this->customerAccNum->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->customerAccNum->Location = System::Drawing::Point(48, 178);
+			this->customerAccNum->Name = L"customerAccNum";
+			this->customerAccNum->Size = System::Drawing::Size(190, 20);
+			this->customerAccNum->TabIndex = 33;
+			this->customerAccNum->Text = L"No. Identitas Nasabah";
+			// 
+			// customerAccInput
+			// 
+			this->customerAccInput->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(56)));
+			this->customerAccInput->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->customerAccInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->customerAccInput->ForeColor = System::Drawing::Color::White;
+			this->customerAccInput->Location = System::Drawing::Point(52, 209);
+			this->customerAccInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->customerAccInput->MaxLength = 50;
+			this->customerAccInput->Name = L"customerAccInput";
+			this->customerAccInput->Size = System::Drawing::Size(451, 20);
+			this->customerAccInput->TabIndex = 32;
+			this->customerAccInput->TextChanged += gcnew System::EventHandler(this, &CheckSavings::customerAccInput_TextChanged);
+			// 
+			// checkSav
+			// 
+			this->checkSav->AutoSize = true;
+			this->checkSav->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(56)));
+			this->checkSav->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->checkSav->Location = System::Drawing::Point(40, 63);
+			this->checkSav->Name = L"checkSav";
+			this->checkSav->Size = System::Drawing::Size(850, 70);
+			this->checkSav->TabIndex = 6;
+			this->checkSav->Text = L"Data dan Riwayat Tabungan";
+			// 
 			// CheckSavings
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->ClientSize = System::Drawing::Size(1040, 640);
+			this->ClientSize = System::Drawing::Size(1400, 900);
 			this->Controls->Add(this->checkSavingsMainPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"CheckSavings";
 			this->Text = L"CheckSavings";
 			this->Load += gcnew System::EventHandler(this, &CheckSavings::CheckSavings_Load);
