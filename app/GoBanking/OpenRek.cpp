@@ -55,7 +55,7 @@ namespace GoBanking {
 		if (value >= 5000000.0) {
 			return "GoPriority";
 		}
-		else if (value >= 200000.0) {
+		else if (value >= 2000000.0) {
 			return "GoPlatinum";
 		}
 		else if (value >= 1500000.0) {
@@ -102,7 +102,7 @@ namespace GoBanking {
 	System::Void OpenRek::depositoInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		if (!System::Text::RegularExpressions::Regex::IsMatch(depositoInput->Text, "^[0-9]*\\.?[0-9]+$")) {
-			System::Windows::Forms::MessageBox::Show("Hanya angka yang diizinkan.", "Kesalahan");
+			System::Windows::Forms::MessageBox::Show("Hanya angka yang diizinkan.", "Terjadi kesalahan");
 			depositoInput->Text = "0";
 			return;
 		}
@@ -196,6 +196,4 @@ namespace GoBanking {
 			return;
 		}
 	}
-
-
 }

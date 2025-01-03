@@ -59,10 +59,9 @@ namespace GoBanking {
 				dataGridViewAccount->Rows->Clear();
 
 				for (const auto& item : data) {
-					int inomorRekening = item["nomorRekening"].get<int>();
 
 					// Konversi data string menggunakan marshal_as menjadi System::String / String^
-					String^ nomorRekening = msclr::interop::marshal_as<String^>(std::to_string(inomorRekening));
+					String^ nomorRekening = msclr::interop::marshal_as<String^>(item["nomorRekening"].get<string>());
 					String^ jenisTabungan = msclr::interop::marshal_as<String^>(item["jenisTabungan"].get<string>());
 					String^ jumlahSaldo = msclr::interop::marshal_as<String^>(item["totalDana"].get<string>());
 					String^ jumlahBunga = msclr::interop::marshal_as<String^>(item["bonusBunga"].get<string>());
