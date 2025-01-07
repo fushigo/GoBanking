@@ -568,7 +568,7 @@ private: System::Void Transfer_Load(System::Object^ sender, System::EventArgs^ e
 }
 
 // ============================ btnTransfer ==========================
-private:
+	private:
 	System::Void btnTransfer_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void ShowConfirmationPopup();
 	System::Void OnConfirmTransfer(System::Object^ sender, System::EventArgs^ e);
@@ -576,6 +576,7 @@ private:
 	// ===================================== Random simulation for test ======================================
 	System::Void ProcessTransfer();
 	// ===================================== Random simulation for test end ======================================
+
 	System::Void ShowResultPopup(bool isSuccess);
 	System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e);
 	System::Void OnRetryTransfer(System::Object^ sender, System::EventArgs^ e);
@@ -648,29 +649,32 @@ private:
 			e->Font, gcnew SolidBrush(textColor),
 			e->Bounds, StringFormat::GenericDefault);
 	}
-		  void loadDropdownData();
-		   // ============================ dropDownMenuSend End =============================
-private: System::Void nominalInput_TextChanged(System::Object^ sender, System::EventArgs^ e);
+	void loadDropdownData();
+	// ============================ dropDownMenuSend End =============================
 
-private: System::Void dropDownRekReceive_DrawItem(System::Object^ sender, DrawItemEventArgs^ e) {
-	if (e->Index < 0) return;
 
-	// Custom colors
-	Color normalColor = Color::FromArgb(110, 84, 181);      // Normal background
-	Color hoverColor = Color::FromArgb(128, 128, 255);      // Hover/Selected background
-	Color textColor = Color::White;                         // Text color
+	private: System::Void nominalInput_TextChanged(System::Object^ sender, System::EventArgs^ e);
 
-	// Set the background color based on selection state
-	if ((e->State & DrawItemState::Selected) == DrawItemState::Selected)
-		e->Graphics->FillRectangle(gcnew SolidBrush(hoverColor), e->Bounds);
-	else
-		e->Graphics->FillRectangle(gcnew SolidBrush(normalColor), e->Bounds);
+	private: System::Void dropDownRekReceive_DrawItem(System::Object^ sender, DrawItemEventArgs^ e) {
+		if (e->Index < 0) return;
 
-	// Draw the text
-	e->Graphics->DrawString(dropDownRekReceive->Items[e->Index]->ToString(),
-		e->Font, gcnew SolidBrush(textColor),
-		e->Bounds, StringFormat::GenericDefault);
-}
-private: System::Void dropDownRekReceive_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
-};
+		// Custom colors
+		Color normalColor = Color::FromArgb(110, 84, 181);      // Normal background
+		Color hoverColor = Color::FromArgb(128, 128, 255);      // Hover/Selected background
+		Color textColor = Color::White;                         // Text color
+
+		// Set the background color based on selection state
+		if ((e->State & DrawItemState::Selected) == DrawItemState::Selected)
+			e->Graphics->FillRectangle(gcnew SolidBrush(hoverColor), e->Bounds);
+		else
+			e->Graphics->FillRectangle(gcnew SolidBrush(normalColor), e->Bounds);
+
+		// Draw the text
+		e->Graphics->DrawString(dropDownRekReceive->Items[e->Index]->ToString(),
+			e->Font, gcnew SolidBrush(textColor),
+			e->Bounds, StringFormat::GenericDefault);
+	}
+
+	private: System::Void dropDownRekReceive_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
+	};
 }
