@@ -8,7 +8,7 @@ namespace GoBanking {
 	using json = nlohmann::json;
 
 	double tSaldo, saldoTf;
-	string pinRek;
+	string rekSender, rekReceiver, pinRek;
 
 	static string getNasabah() {
 		API api;
@@ -67,6 +67,23 @@ namespace GoBanking {
 		}
 
 		return result;
+	}
+
+	static string postData(string& payload) {
+		API api;
+		string endpoint = "/rekening/transfer";
+		string response;
+
+		try
+		{
+			response = api.POST(endpoint, payload);
+		}
+		catch (String^ err)
+		{
+			System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
+		}
+
+		return response.data();
 	}
 
 	System::Void Transfer::dropDownMenuSend_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
@@ -158,6 +175,7 @@ namespace GoBanking {
 
 				string dataDana = jsonData["data"]["totalDana"].get<string>();
 				string dataBunga = jsonData["data"]["bonusBunga"].get<string>();
+				string dataNorek = jsonData["data"]["nomorRekening"].get<string>();
 				int dataPin = jsonData["data"]["pin"].get<int>();
 
 				double dana = Convert::ToDouble(msclr::interop::marshal_as<String^>(dataDana));
@@ -166,6 +184,7 @@ namespace GoBanking {
 				double totalSaldo = dana + bunga;
 				tSaldo = totalSaldo;
 				pinRek = msclr::interop::marshal_as<string>(dataPin.ToString());
+				rekSender = dataNorek;
 
 				System::Globalization::CultureInfo^ culture = gcnew System::Globalization::CultureInfo("id-ID");
 				String^ formattedSaldo = String::Format(culture, "{0:c2}", totalSaldo);
@@ -230,11 +249,14 @@ namespace GoBanking {
 
 				string dataDana = jsonData["data"]["totalDana"].get<string>();
 				string dataBunga = jsonData["data"]["bonusBunga"].get<string>();
+				string dataNorek = jsonData["data"]["nomorRekening"].get<string>();
 
 				double dana = Convert::ToDouble(msclr::interop::marshal_as<String^>(dataDana));
 				double bunga = Convert::ToDouble(msclr::interop::marshal_as<String^>(dataBunga));
 
 				double totalSaldo = dana + bunga;
+
+				rekReceiver = dataNorek;
 
 				System::Globalization::CultureInfo^ culture = gcnew System::Globalization::CultureInfo("id-ID");
 				String^ formattedSaldo = String::Format(culture, "{0:c2}", totalSaldo);
@@ -273,9 +295,31 @@ namespace GoBanking {
 
 	System::Void Transfer::ProcessTransfer() {
 		// Random success/fail simulation
-		Random^ rand = gcnew Random();
-		bool isSuccess = (rand->Next(100) < 70); // 70% success rate
-		ShowResultPopup(isSuccess);
+
+		json payjson;
+
+		payjson["rekSend"] = rekSender;
+		payjson["rekReceive"] = rekReceiver;
+		payjson["nominalTf"] = saldoTf;
+		payjson["pin"] = pinRek;
+
+		try {
+			string response = postData(payjson.dump());
+
+			auto jsonData = json::parse(response);
+			auto& status = jsonData["statusCode"];
+
+			if (status.get<int>() == 500) {
+				ShowResultPopup(false);
+			}
+			else {
+				ShowResultPopup(true);
+			}
+		}
+		catch (json::exception e) {
+			System::Windows::Forms::MessageBox::Show(gcnew System::String(e.what()), "Terjadi kesalahan");
+			return;
+		}
 	}
 
 	System::Void Transfer::ShowResultPopup(bool isSuccess) {
