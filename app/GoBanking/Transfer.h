@@ -90,6 +90,12 @@ namespace GoBanking {
 
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::ComboBox^ dropDownRekReceive;
+
+
+	private: System::Windows::Forms::Label^ label5;
 
 
 
@@ -111,8 +117,12 @@ namespace GoBanking {
 		{
 			this->transferMainPanel = (gcnew System::Windows::Forms::Panel());
 			this->transferInputPanel = (gcnew System::Windows::Forms::Panel());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->dropDownRekReceive = (gcnew System::Windows::Forms::ComboBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->dropDownDana = (gcnew System::Windows::Forms::ComboBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->pinInputPanel = (gcnew System::Windows::Forms::Panel());
@@ -134,6 +144,7 @@ namespace GoBanking {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->transferMainPanel->SuspendLayout();
 			this->transferInputPanel->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->pinInputPanel->SuspendLayout();
 			this->nominalInputPanel->SuspendLayout();
@@ -157,6 +168,7 @@ namespace GoBanking {
 			// 
 			// transferInputPanel
 			// 
+			this->transferInputPanel->Controls->Add(this->panel2);
 			this->transferInputPanel->Controls->Add(this->panel1);
 			this->transferInputPanel->Controls->Add(this->pinInputPanel);
 			this->transferInputPanel->Controls->Add(this->nominalInputPanel);
@@ -168,6 +180,72 @@ namespace GoBanking {
 			this->transferInputPanel->Name = L"transferInputPanel";
 			this->transferInputPanel->Size = System::Drawing::Size(750, 385);
 			this->transferInputPanel->TabIndex = 2;
+			// 
+			// panel2
+			// 
+			this->panel2->Controls->Add(this->label6);
+			this->panel2->Controls->Add(this->dropDownRekReceive);
+			this->panel2->Controls->Add(this->label5);
+			this->panel2->Location = System::Drawing::Point(385, 92);
+			this->panel2->Margin = System::Windows::Forms::Padding(2);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(345, 57);
+			this->panel2->TabIndex = 44;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
+			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->label6->Location = System::Drawing::Point(102, 0);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(53, 16);
+			this->label6->TabIndex = 23;
+			this->label6->Text = L"Saldo :";
+			// 
+			// dropDownRekReceive
+			// 
+			this->dropDownRekReceive->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->dropDownRekReceive->DrawMode = System::Windows::Forms::DrawMode::OwnerDrawFixed;
+			this->dropDownRekReceive->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dropDownRekReceive->ForeColor = System::Drawing::Color::White;
+			this->dropDownRekReceive->FormattingEnabled = true;
+			this->dropDownRekReceive->Location = System::Drawing::Point(4, 32);
+			this->dropDownRekReceive->Margin = System::Windows::Forms::Padding(2);
+			this->dropDownRekReceive->MaxDropDownItems = 100;
+			this->dropDownRekReceive->Name = L"dropDownRekReceive";
+			this->dropDownRekReceive->Size = System::Drawing::Size(338, 24);
+			this->dropDownRekReceive->TabIndex = 43;
+			this->dropDownRekReceive->Tag = L"";
+			this->dropDownRekReceive->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &Transfer::dropDownRekReceive_DrawItem);
+			this->dropDownRekReceive->SelectedIndexChanged += gcnew System::EventHandler(this, &Transfer::dropDownRekReceive_SelectedIndexChanged);
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->label5->Location = System::Drawing::Point(0, 0);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(70, 16);
+			this->label5->TabIndex = 23;
+			this->label5->Text = L"Rekening";
+			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->label4);
+			this->panel1->Controls->Add(this->dropDownDana);
+			this->panel1->Controls->Add(this->label3);
+			this->panel1->Location = System::Drawing::Point(385, 16);
+			this->panel1->Margin = System::Windows::Forms::Padding(2);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(345, 57);
+			this->panel1->TabIndex = 40;
 			// 
 			// label4
 			// 
@@ -181,17 +259,6 @@ namespace GoBanking {
 			this->label4->Size = System::Drawing::Size(53, 16);
 			this->label4->TabIndex = 22;
 			this->label4->Text = L"Saldo :";
-			// 
-			// panel1
-			// 
-			this->panel1->Controls->Add(this->label4);
-			this->panel1->Controls->Add(this->dropDownDana);
-			this->panel1->Controls->Add(this->label3);
-			this->panel1->Location = System::Drawing::Point(385, 16);
-			this->panel1->Margin = System::Windows::Forms::Padding(2);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(345, 57);
-			this->panel1->TabIndex = 40;
 			// 
 			// dropDownDana
 			// 
@@ -464,6 +531,8 @@ namespace GoBanking {
 			this->transferMainPanel->ResumeLayout(false);
 			this->transferMainPanel->PerformLayout();
 			this->transferInputPanel->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->pinInputPanel->ResumeLayout(false);
@@ -493,79 +562,25 @@ private: System::Void Transfer_Load(System::Object^ sender, System::EventArgs^ e
 
 	this->dropDownDana->Items->Insert(0, "-- Pilih Sumber Dana --");
 	this->dropDownDana->SelectedIndex = 0;
+
+	this->dropDownRekReceive->Items->Insert(0, "-- Pilih Rekening --");
+	this->dropDownRekReceive->SelectedIndex = 0;
 }
 
 // ============================ btnTransfer ==========================
 private:
-	System::Void btnTransfer_Click(System::Object^ sender, System::EventArgs^ e) {
-		ShowConfirmationPopup();
-	}
-
-	System::Void ShowConfirmationPopup() {
-		CloseCurrentPopup();
-
-		currentPopup = gcnew PopupForm();
-		currentPopup->SetMessage("Apakah Anda yakin ingin melanjutkan transfer?");
-		currentPopup->SetActionButton1("Konfirmasi", gcnew EventHandler(this, &Transfer::OnConfirmTransfer));
-		currentPopup->SetActionButton2("Batal", gcnew EventHandler(this, &Transfer::OnClose));
-		currentPopup->ShowPopup();
-	}
-
-	System::Void OnConfirmTransfer(System::Object^ sender, System::EventArgs^ e) {
-		if (currentPopup != nullptr) {
-			currentPopup->ClosePopup();
-			ProcessTransfer();
-		}
-	}
+	System::Void btnTransfer_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void ShowConfirmationPopup();
+	System::Void OnConfirmTransfer(System::Object^ sender, System::EventArgs^ e);
 
 	// ===================================== Random simulation for test ======================================
-	System::Void ProcessTransfer() {
-		// Random success/fail simulation
-		Random^ rand = gcnew Random();
-		bool isSuccess = (rand->Next(100) < 70); // 70% success rate
-		ShowResultPopup(isSuccess);
-	}
+	System::Void ProcessTransfer();
 	// ===================================== Random simulation for test end ======================================
-
-	System::Void ShowResultPopup(bool isSuccess) {
-		currentPopup = gcnew PopupForm();
-		if (isSuccess) {
-			currentPopup->SetMessage("Transfer berhasil!");
-			currentPopup->SetActionButton1("OK", gcnew EventHandler(this, &Transfer::OnResultConfirmed));
-		}
-		else {
-			currentPopup->SetMessage("Transfer gagal!");
-			currentPopup->SetActionButton1("Coba Lagi", gcnew EventHandler(this, &Transfer::OnRetryTransfer));
-		}
-		currentPopup->SetActionButton2("Tutup", gcnew EventHandler(this, &Transfer::OnClose));
-		currentPopup->ShowPopup();
-	}
-
-	System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e) {
-		if (currentPopup != nullptr) {
-			currentPopup->ClosePopup();
-		}
-	}
-
-	System::Void OnRetryTransfer(System::Object^ sender, System::EventArgs^ e) {
-		if (currentPopup != nullptr) {
-			currentPopup->ClosePopup();
-			ShowConfirmationPopup();
-		}
-	}
-
-	System::Void OnClose(System::Object^ sender, System::EventArgs^ e) {
-		if (currentPopup != nullptr) {
-			currentPopup->ClosePopup();
-		}
-	}
-
-	System::Void CloseCurrentPopup() {
-		if (currentPopup != nullptr) {
-			currentPopup->ClosePopup();
-			currentPopup = nullptr;
-		}
-	}
+	System::Void ShowResultPopup(bool isSuccess);
+	System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e);
+	System::Void OnRetryTransfer(System::Object^ sender, System::EventArgs^ e);
+	System::Void OnClose(System::Object^ sender, System::EventArgs^ e);
+	System::Void CloseCurrentPopup();
 	// ============================ btnTransfer End ==========================
 
 	// ============================ dropDownMenuSend =============================
@@ -636,5 +651,26 @@ private:
 		  void loadDropdownData();
 		   // ============================ dropDownMenuSend End =============================
 private: System::Void nominalInput_TextChanged(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void dropDownRekReceive_DrawItem(System::Object^ sender, DrawItemEventArgs^ e) {
+	if (e->Index < 0) return;
+
+	// Custom colors
+	Color normalColor = Color::FromArgb(110, 84, 181);      // Normal background
+	Color hoverColor = Color::FromArgb(128, 128, 255);      // Hover/Selected background
+	Color textColor = Color::White;                         // Text color
+
+	// Set the background color based on selection state
+	if ((e->State & DrawItemState::Selected) == DrawItemState::Selected)
+		e->Graphics->FillRectangle(gcnew SolidBrush(hoverColor), e->Bounds);
+	else
+		e->Graphics->FillRectangle(gcnew SolidBrush(normalColor), e->Bounds);
+
+	// Draw the text
+	e->Graphics->DrawString(dropDownRekReceive->Items[e->Index]->ToString(),
+		e->Font, gcnew SolidBrush(textColor),
+		e->Bounds, StringFormat::GenericDefault);
+}
+private: System::Void dropDownRekReceive_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }

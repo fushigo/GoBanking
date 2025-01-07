@@ -7,10 +7,8 @@ namespace GoBanking {
 	using namespace std;
 	using json = nlohmann::json;
 
-	struct Selection {
-		int pengirim;
-		int penerima;
-	}nasabah;
+	double tSaldo, saldoTf;
+	string pinRek;
 
 	static string getNasabah() {
 		API api;
@@ -127,6 +125,25 @@ namespace GoBanking {
 				return;
 			}
 
+			try {
+				dropDownRekReceive->Items->Clear();
+				dropDownRekReceive->Items->Insert(0, "-- Pilih Rekening --");
+				dropDownRekReceive->SelectedIndex = 0;
+
+				string rekeningData = getAllRekeningNasabah(recieveIdentityNumber);
+				auto jsonData = json::parse(rekeningData);
+
+				auto& data = jsonData["data"]["rekening"];
+
+				for (const auto& item : data) {
+					dropDownRekReceive->Items->Add(msclr::interop::marshal_as<String^>(item["nomorRekening"].get<string>() + " | " + item["jenisTabungan"].get<string>()));
+					//System::Windows::Forms::MessageBox::Show(msclr::interop::marshal_as<String^>(item["nomorRekening"].get<string>()));
+				}
+
+			}
+			catch (json::exception err) {
+				System::Windows::Forms::MessageBox::Show(gcnew System::String(err.what()));
+			}
 		}
 	}
 
@@ -141,11 +158,14 @@ namespace GoBanking {
 
 				string dataDana = jsonData["data"]["totalDana"].get<string>();
 				string dataBunga = jsonData["data"]["bonusBunga"].get<string>();
+				int dataPin = jsonData["data"]["pin"].get<int>();
 
 				double dana = Convert::ToDouble(msclr::interop::marshal_as<String^>(dataDana));
 				double bunga = Convert::ToDouble(msclr::interop::marshal_as<String^>(dataBunga));
 
 				double totalSaldo = dana + bunga;
+				tSaldo = totalSaldo;
+				pinRek = msclr::interop::marshal_as<string>(dataPin.ToString());
 
 				System::Globalization::CultureInfo^ culture = gcnew System::Globalization::CultureInfo("id-ID");
 				String^ formattedSaldo = String::Format(culture, "{0:c2}", totalSaldo);
@@ -167,6 +187,7 @@ namespace GoBanking {
 		dropDownMenuSend->Items->Clear();
 		dropDownMenuReceive->Items->Clear();
 		dropDownDana->Items->Clear();
+		dropDownRekReceive->Items->Clear();
 
 		dropDownMenuSend->AutoCompleteMode = AutoCompleteMode::SuggestAppend;
 		dropDownMenuSend->AutoCompleteSource = AutoCompleteSource::ListItems;
@@ -189,6 +210,111 @@ namespace GoBanking {
 	}
 	System::Void Transfer::nominalInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		
+		double inpSaldo = Convert::ToDouble(nominalInput->Text);
+		if (tSaldo && inpSaldo >= tSaldo) {
+			System::Windows::Forms::MessageBox::Show("Saldo rekening nasabah tidak cukup", "Terjadi kesalahan");
+			nominalInput->Text = (tSaldo - 10000).ToString();
+			return;
+		}
+
+		saldoTf = inpSaldo;
+	}
+	System::Void Transfer::dropDownRekReceive_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (dropDownRekReceive->SelectedIndex > 0) {
+			string rekeningNumber = getUniqueItem(msclr::interop::marshal_as<string>(dropDownRekReceive->SelectedItem->ToString()));
+			string rekeningData = getRekeningData(rekeningNumber);
+
+			try {
+				auto jsonData = json::parse(rekeningData);
+
+				string dataDana = jsonData["data"]["totalDana"].get<string>();
+				string dataBunga = jsonData["data"]["bonusBunga"].get<string>();
+
+				double dana = Convert::ToDouble(msclr::interop::marshal_as<String^>(dataDana));
+				double bunga = Convert::ToDouble(msclr::interop::marshal_as<String^>(dataBunga));
+
+				double totalSaldo = dana + bunga;
+
+				System::Globalization::CultureInfo^ culture = gcnew System::Globalization::CultureInfo("id-ID");
+				String^ formattedSaldo = String::Format(culture, "{0:c2}", totalSaldo);
+
+				label6->Text = "Saldo : " + formattedSaldo;
+			}
+			catch (json::exception err) {
+				System::Windows::Forms::MessageBox::Show(gcnew System::String(err.what()), "Terjadi kesalahan saat parse JSON");
+			}
+		}
+		else {
+			label6->Text = "Saldo : ";
+		}
+	}
+
+	System::Void Transfer::btnTransfer_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		ShowConfirmationPopup();
+	}
+
+	System::Void Transfer::ShowConfirmationPopup() {
+		CloseCurrentPopup();
+		currentPopup = gcnew PopupForm();
+		currentPopup->SetMessage("Apakah Anda yakin ingin melanjutkan transfer?");
+		currentPopup->SetActionButton1("Konfirmasi", gcnew EventHandler(this, &Transfer::OnConfirmTransfer));
+		currentPopup->SetActionButton2("Batal", gcnew EventHandler(this, &Transfer::OnClose));
+		currentPopup->ShowPopup();
+	}
+
+	System::Void Transfer::OnConfirmTransfer(System::Object^ sender, System::EventArgs^ e) {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+			ProcessTransfer();
+		}
+	}
+
+	System::Void Transfer::ProcessTransfer() {
+		// Random success/fail simulation
+		Random^ rand = gcnew Random();
+		bool isSuccess = (rand->Next(100) < 70); // 70% success rate
+		ShowResultPopup(isSuccess);
+	}
+
+	System::Void Transfer::ShowResultPopup(bool isSuccess) {
+		currentPopup = gcnew PopupForm();
+		if (isSuccess) {
+			currentPopup->SetMessage("Transfer berhasil!");
+			currentPopup->SetActionButton1("OK", gcnew EventHandler(this, &Transfer::OnResultConfirmed));
+		}
+		else {
+			currentPopup->SetMessage("Transfer gagal!");
+			currentPopup->SetActionButton1("Coba Lagi", gcnew EventHandler(this, &Transfer::OnRetryTransfer));
+		}
+		currentPopup->SetActionButton2("Tutup", gcnew EventHandler(this, &Transfer::OnClose));
+		currentPopup->ShowPopup();
+	}
+
+	System::Void Transfer::OnResultConfirmed(System::Object^ sender, System::EventArgs^ e) {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+		}
+	}
+
+	System::Void Transfer::OnRetryTransfer(System::Object^ sender, System::EventArgs^ e) {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+			ShowConfirmationPopup();
+		}
+	}
+
+	System::Void Transfer::OnClose(System::Object^ sender, System::EventArgs^ e) {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+		}
+	}
+
+	System::Void Transfer::CloseCurrentPopup() {
+		if (currentPopup != nullptr) {
+			currentPopup->ClosePopup();
+			currentPopup = nullptr;
+		}
 	}
 }

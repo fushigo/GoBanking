@@ -3,6 +3,7 @@
 #include "Api.h"
 #include "msclr/marshal_cppstd.h"
 #include "sstream"
+#include "PopupForm.h"
 
 namespace GoBanking {
 	using namespace std;
@@ -188,8 +189,6 @@ namespace GoBanking {
 				System::Windows::Forms::MessageBox::Show("Berhasil menambahkan rekening dan nasabah baru", "Success");
 				return;
 			}
-
-			System::Windows::Forms::MessageBox::Show("Haia", "lol");
 		}
 		catch (json::exception e) {
 			System::Windows::Forms::MessageBox::Show(gcnew System::String(e.what()), "Terjadi kesalahan");
