@@ -1,4 +1,5 @@
 #pragma once
+#include "PopupForm.h"
 
 namespace GoBanking {
 
@@ -372,8 +373,24 @@ namespace GoBanking {
 #pragma endregion
 private: System::Void customerDataMainPanel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
-private: System::Void dataGridView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
+private:
+
+	PopupForm^ currentPopup;
+
+	System::Void dataGridView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+	System::Void ShowConfirmationPopup();
+	System::Void ShowPopupEdit();
+	System::Void OnConfirmDelete(System::Object^ sender, System::EventArgs^ e);
+	System::Void OnConfirmEdit(System::Object^ sender, System::EventArgs^ e);
+
+	System::Void ProcessDelete();
+	System::Void ProcessEdit();
+
+	System::Void ShowResultPopup(bool isSuccess);
+	System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e);
+	System::Void OnRetryDelete(System::Object^ sender, System::EventArgs^ e);
+	System::Void OnClose(System::Object^ sender, System::EventArgs^ e);
+	System::Void CloseCurrentPopup();
 
 private: 
 	System::Void CustomerData_Load(System::Object^ sender, System::EventArgs^ e);

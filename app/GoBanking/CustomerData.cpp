@@ -115,4 +115,132 @@ namespace GoBanking {
 
         CustomerData_Load(nullptr, nullptr);
     }
+
+    System::Void CustomerData::dataGridView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e)
+    {
+        if (e->RowIndex >= 0 && dataGridView->Rows->Count > 0) {
+
+            if (e->ColumnIndex == dataGridView->Columns["edit"]->Index) {
+                DataGridViewButtonCell^ buttonCell = safe_cast<DataGridViewButtonCell^>(
+                    dataGridView->Rows[e->RowIndex]->Cells[e->ColumnIndex]
+                );
+
+                if (dataGridView->Rows[e->RowIndex]->Cells[0]->Value != nullptr &&
+                    !String::IsNullOrEmpty(dataGridView->Rows[e->RowIndex]->Cells[0]->Value->ToString()))
+                {
+                    buttonCell->FlatStyle = FlatStyle::Flat;
+                    //buttonCell->Style->BackColor = System::Drawing::Color::FromArgb(43, 39, 56);
+                    buttonCell->Style->ForeColor = System::Drawing::Color::White;
+                    //buttonCell->Style->SelectionBackColor = System::Drawing::Color::FromArgb(43, 39, 56);
+                    buttonCell->Style->SelectionForeColor = System::Drawing::Color::White;
+
+                    ShowPopupEdit();
+                }
+            }
+
+            else if (e->ColumnIndex == dataGridView->Columns["deletecol"]->Index) {
+                DataGridViewButtonCell^ buttonCell = safe_cast<DataGridViewButtonCell^>(
+                    dataGridView->Rows[e->RowIndex]->Cells[e->ColumnIndex]
+                );
+
+                if (dataGridView->Rows[e->RowIndex]->Cells[0]->Value != nullptr &&
+                    !String::IsNullOrEmpty(dataGridView->Rows[e->RowIndex]->Cells[0]->Value->ToString()))
+                {
+                    buttonCell->FlatStyle = FlatStyle::Flat;
+                    //buttonCell->Style->BackColor = System::Drawing::Color::FromArgb(43, 39, 56);
+                    buttonCell->Style->ForeColor = System::Drawing::Color::White;
+                    //buttonCell->Style->SelectionBackColor = System::Drawing::Color::FromArgb(43, 39, 56);
+                    buttonCell->Style->SelectionForeColor = System::Drawing::Color::White;
+
+                    ShowConfirmationPopup();
+                }
+            }
+        }
+    }
+
+    System::Void CustomerData::ShowConfirmationPopup() {
+        CloseCurrentPopup();
+        currentPopup = gcnew PopupForm();
+        currentPopup->SetMessage("Apakah Anda yakin ingin menghapus data?");
+        currentPopup->SetActionButton1("Konfirmasi", gcnew EventHandler(this, &CustomerData::OnConfirmDelete));
+        currentPopup->SetActionButton2("Batal", gcnew EventHandler(this, &CustomerData::OnClose));
+        currentPopup->ShowPopup();
+    }
+
+    System::Void CustomerData::ShowPopupEdit() {
+        CloseCurrentPopup();
+        currentPopup = gcnew PopupForm();
+        currentPopup->SetMessage("Apakah Anda yakin ingin mengedit data?");
+        currentPopup->SetActionButton1("Konfirmasi", gcnew EventHandler(this, &CustomerData::OnConfirmDelete));
+        currentPopup->SetActionButton2("Batal", gcnew EventHandler(this, &CustomerData::OnClose));
+        currentPopup->ShowPopup();
+    }
+
+    System::Void CustomerData::OnConfirmEdit(System::Object^ sender, System::EventArgs^ e) {
+        if (currentPopup != nullptr) {
+            currentPopup->ClosePopup();
+            ProcessEdit();
+        }
+    }
+
+    System::Void CustomerData::ProcessEdit() {
+        // Random success/fail simulation
+        Random^ rand = gcnew Random();
+        bool isSuccess = (rand->Next(100) < 70); // 70% success rate
+        ShowResultPopup(isSuccess);
+    }
+
+    System::Void CustomerData::OnConfirmDelete(System::Object^ sender, System::EventArgs^ e) {
+        if (currentPopup != nullptr) {
+            currentPopup->ClosePopup();
+            ProcessDelete();
+        }
+    }
+
+    System::Void CustomerData::ProcessDelete() {
+        // Random success/fail simulation
+        Random^ rand = gcnew Random();
+        bool isSuccess = (rand->Next(100) < 70); // 70% success rate
+        ShowResultPopup(isSuccess);
+    }
+
+    System::Void CustomerData::ShowResultPopup(bool isSuccess) {
+        currentPopup = gcnew PopupForm();
+        if (isSuccess) {
+            currentPopup->SetMessage("Transfer berhasil!");
+            currentPopup->SetActionButton1("OK", gcnew EventHandler(this, &CustomerData::OnResultConfirmed));
+        }
+        else {
+            currentPopup->SetMessage("Transfer gagal!");
+            currentPopup->SetActionButton1("Coba Lagi", gcnew EventHandler(this, &CustomerData::OnRetryDelete));
+        }
+        currentPopup->SetActionButton2("Tutup", gcnew EventHandler(this, &CustomerData::OnClose));
+        currentPopup->ShowPopup();
+    }
+
+    System::Void CustomerData::OnResultConfirmed(System::Object^ sender, System::EventArgs^ e) {
+        if (currentPopup != nullptr) {
+            currentPopup->ClosePopup();
+        }
+    }
+
+    System::Void CustomerData::OnRetryDelete(System::Object^ sender, System::EventArgs^ e) {
+        if (currentPopup != nullptr) {
+            currentPopup->ClosePopup();
+            ShowConfirmationPopup();
+        }
+    }
+
+    System::Void CustomerData::OnClose(System::Object^ sender, System::EventArgs^ e) {
+        if (currentPopup != nullptr) {
+            currentPopup->ClosePopup();
+        }
+    }
+
+    System::Void CustomerData::CloseCurrentPopup() {
+        if (currentPopup != nullptr) {
+            currentPopup->ClosePopup();
+            currentPopup = nullptr;
+        }
+    }
 }
