@@ -620,10 +620,9 @@ namespace GoBanking {
 				// Prevent multiple clicks during animation
 			}
 			// ==================================== Detail Panel End ===================================================
-
-		private: 
-			System::Void btnCheckSavings_Click(System::Object^ sender, System::EventArgs^ e);
-			System::Void customerAccInput_TextChanged(System::Object^ sender, System::EventArgs^ e);
-			System::Void dataGridViewAccount_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
-	};
+private: 
+	System::Void btnCheckSavings_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void customerAccInput_TextChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void dataGridViewAccount_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+};
 }

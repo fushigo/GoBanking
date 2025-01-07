@@ -1,5 +1,4 @@
 #pragma once
-#include "PopupForm.h"
 
 namespace GoBanking {
 
@@ -93,13 +92,18 @@ namespace GoBanking {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CustomerData::typeid));
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->customerDataMainPanel = (gcnew System::Windows::Forms::Panel());
 			this->dataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btn_reset = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
+			this->btnSearch = (gcnew System::Windows::Forms::Button());
 			this->identityNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->customerName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->gender = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -109,11 +113,6 @@ namespace GoBanking {
 			this->updatedAt = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->edit = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
 			this->deletecol = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->btn_reset = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
-			this->btnSearch = (gcnew System::Windows::Forms::Button());
 			this->customerDataMainPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -134,21 +133,19 @@ namespace GoBanking {
 			// dataGridView
 			// 
 			this->dataGridView->AllowUserToOrderColumns = true;
-			this->dataGridView->AllowUserToResizeColumns = false;
-			this->dataGridView->AllowUserToResizeRows = false;
 			this->dataGridView->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle9->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle9->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle9->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle9->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(9) {
 				this->identityNumber,
@@ -159,20 +156,19 @@ namespace GoBanking {
 			this->dataGridView->Location = System::Drawing::Point(52, 251);
 			this->dataGridView->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView->Name = L"dataGridView";
-			this->dataGridView->ReadOnly = true;
 			this->dataGridView->RowHeadersVisible = false;
 			this->dataGridView->RowHeadersWidth = 51;
-			dataGridViewCellStyle12->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle12->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle12->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle12->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			dataGridViewCellStyle4->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle12->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle12->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView->RowsDefaultCellStyle = dataGridViewCellStyle12;
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView->RowsDefaultCellStyle = dataGridViewCellStyle4;
 			this->dataGridView->RowTemplate->DefaultCellStyle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->dataGridView->RowTemplate->DefaultCellStyle->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
@@ -186,104 +182,6 @@ namespace GoBanking {
 			this->dataGridView->Size = System::Drawing::Size(987, 606);
 			this->dataGridView->TabIndex = 3;
 			this->dataGridView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CustomerData::dataGridView_CellContentClick);
-			// 
-			// identityNumber
-			// 
-			this->identityNumber->HeaderText = L"Nomor Identitas";
-			this->identityNumber->MinimumWidth = 6;
-			this->identityNumber->Name = L"identityNumber";
-			this->identityNumber->ReadOnly = true;
-			this->identityNumber->Width = 125;
-			// 
-			// customerName
-			// 
-			this->customerName->HeaderText = L"Nama Nasabah";
-			this->customerName->MinimumWidth = 6;
-			this->customerName->Name = L"customerName";
-			this->customerName->ReadOnly = true;
-			this->customerName->Width = 125;
-			// 
-			// gender
-			// 
-			this->gender->HeaderText = L"Jenis Kelamin";
-			this->gender->MinimumWidth = 6;
-			this->gender->Name = L"gender";
-			this->gender->ReadOnly = true;
-			this->gender->Width = 125;
-			// 
-			// email
-			// 
-			this->email->HeaderText = L"Email";
-			this->email->MinimumWidth = 6;
-			this->email->Name = L"email";
-			this->email->ReadOnly = true;
-			this->email->Width = 125;
-			// 
-			// phoneNumber
-			// 
-			this->phoneNumber->HeaderText = L"Nomor Telephone";
-			this->phoneNumber->MinimumWidth = 6;
-			this->phoneNumber->Name = L"phoneNumber";
-			this->phoneNumber->ReadOnly = true;
-			this->phoneNumber->Width = 125;
-			// 
-			// createdAt
-			// 
-			this->createdAt->HeaderText = L"Tgl. Dibuat";
-			this->createdAt->MinimumWidth = 6;
-			this->createdAt->Name = L"createdAt";
-			this->createdAt->ReadOnly = true;
-			this->createdAt->Width = 125;
-			// 
-			// updatedAt
-			// 
-			this->updatedAt->HeaderText = L"Tgl. Diubah";
-			this->updatedAt->MinimumWidth = 6;
-			this->updatedAt->Name = L"updatedAt";
-			this->updatedAt->ReadOnly = true;
-			this->updatedAt->Width = 125;
-			// 
-			// edit
-			// 
-			dataGridViewCellStyle10->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
-				static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			dataGridViewCellStyle10->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle10->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle10->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle10->SelectionForeColor = System::Drawing::Color::White;
-			this->edit->DefaultCellStyle = dataGridViewCellStyle10;
-			this->edit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->edit->HeaderText = L"Edit";
-			this->edit->MinimumWidth = 6;
-			this->edit->Name = L"edit";
-			this->edit->ReadOnly = true;
-			this->edit->Text = L"Edit";
-			this->edit->UseColumnTextForButtonValue = true;
-			this->edit->Width = 125;
-			// 
-			// deletecol
-			// 
-			dataGridViewCellStyle11->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
-				static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			dataGridViewCellStyle11->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle11->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle11->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			dataGridViewCellStyle11->SelectionForeColor = System::Drawing::Color::White;
-			this->deletecol->DefaultCellStyle = dataGridViewCellStyle11;
-			this->deletecol->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->deletecol->HeaderText = L"Delete";
-			this->deletecol->MinimumWidth = 6;
-			this->deletecol->Name = L"deletecol";
-			this->deletecol->ReadOnly = true;
-			this->deletecol->Text = L"Delete";
-			this->deletecol->UseColumnTextForButtonValue = true;
-			this->deletecol->Width = 125;
 			// 
 			// panel1
 			// 
@@ -362,6 +260,95 @@ namespace GoBanking {
 			this->btnSearch->UseVisualStyleBackColor = false;
 			this->btnSearch->Click += gcnew System::EventHandler(this, &CustomerData::btnSearch_Click);
 			// 
+			// identityNumber
+			// 
+			this->identityNumber->HeaderText = L"Nomor Identitas";
+			this->identityNumber->MinimumWidth = 6;
+			this->identityNumber->Name = L"identityNumber";
+			this->identityNumber->Width = 125;
+			// 
+			// customerName
+			// 
+			this->customerName->HeaderText = L"Nama Nasabah";
+			this->customerName->MinimumWidth = 6;
+			this->customerName->Name = L"customerName";
+			this->customerName->Width = 125;
+			// 
+			// gender
+			// 
+			this->gender->HeaderText = L"Jenis Kelamin";
+			this->gender->MinimumWidth = 6;
+			this->gender->Name = L"gender";
+			this->gender->Width = 125;
+			// 
+			// email
+			// 
+			this->email->HeaderText = L"Email";
+			this->email->MinimumWidth = 6;
+			this->email->Name = L"email";
+			this->email->Width = 125;
+			// 
+			// phoneNumber
+			// 
+			this->phoneNumber->HeaderText = L"Nomor Telephone";
+			this->phoneNumber->MinimumWidth = 6;
+			this->phoneNumber->Name = L"phoneNumber";
+			this->phoneNumber->Width = 125;
+			// 
+			// createdAt
+			// 
+			this->createdAt->HeaderText = L"Tgl. Dibuat";
+			this->createdAt->MinimumWidth = 6;
+			this->createdAt->Name = L"createdAt";
+			this->createdAt->Width = 125;
+			// 
+			// updatedAt
+			// 
+			this->updatedAt->HeaderText = L"Tgl. Diubah";
+			this->updatedAt->MinimumWidth = 6;
+			this->updatedAt->Name = L"updatedAt";
+			this->updatedAt->Width = 125;
+			// 
+			// edit
+			// 
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(56)));
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle2->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::Color::White;
+			this->edit->DefaultCellStyle = dataGridViewCellStyle2;
+			this->edit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->edit->HeaderText = L"Edit";
+			this->edit->MinimumWidth = 6;
+			this->edit->Name = L"edit";
+			this->edit->Text = L"Edit";
+			this->edit->UseColumnTextForButtonValue = true;
+			this->edit->Width = 125;
+			// 
+			// deletecol
+			// 
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(56)));
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle3->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::Color::White;
+			this->deletecol->DefaultCellStyle = dataGridViewCellStyle3;
+			this->deletecol->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->deletecol->HeaderText = L"Delete";
+			this->deletecol->MinimumWidth = 6;
+			this->deletecol->Name = L"deletecol";
+			this->deletecol->Text = L"Delete";
+			this->deletecol->UseColumnTextForButtonValue = true;
+			this->deletecol->Width = 125;
+			// 
 			// CustomerData
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -383,28 +370,16 @@ namespace GoBanking {
 
 		}
 #pragma endregion
-	private: System::Void customerDataMainPanel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-	private:
+private: System::Void customerDataMainPanel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void dataGridView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
 
-		//System::Windows::Forms::DataGridView^ dataGridView;
-
-		PopupForm^ currentPopup;
-
-		System::Void dataGridView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
-		System::Void ShowConfirmationPopup();
-		System::Void OnConfirmTransfer(System::Object^ sender, System::EventArgs^ e);
-		System::Void ProcessDelete();
-		System::Void ShowResultPopup(bool isSuccess);
-		System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e);
-		System::Void OnRetryTransfer(System::Object^ sender, System::EventArgs^ e);
-		System::Void OnClose(System::Object^ sender, System::EventArgs^ e);
-		System::Void CloseCurrentPopup();
-	private: 
-		System::Void CustomerData_Load(System::Object^ sender, System::EventArgs^ e);
-		System::Void dateTimePicker_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
-		System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
-		System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e);
+private: 
+	System::Void CustomerData_Load(System::Object^ sender, System::EventArgs^ e);
+	System::Void dateTimePicker_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
