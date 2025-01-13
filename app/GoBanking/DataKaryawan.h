@@ -11,74 +11,45 @@ namespace GoBanking {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for CustomerData
+	/// Summary for DataKaryawan
 	/// </summary>
-	public ref class CustomerData : public System::Windows::Forms::Form
+	public ref class DataKaryawan : public System::Windows::Forms::Form
 	{
 	public:
-		CustomerData(void)
+		DataKaryawan(void)
 		{
 			InitializeComponent();
 			currentPopup = gcnew PopupForm();
-			
 		}
 
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~CustomerData()
+		~DataKaryawan()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ customerDataMainPanel;
-	protected:
+	private: System::Windows::Forms::Panel^ dataKaryawanMainPanel;
+	private: System::Windows::Forms::DataGridView^ dataGridViewKaryawan;
 
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker;
-	private: System::Windows::Forms::Button^ btnSearch;
-	private: System::Windows::Forms::TextBox^ textBox1;
-
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::DataGridView^ dataGridView;
-
-
-
-
-
-
-
-	private: System::Windows::Forms::Button^ btn_reset;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ identityNumber;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ customerName;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ gender;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ email;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ phoneNumber;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ staffNumber;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ staffName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ staffUsername;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ staffRole;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ createdAt;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ updatedAt;
 	private: System::Windows::Forms::DataGridViewButtonColumn^ edit;
 	private: System::Windows::Forms::DataGridViewButtonColumn^ deletecol;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Button^ btn_reset;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker;
+	private: System::Windows::Forms::Button^ btnSearch;
+	private: System::Windows::Forms::Button^ btnCreate;
 	protected:
 
 	private:
@@ -98,47 +69,44 @@ namespace GoBanking {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CustomerData::typeid));
-			this->customerDataMainPanel = (gcnew System::Windows::Forms::Panel());
-			this->dataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->identityNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->customerName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->gender = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->email = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->phoneNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(DataKaryawan::typeid));
+			this->dataKaryawanMainPanel = (gcnew System::Windows::Forms::Panel());
+			this->dataGridViewKaryawan = (gcnew System::Windows::Forms::DataGridView());
+			this->staffNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->staffName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->staffUsername = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->staffRole = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->createdAt = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->updatedAt = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->edit = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
 			this->deletecol = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btnCreate = (gcnew System::Windows::Forms::Button());
 			this->btn_reset = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->dateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
 			this->btnSearch = (gcnew System::Windows::Forms::Button());
-			this->customerDataMainPanel->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
+			this->dataKaryawanMainPanel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewKaryawan))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// customerDataMainPanel
+			// dataKaryawanMainPanel
 			// 
-			this->customerDataMainPanel->AutoScroll = true;
-			this->customerDataMainPanel->Controls->Add(this->dataGridView);
-			this->customerDataMainPanel->Controls->Add(this->panel1);
-			this->customerDataMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
-			this->customerDataMainPanel->Location = System::Drawing::Point(309, 0);
-			this->customerDataMainPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->customerDataMainPanel->Name = L"customerDataMainPanel";
-			this->customerDataMainPanel->Size = System::Drawing::Size(1091, 900);
-			this->customerDataMainPanel->TabIndex = 0;
-			this->customerDataMainPanel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &CustomerData::customerDataMainPanel_Paint);
+			this->dataKaryawanMainPanel->Controls->Add(this->dataGridViewKaryawan);
+			this->dataKaryawanMainPanel->Controls->Add(this->panel1);
+			this->dataKaryawanMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
+			this->dataKaryawanMainPanel->Location = System::Drawing::Point(310, 0);
+			this->dataKaryawanMainPanel->Name = L"dataKaryawanMainPanel";
+			this->dataKaryawanMainPanel->Size = System::Drawing::Size(1090, 900);
+			this->dataKaryawanMainPanel->TabIndex = 0;
 			// 
-			// dataGridView
+			// dataGridViewKaryawan
 			// 
-			this->dataGridView->AllowUserToOrderColumns = true;
-			this->dataGridView->AllowUserToResizeRows = false;
-			this->dataGridView->BackgroundColor = System::Drawing::Color::White;
-			this->dataGridView->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->dataGridViewKaryawan->AllowUserToOrderColumns = true;
+			this->dataGridViewKaryawan->AllowUserToResizeRows = false;
+			this->dataGridViewKaryawan->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridViewKaryawan->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
 			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
@@ -149,20 +117,20 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
 			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			this->dataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(9) {
-				this->identityNumber,
-					this->customerName, this->gender, this->email, this->phoneNumber, this->createdAt, this->updatedAt, this->edit, this->deletecol
+			this->dataGridViewKaryawan->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this->dataGridViewKaryawan->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewKaryawan->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
+				this->staffNumber,
+					this->staffName, this->staffUsername, this->staffRole, this->createdAt, this->updatedAt, this->edit, this->deletecol
 			});
-			this->dataGridView->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
-				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->dataGridView->Location = System::Drawing::Point(52, 251);
-			this->dataGridView->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->dataGridView->Name = L"dataGridView";
-			this->dataGridView->ReadOnly = true;
-			this->dataGridView->RowHeadersVisible = false;
-			this->dataGridView->RowHeadersWidth = 51;
+			this->dataGridViewKaryawan->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->dataGridViewKaryawan->Location = System::Drawing::Point(52, 220);
+			this->dataGridViewKaryawan->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridViewKaryawan->Name = L"dataGridViewKaryawan";
+			this->dataGridViewKaryawan->ReadOnly = true;
+			this->dataGridViewKaryawan->RowHeadersVisible = false;
+			this->dataGridViewKaryawan->RowHeadersWidth = 51;
 			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
 			dataGridViewCellStyle4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
@@ -173,60 +141,51 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::Color::White;
 			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView->RowsDefaultCellStyle = dataGridViewCellStyle4;
-			this->dataGridView->RowTemplate->DefaultCellStyle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->dataGridViewKaryawan->RowsDefaultCellStyle = dataGridViewCellStyle4;
+			this->dataGridViewKaryawan->RowTemplate->DefaultCellStyle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->dataGridView->RowTemplate->DefaultCellStyle->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
+			this->dataGridViewKaryawan->RowTemplate->DefaultCellStyle->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dataGridView->RowTemplate->DefaultCellStyle->ForeColor = System::Drawing::Color::White;
-			this->dataGridView->RowTemplate->DefaultCellStyle->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			this->dataGridViewKaryawan->RowTemplate->DefaultCellStyle->ForeColor = System::Drawing::Color::White;
+			this->dataGridViewKaryawan->RowTemplate->DefaultCellStyle->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->dataGridView->RowTemplate->DefaultCellStyle->SelectionForeColor = System::Drawing::Color::White;
-			this->dataGridView->RowTemplate->Height = 50;
-			this->dataGridView->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView->Size = System::Drawing::Size(987, 606);
-			this->dataGridView->TabIndex = 3;
-			this->dataGridView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CustomerData::dataGridView_CellContentClick);
+			this->dataGridViewKaryawan->RowTemplate->DefaultCellStyle->SelectionForeColor = System::Drawing::Color::White;
+			this->dataGridViewKaryawan->RowTemplate->Height = 50;
+			this->dataGridViewKaryawan->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridViewKaryawan->Size = System::Drawing::Size(987, 606);
+			this->dataGridViewKaryawan->TabIndex = 5;
 			// 
-			// identityNumber
+			// staffNumber
 			// 
-			this->identityNumber->HeaderText = L"Nomor Identitas";
-			this->identityNumber->MinimumWidth = 6;
-			this->identityNumber->Name = L"identityNumber";
-			this->identityNumber->ReadOnly = true;
-			this->identityNumber->Width = 125;
+			this->staffNumber->HeaderText = L"No. Karyawan";
+			this->staffNumber->MinimumWidth = 6;
+			this->staffNumber->Name = L"staffNumber";
+			this->staffNumber->ReadOnly = true;
+			this->staffNumber->Width = 125;
 			// 
-			// customerName
+			// staffName
 			// 
-			this->customerName->HeaderText = L"Nama Nasabah";
-			this->customerName->MinimumWidth = 6;
-			this->customerName->Name = L"customerName";
-			this->customerName->ReadOnly = true;
-			this->customerName->Width = 125;
+			this->staffName->HeaderText = L"Nama Karyawan";
+			this->staffName->MinimumWidth = 6;
+			this->staffName->Name = L"staffName";
+			this->staffName->ReadOnly = true;
+			this->staffName->Width = 125;
 			// 
-			// gender
+			// staffUsername
 			// 
-			this->gender->HeaderText = L"Jenis Kelamin";
-			this->gender->MinimumWidth = 6;
-			this->gender->Name = L"gender";
-			this->gender->ReadOnly = true;
-			this->gender->Width = 125;
+			this->staffUsername->HeaderText = L"Username";
+			this->staffUsername->MinimumWidth = 6;
+			this->staffUsername->Name = L"staffUsername";
+			this->staffUsername->ReadOnly = true;
+			this->staffUsername->Width = 125;
 			// 
-			// email
+			// staffRole
 			// 
-			this->email->HeaderText = L"Email";
-			this->email->MinimumWidth = 6;
-			this->email->Name = L"email";
-			this->email->ReadOnly = true;
-			this->email->Width = 125;
-			// 
-			// phoneNumber
-			// 
-			this->phoneNumber->HeaderText = L"Nomor Telephone";
-			this->phoneNumber->MinimumWidth = 6;
-			this->phoneNumber->Name = L"phoneNumber";
-			this->phoneNumber->ReadOnly = true;
-			this->phoneNumber->Width = 125;
+			this->staffRole->HeaderText = L"Role";
+			this->staffRole->MinimumWidth = 6;
+			this->staffRole->Name = L"staffRole";
+			this->staffRole->ReadOnly = true;
+			this->staffRole->Width = 125;
 			// 
 			// createdAt
 			// 
@@ -288,15 +247,29 @@ namespace GoBanking {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->btnCreate);
 			this->panel1->Controls->Add(this->btn_reset);
 			this->panel1->Controls->Add(this->textBox1);
 			this->panel1->Controls->Add(this->dateTimePicker);
 			this->panel1->Controls->Add(this->btnSearch);
-			this->panel1->Location = System::Drawing::Point(51, 106);
+			this->panel1->Location = System::Drawing::Point(51, 75);
 			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(989, 95);
-			this->panel1->TabIndex = 4;
+			this->panel1->TabIndex = 6;
+			// 
+			// btnCreate
+			// 
+			this->btnCreate->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnCreate->Location = System::Drawing::Point(835, 47);
+			this->btnCreate->Margin = System::Windows::Forms::Padding(4);
+			this->btnCreate->Name = L"btnCreate";
+			this->btnCreate->Size = System::Drawing::Size(153, 44);
+			this->btnCreate->TabIndex = 4;
+			this->btnCreate->Text = L"Tambah Data";
+			this->btnCreate->UseVisualStyleBackColor = true;
+			this->btnCreate->Click += gcnew System::EventHandler(this, &DataKaryawan::btnCreate_Click);
 			// 
 			// btn_reset
 			// 
@@ -309,7 +282,6 @@ namespace GoBanking {
 			this->btn_reset->TabIndex = 3;
 			this->btn_reset->Text = L"Reset Filter";
 			this->btn_reset->UseVisualStyleBackColor = true;
-			this->btn_reset->Click += gcnew System::EventHandler(this, &CustomerData::button1_Click);
 			// 
 			// textBox1
 			// 
@@ -325,7 +297,6 @@ namespace GoBanking {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(301, 27);
 			this->textBox1->TabIndex = 1;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &CustomerData::textBox1_TextChanged);
 			// 
 			// dateTimePicker
 			// 
@@ -344,7 +315,6 @@ namespace GoBanking {
 			this->dateTimePicker->Size = System::Drawing::Size(325, 27);
 			this->dateTimePicker->TabIndex = 0;
 			this->dateTimePicker->Value = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
-			this->dateTimePicker->ValueChanged += gcnew System::EventHandler(this, &CustomerData::dateTimePicker_ValueChanged);
 			// 
 			// btnSearch
 			// 
@@ -361,55 +331,47 @@ namespace GoBanking {
 			this->btnSearch->Size = System::Drawing::Size(40, 27);
 			this->btnSearch->TabIndex = 2;
 			this->btnSearch->UseVisualStyleBackColor = false;
-			this->btnSearch->Click += gcnew System::EventHandler(this, &CustomerData::btnSearch_Click);
 			// 
-			// CustomerData
+			// DataKaryawan
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->ClientSize = System::Drawing::Size(1400, 900);
-			this->Controls->Add(this->customerDataMainPanel);
+			this->Controls->Add(this->dataKaryawanMainPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->Name = L"CustomerData";
-			this->Text = L"CustomerData";
-			this->Load += gcnew System::EventHandler(this, &CustomerData::CustomerData_Load);
-			this->customerDataMainPanel->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->EndInit();
+			this->Name = L"DataKaryawan";
+			this->Text = L"DataKaryawan";
+			this->dataKaryawanMainPanel->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewKaryawan))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-private: System::Void customerDataMainPanel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private:
+	private:
+		PopupForm^ currentPopup;
 
-	PopupForm^ currentPopup;
+		System::Void dataGridViewKaryawan_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+		System::Void ShowPopupCreate();
+		System::Void ShowConfirmationPopup();
+		System::Void ShowPopupEdit();
 
-	System::Void dataGridView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
-	System::Void ShowConfirmationPopup();
-	System::Void ShowPopupEdit();
-	System::Void OnConfirmDelete(System::Object^ sender, System::EventArgs^ e);
-	System::Void OnConfirmEdit(System::Object^ sender, System::EventArgs^ e);
+		System::Void OnConfirmCreate(System::Object^ sender, System::EventArgs^ e);
+		System::Void OnConfirmDelete(System::Object^ sender, System::EventArgs^ e);
+		System::Void OnConfirmEdit(System::Object^ sender, System::EventArgs^ e);
 
-	System::Void ProcessDelete();
-	System::Void ShowResultPopup(bool isSuccess, String^ message);
-	System::Void ProcessEdit();
+		System::Void ProcessCreate();
+		System::Void ProcessDelete();
+		System::Void ProcessEdit();
+		System::Void ShowResultPopup(bool isSuccess, String^ message);
 
-	System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e);
-	System::Void OnRetryDelete(System::Object^ sender, System::EventArgs^ e);
-	System::Void OnClose(System::Object^ sender, System::EventArgs^ e);
-	System::Void CloseCurrentPopup();
-
-private: 
-	System::Void CustomerData_Load(System::Object^ sender, System::EventArgs^ e);
-	System::Void dateTimePicker_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-	System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
-	System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
-	System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e);
+		System::Void OnRetryDelete(System::Object^ sender, System::EventArgs^ e);
+		System::Void OnClose(System::Object^ sender, System::EventArgs^ e);
+		System::Void CloseCurrentPopup(); 
+		System::Void btnCreate_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

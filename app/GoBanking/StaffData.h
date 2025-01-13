@@ -10,12 +10,12 @@ namespace GoBanking {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for StaffActivity
+	/// Summary for StaffData
 	/// </summary>
-	public ref class StaffActivity : public System::Windows::Forms::Form
+	public ref class StaffData : public System::Windows::Forms::Form
 	{
 	public:
-		StaffActivity(void)
+		StaffData(void)
 		{
 			InitializeComponent();
 			//
@@ -27,50 +27,15 @@ namespace GoBanking {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~StaffActivity()
+		~StaffData()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-
+	private: System::Windows::Forms::Panel^ panel1;
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	protected:
-
-
 
 	private:
 		/// <summary>
@@ -85,24 +50,31 @@ namespace GoBanking {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
 			// 
-			// StaffActivity
+			// panel1
+			// 
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Right;
+			this->panel1->Location = System::Drawing::Point(310, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1090, 900);
+			this->panel1->TabIndex = 0;
+			// 
+			// StaffData
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->ClientSize = System::Drawing::Size(1400, 900);
-			this->ForeColor = System::Drawing::Color::White;
+			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"StaffActivity";
-			this->Text = L"StaffActivity";
+			this->Name = L"StaffData";
+			this->Text = L"StaffData";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-};
+	};
 }

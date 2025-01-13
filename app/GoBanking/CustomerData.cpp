@@ -184,18 +184,49 @@ namespace GoBanking {
     System::Void CustomerData::ShowConfirmationPopup() {
         CloseCurrentPopup();
         currentPopup = gcnew PopupForm();
+        currentPopup->Size = System::Drawing::Size(400, 250);
+        //currentPopup->SetActionButton1Position(250, 150);
+        //currentPopup->SetActionButton2Position(0, 150);
         currentPopup->SetMessage("Apakah Anda yakin ingin menghapus data?");
         currentPopup->SetActionButton1("Konfirmasi", gcnew EventHandler(this, &CustomerData::OnConfirmDelete));
         currentPopup->SetActionButton2("Batal", gcnew EventHandler(this, &CustomerData::OnClose));
         currentPopup->ShowPopup();
     }
 
+
     System::Void CustomerData::ShowPopupEdit() {
         CloseCurrentPopup();
         currentPopup = gcnew PopupForm();
-        currentPopup->SetMessage("Apakah Anda yakin ingin mengedit data?");
-        currentPopup->SetActionButton1("Konfirmasi", gcnew EventHandler(this, &CustomerData::OnConfirmDelete));
-        currentPopup->SetActionButton2("Batal", gcnew EventHandler(this, &CustomerData::OnClose));
+        cli::array<PopupForm::FormField^>^ fields = gcnew cli::array<PopupForm::FormField^>(5);
+
+        fields[0] = gcnew PopupForm::FormField();
+        fields[0]->label = "Nomor Identitas";
+        fields[0]->type = "text";
+
+        fields[1] = gcnew PopupForm::FormField();
+        fields[1]->label = "Nama Nasabah";
+        fields[1]->type = "text";
+
+        fields[2] = gcnew PopupForm::FormField();
+        fields[2]->label = "Jenis Kelamin";
+        fields[2]->type = "radio";
+        fields[2]->options = gcnew cli::array<String^>{"Laki-laki", "Perempuan"};
+
+        fields[3] = gcnew PopupForm::FormField();
+        fields[3]->label = "Email";
+        fields[3]->type = "text";
+
+        fields[4] = gcnew PopupForm::FormField();
+        fields[4]->label = "Nomor Telephone";
+        fields[4]->type = "text";
+
+        currentPopup->SetMessageVisible(false);
+
+        currentPopup->SetActionButton1("Edit", gcnew EventHandler(this, &CustomerData::OnConfirmEdit));
+        currentPopup->SetActionButton2("Close", gcnew EventHandler(this, &CustomerData::OnClose));
+
+        currentPopup->CreateFormFields(fields);
+        currentPopup->Size = System::Drawing::Size(400, 400);
         currentPopup->ShowPopup();
     }
 

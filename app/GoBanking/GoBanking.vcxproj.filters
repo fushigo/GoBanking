@@ -42,13 +42,16 @@
     <ClCompile Include="CustomerData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StaffActivity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Api.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PopupForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataRekening.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataKaryawan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,10 +83,13 @@
     <ClInclude Include="CustomerData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StaffActivity.h">
+    <ClInclude Include="PopupForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PopupForm.h">
+    <ClInclude Include="DataRekening.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataKaryawan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

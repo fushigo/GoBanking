@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dailyReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="rekeningData.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAG/SURBVEhL1ZYxL0NhFIbbSIcy+Q9+goSNwUY0DIhEUmEj
-        LCaDTk2wNUQikWiYuluExGBpTCaDiYh0YGgtFa3W896c1K3ecm9bEW/y5JzvfOc7L/d+pSEvVSqVKAzA
-        oE/6q9VqxI77E4cSHPIt+p8JceK0jfhZHNh0TvuUTGARSuVyecbGNIreMKRp3CEGMkF5zs0qkRF4/0bs
-        R9iUsuSOCfk7OieeeqC+mlivQwwmYJRS2EZ/iqKXyRvsw95XMM+ox0vsVwiNF0FFbSK3SREWSOOCfB70
-        kh2R69Fk4c5Kjlj7N5FYFwh5FzWxd0zohbp3qCEE/ybfid4Ut2mVeGQlRxpCaM/E+pKwZqU6aZPQugn7
-        1zAOB1ZSTZdghHhj6+Am1O7hsFQqTfJ4lskfIQcy1MtPagbx0voDv/gNWIIMvFhZ9RWdI95CeyZusafP
-        yBy8QkdN9CfjSQlxSr3EAnTUZJhajxLi75iwHiJ0W/6/TXSrUpafwDbo2l7AFsjwyvKc9QV+J4GlIYS/
-        N3mAMThrFWalofk/LaJ+Ej3j3RaI2ThvMbuLpqJMWhXnEzauuWjqA6/vVX7Q97SojXIpFPoATWzrAoIy
-        U44AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cQAAEnEB89x6jgAAAb9JREFUSEvVljEvQ2EUhttIhzL5D36ChI3BRjQMiERSYSMsJoNOTbA1RCKRaJi6
+        W4TEYGlMJoOJiHRgaC0Vrdbz3pzUrd5yb1sRb/LknO985zsv936lIS9VKpUoDMCgT/qr1WrEjvsThxIc
+        8i36nwlx4rSN+Fkc2HRO+5RMYBFK5XJ5xsY0it4wpGncIQYyQXnOzSqREXj/RuxH2JSy5I4J+Ts6J556
+        oL6aWK9DDCZglFLYRn+KopfJG+zD3lcwz6jHS+xXCI0XQUVtIrdJERZI44J8HvSSHZHr0WThzkqOWPs3
+        kVgXCHkXNbF3TOiFuneoIQT/Jt+J3hS3aZV4ZCVHGkJoz8T6krBmpTppk9C6CfvXMA4HVlJNl2CEeGPr
+        4CbU7uGwVCpN8niWyR8hBzLUy09qBvHS+gO/+A1Yggy8WFn1FZ0j3kJ7Jm6xp8/IHLxCR030J+NJCXFK
+        vcQCdNRkmFqPEuLvmLAeInRb/r9NdKtSlp/ANujaXsAWyPDK8pz1BX4ngaUhhL83eYAxOGsVZqWh+T8t
+        on4SPePdFojZOG8xu4umokxaFecTNq65aOoDr+9VftD3tKiNcikU+gBNbOsCgjJTjgAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
-  <data name="staffActivity.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="staffData.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         cQAAEnEB89x6jgAAAmBJREFUSEutlU1IVFEYhicwRtoGQS0zsQJBFwUhYT8kuqpFOCoRRBSYEP0siogW

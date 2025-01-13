@@ -5,7 +5,8 @@
 #include "AddSavingsFunds.h"
 #include "CheckSavings.h"
 #include "CustomerData.h"
-#include "StaffActivity.h"
+#include "DataRekening.h"
+#include "DataKaryawan.h"
 #include <nlohmann/json.hpp>
 #include <msclr/marshal_cppstd.h>
 
@@ -89,8 +90,10 @@ namespace GoBanking {
 
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Button^ btnCustomerData;
-	private: System::Windows::Forms::Button^ staffActivity;
-	private: System::Windows::Forms::Button^ dailyReports;
+	private: System::Windows::Forms::Button^ staffData;
+
+	private: System::Windows::Forms::Button^ rekeningData;
+
 
 
 
@@ -114,8 +117,8 @@ namespace GoBanking {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Home::typeid));
 			this->sideBarPanel = (gcnew System::Windows::Forms::Panel());
-			this->dailyReports = (gcnew System::Windows::Forms::Button());
-			this->staffActivity = (gcnew System::Windows::Forms::Button());
+			this->rekeningData = (gcnew System::Windows::Forms::Button());
+			this->staffData = (gcnew System::Windows::Forms::Button());
 			this->btnCustomerData = (gcnew System::Windows::Forms::Button());
 			this->btnCeksavings = (gcnew System::Windows::Forms::Button());
 			this->btnLogout = (gcnew System::Windows::Forms::Button());
@@ -141,8 +144,8 @@ namespace GoBanking {
 			// 
 			this->sideBarPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)));
-			this->sideBarPanel->Controls->Add(this->dailyReports);
-			this->sideBarPanel->Controls->Add(this->staffActivity);
+			this->sideBarPanel->Controls->Add(this->rekeningData);
+			this->sideBarPanel->Controls->Add(this->staffData);
 			this->sideBarPanel->Controls->Add(this->btnCustomerData);
 			this->sideBarPanel->Controls->Add(this->btnCeksavings);
 			this->sideBarPanel->Controls->Add(this->btnLogout);
@@ -160,51 +163,51 @@ namespace GoBanking {
 			this->sideBarPanel->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Home::homeTopPanel_MouseMove);
 			this->sideBarPanel->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &Home::homeTopPanel_MouseUp);
 			// 
-			// dailyReports
+			// rekeningData
 			// 
-			this->dailyReports->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
+			this->rekeningData->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)));
-			this->dailyReports->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->dailyReports->FlatAppearance->BorderSize = 0;
-			this->dailyReports->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->dailyReports->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->rekeningData->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->rekeningData->FlatAppearance->BorderSize = 0;
+			this->rekeningData->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->rekeningData->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dailyReports->ForeColor = System::Drawing::Color::White;
-			this->dailyReports->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"dailyReports.Image")));
-			this->dailyReports->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->dailyReports->Location = System::Drawing::Point(0, 696);
-			this->dailyReports->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->dailyReports->Name = L"dailyReports";
-			this->dailyReports->Padding = System::Windows::Forms::Padding(20, 0, 20, 0);
-			this->dailyReports->Size = System::Drawing::Size(309, 55);
-			this->dailyReports->TabIndex = 9;
-			this->dailyReports->Text = L"Laporan Harian";
-			this->dailyReports->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->dailyReports->UseVisualStyleBackColor = false;
-			this->dailyReports->Click += gcnew System::EventHandler(this, &Home::logAvtivity_Click);
+			this->rekeningData->ForeColor = System::Drawing::Color::White;
+			this->rekeningData->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"rekeningData.Image")));
+			this->rekeningData->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->rekeningData->Location = System::Drawing::Point(0, 696);
+			this->rekeningData->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->rekeningData->Name = L"rekeningData";
+			this->rekeningData->Padding = System::Windows::Forms::Padding(20, 0, 20, 0);
+			this->rekeningData->Size = System::Drawing::Size(309, 55);
+			this->rekeningData->TabIndex = 9;
+			this->rekeningData->Text = L"Data Rekening";
+			this->rekeningData->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->rekeningData->UseVisualStyleBackColor = false;
+			this->rekeningData->Click += gcnew System::EventHandler(this, &Home::rekeningData_Click);
 			// 
-			// staffActivity
+			// staffData
 			// 
-			this->staffActivity->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
+			this->staffData->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(70)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)));
-			this->staffActivity->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->staffActivity->FlatAppearance->BorderSize = 0;
-			this->staffActivity->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->staffActivity->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->staffData->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->staffData->FlatAppearance->BorderSize = 0;
+			this->staffData->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->staffData->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->staffActivity->ForeColor = System::Drawing::Color::White;
-			this->staffActivity->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"staffActivity.Image")));
-			this->staffActivity->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->staffActivity->Location = System::Drawing::Point(0, 623);
-			this->staffActivity->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->staffActivity->Name = L"staffActivity";
-			this->staffActivity->Padding = System::Windows::Forms::Padding(20, 0, 20, 0);
-			this->staffActivity->Size = System::Drawing::Size(309, 55);
-			this->staffActivity->TabIndex = 8;
-			this->staffActivity->Text = L"Aktivitas Pegawai";
-			this->staffActivity->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->staffActivity->UseVisualStyleBackColor = false;
-			this->staffActivity->Click += gcnew System::EventHandler(this, &Home::staffActivity_Click);
+			this->staffData->ForeColor = System::Drawing::Color::White;
+			this->staffData->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"staffData.Image")));
+			this->staffData->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->staffData->Location = System::Drawing::Point(0, 623);
+			this->staffData->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->staffData->Name = L"staffData";
+			this->staffData->Padding = System::Windows::Forms::Padding(20, 0, 20, 0);
+			this->staffData->Size = System::Drawing::Size(309, 55);
+			this->staffData->TabIndex = 8;
+			this->staffData->Text = L"Data Karyawan";
+			this->staffData->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->staffData->UseVisualStyleBackColor = false;
+			this->staffData->Click += gcnew System::EventHandler(this, &Home::dataKaryawan_Click);
 			// 
 			// btnCustomerData
 			// 
@@ -521,19 +524,22 @@ namespace GoBanking {
 		CheckSavings^ checksavings = gcnew CheckSavings();
 		loadform(checksavings);
 	}
-	private: System::Void panel4_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	private: System::Void rekeningData_Click(System::Object^ sender, System::EventArgs^ e) {
+		DataRekening^ dataRekening = gcnew DataRekening();
+		loadform(dataRekening);
 	}
-	private: System::Void welcome_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void staffActivity_Click(System::Object^ sender, System::EventArgs^ e) {
-		StaffActivity^ staffactvt = gcnew StaffActivity();
-		loadform(staffactvt);
-	}
-	private: System::Void logAvtivity_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void dataKaryawan_Click(System::Object^ sender, System::EventArgs^ e) {
+		DataKaryawan^ staffData = gcnew DataKaryawan();
+		loadform(staffData);
 	}
 	private: System::Void btnCustomerData_Click(System::Object^ sender, System::EventArgs^ e) {
 		CustomerData^ custData = gcnew CustomerData();
 		loadform(custData);
+	}
+
+	private: System::Void panel4_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+	private: System::Void welcome_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
 	// dragging

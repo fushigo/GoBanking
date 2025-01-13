@@ -19,6 +19,21 @@ namespace GoBanking {
         Timer^ fadeOutTimer;
         double opacityIncrement;
 
+    private:
+        System::Windows::Forms::TextBox^ txtIdentitas;
+        System::Windows::Forms::TextBox^ txtNama;
+        System::Windows::Forms::RadioButton^ rbMale;
+        System::Windows::Forms::RadioButton^ rbFemale;
+        System::Windows::Forms::TextBox^ txtEmail;
+        System::Windows::Forms::TextBox^ txtPhone;
+        System::Windows::Forms::Label^ lblIdentitas;
+        System::Windows::Forms::Label^ lblNama;
+        System::Windows::Forms::Label^ lblGender;
+        System::Windows::Forms::Label^ lblEmail;
+        System::Windows::Forms::Label^ lblPhone;
+        System::Windows::Forms::Panel^ pnlGender;
+
+
     public:
         PopupForm(void) {
             InitializeComponent();
@@ -34,9 +49,102 @@ namespace GoBanking {
             fadeOutTimer->Tick += gcnew EventHandler(this, &PopupForm::FadeOut);
         }
 
+        ref struct FormField {
+            String^ label;
+            String^ type;  // "text", "radio", "date", "combo"
+            cli::array<String^>^ options;  // for radio buttons and combobox
+        };
+
+        void CreateFormFields(cli::array<FormField^>^ fields) {
+            int yPosition = 20;
+
+            for each (FormField ^ field in fields) {
+                Label^ label = gcnew Label();
+                label->Text = field->label;
+                label->Location = System::Drawing::Point(10, yPosition);
+                label->AutoSize = true;
+                label->ForeColor = System::Drawing::Color::White;
+                label->Font = gcnew System::Drawing::Font("Arial Rounded MT", 10);
+                this->Controls->Add(label);
+
+                if (field->type == "text") {
+                    TextBox^ textBox = gcnew TextBox();
+                    textBox->Name = "txt" + field->label;
+                    textBox->Location = System::Drawing::Point(155, yPosition);
+                    textBox->Size = System::Drawing::Size(225, 25);
+                    textBox->Font = gcnew System::Drawing::Font("Arial Rounded MT", 10);
+                    this->Controls->Add(textBox);
+                    yPosition += 40;
+                }
+                else if (field->type == "radio") {
+                    Panel^ panel = gcnew Panel();
+                    panel->Location = System::Drawing::Point(155, yPosition);
+                    panel->Size = System::Drawing::Size(225, 30);
+
+                    int xPos = 0;
+                    for each (String ^ option in field->options) {
+                        RadioButton^ radio = gcnew RadioButton();
+                        radio->Text = option;
+                        radio->Location = System::Drawing::Point(xPos, 0);
+                        radio->ForeColor = System::Drawing::Color::White;
+                        panel->Controls->Add(radio);
+                        xPos += 120;
+                    }
+                    this->Controls->Add(panel);
+                    yPosition += 40;
+                }
+                else if (field->type == "combo") {
+                    ComboBox^ combo = gcnew ComboBox();
+                    combo->Location = System::Drawing::Point(155, yPosition);
+                    combo->Size = System::Drawing::Size(225, 25);
+                    combo->Items->AddRange(field->options);
+                    this->Controls->Add(combo);
+                    yPosition += 40;
+                }
+            }
+        }
+
+        String^ GetFormData() {
+            String^ result = "";
+            for each (Control ^ control in this->Controls) {
+                if (TextBox^ textBox = dynamic_cast<TextBox^>(control)) {
+                    Label^ associatedLabel = FindLabel(textBox->Location.Y);
+                    if (associatedLabel != nullptr) {
+                        result += associatedLabel->Text + ": " + textBox->Text + "\n";
+                    }
+                }
+                else if (Panel^ panel = dynamic_cast<Panel^>(control)) {
+                    for each (Control ^ panelControl in panel->Controls) {
+                        if (RadioButton^ radio = dynamic_cast<RadioButton^>(panelControl)) {
+                            if (radio->Checked) {
+                                Label^ associatedLabel = FindLabel(panel->Location.Y);
+                                if (associatedLabel != nullptr) {
+                                    result += associatedLabel->Text + ": " + radio->Text + "\n";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+
         // Set message text dynamically
         void SetMessage(String^ message) {
             this->messageLabel->Text = message;
+        }
+
+        void SetMessageVisible(bool visible) {
+            if (this->messageLabel != nullptr) {
+                this->messageLabel->Visible = visible;
+                if (!visible) {
+                    messageLabel->SendToBack();
+                }
+                else {
+                    messageLabel->BringToFront();
+                }
+            }
         }
 
         // Set action button text and event
@@ -73,7 +181,57 @@ namespace GoBanking {
             this->fadeOutTimer->Start();
         }
 
+        void SetFormSize(int width, int height) {
+            this->Size = System::Drawing::Size(width, height);
+
+            if (this->messageLabel != nullptr) {
+                this->messageLabel->Location = System::Drawing::Point(
+                    (this->Width - messageLabel->Width) / 2,
+                    (this->Height - messageLabel->Height) / 2 - 30
+                );
+            }
+
+            // Automatically adjust button positions when form size changes
+            if (this->actionButton1 != nullptr) {
+                this->actionButton1->Location = System::Drawing::Point(
+                    this->Width - actionButton1->Width - 20,
+                    this->Height - actionButton1->Height - 50
+                );
+            }
+
+            if (this->actionButton2 != nullptr) {
+                this->actionButton2->Location = System::Drawing::Point(
+                    20,
+                    this->Height - actionButton2->Height - 50
+                );
+            }
+        }
+
+        void SetActionButton1Position(int x, int y) {
+            if (this->actionButton1 != nullptr) {
+                this->actionButton1->Location = System::Drawing::Point(x, y);
+            }
+        }
+
+        void SetActionButton2Position(int x, int y) {
+            if (this->actionButton2 != nullptr) {
+                this->actionButton2->Location = System::Drawing::Point(x, y);
+            }
+        }
+
     private:
+
+        Label^ FindLabel(int yPosition) {
+            for each (Control ^ control in this->Controls) {
+                if (Label^ label = dynamic_cast<Label^>(control)) {
+                    if (label->Location.Y == yPosition) {
+                        return label;
+                    }
+                }
+            }
+            return nullptr;
+        }
+
         void FadeIn(System::Object^ sender, System::EventArgs^ e) {
             if (this->Opacity < 1.0) {
                 this->Opacity = Math::Min(1.0, this->Opacity + opacityIncrement);
@@ -120,7 +278,7 @@ namespace GoBanking {
             this->messageLabel->Size = System::Drawing::Size(360, 80); // Adjusted width
             this->messageLabel->Location = System::Drawing::Point(
                 (this->Width - messageLabel->Width) / 2,  // Center horizontally
-                (this->Height - messageLabel->Height) / 2 - 30  // Center vertically with offset
+                (this->Height - messageLabel->Height) / 2 - 30 // Center vertically with offset
             );
             this->messageLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             this->messageLabel->Font = gcnew System::Drawing::Font("Arial Rounded MT", 12);
@@ -137,7 +295,7 @@ namespace GoBanking {
             this->actionButton1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->actionButton1->Location = System::Drawing::Point(
                 this->Width - actionButton1->Width - 20,  // 20 pixels from right edge
-                this->Height - actionButton1->Height - 40  // 20 pixels from bottom edge
+                this->Height - actionButton1->Height - 50 // 20 pixels from bottom edge
             );
             this->actionButton1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(
                 System::Windows::Forms::AnchorStyles::Bottom |
@@ -155,8 +313,8 @@ namespace GoBanking {
             this->actionButton2->FlatAppearance->BorderSize = 0;
             this->actionButton2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->actionButton2->Location = System::Drawing::Point(
-                3,  // 3 pixels from left edge
-                this->Height - actionButton2->Height - 40  // 20 pixels from bottom edge
+                2,  // 3 pixels from left edge
+                this->Height - actionButton2->Height - 50 // 20 pixels from bottom edge
             );
             this->actionButton2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(
                 System::Windows::Forms::AnchorStyles::Bottom |
