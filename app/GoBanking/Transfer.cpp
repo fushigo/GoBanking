@@ -294,8 +294,6 @@ namespace GoBanking {
 	}
 
 	System::Void Transfer::ProcessTransfer() {
-		// Random success/fail simulation
-
 		json payjson;
 
 		payjson["rekSend"] = rekSender;
@@ -310,6 +308,8 @@ namespace GoBanking {
 			auto& status = jsonData["statusCode"];
 
 			if (status.get<int>() == 500) {
+				ShowResultPopup(false);
+			}else if (status.get<int>() == 400) {
 				ShowResultPopup(false);
 			}
 			else {

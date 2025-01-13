@@ -10,6 +10,8 @@ namespace GoBanking {
 	string dateFilter;
 	string searchFilter;
 
+    string nomorNik;
+
     // Mengambil data dari API
 	static string getData() {
 		API api;
@@ -25,6 +27,21 @@ namespace GoBanking {
 
 		return response.data();
 	}
+
+    static string deleteData(const string& nik) {
+        API api;
+        string endpoint = "/nasabah/nik/" + nik;
+        string response;
+
+        try {
+            response = api.REQDELETE(endpoint);
+        }
+        catch (System::String^ err) {
+            System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
+        }
+
+        return response.data();
+    }
 
     // Menampilkan data nasabah
     System::Void CustomerData::CustomerData_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -134,6 +151,9 @@ namespace GoBanking {
                     //buttonCell->Style->SelectionBackColor = System::Drawing::Color::FromArgb(43, 39, 56);
                     buttonCell->Style->SelectionForeColor = System::Drawing::Color::White;
 
+                    String^ noNik = dataGridView->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+                    nomorNik = msclr::interop::marshal_as<string>(noNik);
+
                     ShowPopupEdit();
                 }
             }
@@ -151,6 +171,9 @@ namespace GoBanking {
                     buttonCell->Style->ForeColor = System::Drawing::Color::White;
                     //buttonCell->Style->SelectionBackColor = System::Drawing::Color::FromArgb(43, 39, 56);
                     buttonCell->Style->SelectionForeColor = System::Drawing::Color::White;
+
+                    String^ noNik = dataGridView->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+                    nomorNik = msclr::interop::marshal_as<string>(noNik);
 
                     ShowConfirmationPopup();
                 }
@@ -184,10 +207,7 @@ namespace GoBanking {
     }
 
     System::Void CustomerData::ProcessEdit() {
-        // Random success/fail simulation
-        Random^ rand = gcnew Random();
-        bool isSuccess = (rand->Next(100) < 70); // 70% success rate
-        ShowResultPopup(isSuccess);
+
     }
 
     System::Void CustomerData::OnConfirmDelete(System::Object^ sender, System::EventArgs^ e) {
@@ -198,20 +218,33 @@ namespace GoBanking {
     }
 
     System::Void CustomerData::ProcessDelete() {
-        // Random success/fail simulation
-        Random^ rand = gcnew Random();
-        bool isSuccess = (rand->Next(100) < 70); // 70% success rate
-        ShowResultPopup(isSuccess);
+        if (nomorNik.empty()) {
+            System::Windows::Forms::MessageBox::Show("Nomor Identitas diperlukan", "Terjadi kesalahan");
+        }
+
+        try {
+            auto jsonData = json::parse(deleteData(nomorNik));
+            int statusCode = jsonData["statusCode"].get<int>();
+
+            if (statusCode == 200) {
+                nomorNik = "";
+                ShowResultPopup(true, "Berhasil menghapus data");
+                CustomerData_Load(nullptr, nullptr);
+            }
+        }
+        catch (json::exception err) {
+            System::Windows::Forms::MessageBox::Show(gcnew System::String(err.what()), "Terjadi kesalahan saat parse json");
+      }
     }
 
-    System::Void CustomerData::ShowResultPopup(bool isSuccess) {
+    System::Void CustomerData::ShowResultPopup(bool isSuccess, String^ message) {
         currentPopup = gcnew PopupForm();
         if (isSuccess) {
-            currentPopup->SetMessage("Transfer berhasil!");
+            currentPopup->SetMessage(message);
             currentPopup->SetActionButton1("OK", gcnew EventHandler(this, &CustomerData::OnResultConfirmed));
         }
         else {
-            currentPopup->SetMessage("Transfer gagal!");
+            currentPopup->SetMessage(message);
             currentPopup->SetActionButton1("Coba Lagi", gcnew EventHandler(this, &CustomerData::OnRetryDelete));
         }
         currentPopup->SetActionButton2("Tutup", gcnew EventHandler(this, &CustomerData::OnClose));
