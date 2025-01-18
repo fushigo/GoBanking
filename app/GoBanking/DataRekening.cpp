@@ -58,7 +58,6 @@ namespace GoBanking {
                 auto jsonData = json::parse(dataRekening);
                 // Mengambil data object dengan key "data"
                 auto& data = jsonData["data"];
-                System::Windows::Forms::MessageBox::Show("Found records: " + data.size());
 
                 // Menghapus data rows
                 dataGridViewRekening->Rows->Clear();
@@ -76,7 +75,7 @@ namespace GoBanking {
 
                     // Filter data berdasarkan query nama lengkap atau nomor identitas (nik)
                     if (!searchFilterRekening.empty()) {
-                        // Mengubah namaLengkap, nik, dan searchQuery menjadi lowercase
+                        // Mengubah namaLengkap, nomorRekening, dan searchQuery menjadi lowercase
                         string jenis_lower = jenisTabungan, nomor_lower = nomorRekening, search_lower = searchFilterRekening;
                         transform(jenis_lower.begin(), jenis_lower.end(), jenis_lower.begin(), tolower);
                         transform(nomor_lower.begin(), nomor_lower.end(), nomor_lower.begin(), tolower);
@@ -93,11 +92,12 @@ namespace GoBanking {
                     String^ jenistabungan = msclr::interop::marshal_as<String^>(item["jenisTabungan"].get<string>());
                     String^ totaldana = msclr::interop::marshal_as<String^>(item["totalDana"].get<string>());
                     String^ bonus = msclr::interop::marshal_as<String^>(item["bonusBunga"].get<string>());
-                    String^ dirubah = msclr::interop::marshal_as<String^>(item["updateAt"].get<string>());
+                    String^ dirubah = msclr::interop::marshal_as<String^>(item["updatedAt"].get<string>());
                     String^ dibuat = msclr::interop::marshal_as<String^>(item["createdAt"].get<string>());
 
                     // Mengubah pin menjadi **** saat ditampilkan
-                    String^ pin = msclr::interop::marshal_as<String^>(item["pin"].get<string>());
+                    int pin_number = item["pin"].get<int>();
+                    String^ pin = Convert::ToString(pin_number);
                     String^ maskedPin = gcnew String(L'*', pin->Length);
 
                     // Menampilkan data

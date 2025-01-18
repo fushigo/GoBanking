@@ -16,6 +16,7 @@ public:
 
     string GET(const string& endpoint) const;
     string POST(const string& endpoint, const string& payload) const;
+    string REQPATCH(const string& endpoint, const string& payload) const;
     string REQDELETE(const string& edpoint) const;
 };
 

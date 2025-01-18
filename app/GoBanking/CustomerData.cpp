@@ -265,7 +265,7 @@ namespace GoBanking {
         }
         catch (json::exception err) {
             System::Windows::Forms::MessageBox::Show(gcnew System::String(err.what()), "Terjadi kesalahan saat parse json");
-      }
+        }
     }
 
     System::Void CustomerData::ShowResultPopup(bool isSuccess, String^ message) {

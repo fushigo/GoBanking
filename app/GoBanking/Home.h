@@ -8,7 +8,6 @@
 #include "DataRekening.h"
 #include "DataKaryawan.h"
 #include <nlohmann/json.hpp>
-#include <msclr/marshal_cppstd.h>
 
 namespace GoBanking {
 
