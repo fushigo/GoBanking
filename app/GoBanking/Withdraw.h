@@ -102,10 +102,10 @@ namespace GoBanking {
 			this->withdrawMainPanel->Controls->Add(this->withdrw);
 			this->withdrawMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
 			this->withdrawMainPanel->ForeColor = System::Drawing::Color::White;
-			this->withdrawMainPanel->Location = System::Drawing::Point(222, 0);
-			this->withdrawMainPanel->Margin = System::Windows::Forms::Padding(2);
+			this->withdrawMainPanel->Location = System::Drawing::Point(309, 0);
+			this->withdrawMainPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->withdrawMainPanel->Name = L"withdrawMainPanel";
-			this->withdrawMainPanel->Size = System::Drawing::Size(818, 640);
+			this->withdrawMainPanel->Size = System::Drawing::Size(1091, 900);
 			this->withdrawMainPanel->TabIndex = 0;
 			// 
 			// transferInputPanel
@@ -114,10 +114,10 @@ namespace GoBanking {
 			this->transferInputPanel->Controls->Add(this->nominalPanel);
 			this->transferInputPanel->Controls->Add(this->btnWithdraw);
 			this->transferInputPanel->Controls->Add(this->pinPanel);
-			this->transferInputPanel->Location = System::Drawing::Point(57, 142);
-			this->transferInputPanel->Margin = System::Windows::Forms::Padding(2);
+			this->transferInputPanel->Location = System::Drawing::Point(76, 175);
+			this->transferInputPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->transferInputPanel->Name = L"transferInputPanel";
-			this->transferInputPanel->Size = System::Drawing::Size(396, 385);
+			this->transferInputPanel->Size = System::Drawing::Size(528, 474);
 			this->transferInputPanel->TabIndex = 4;
 			// 
 			// accNumPanel
@@ -125,10 +125,10 @@ namespace GoBanking {
 			this->accNumPanel->Controls->Add(this->customerAccInput);
 			this->accNumPanel->Controls->Add(this->customerAccNum);
 			this->accNumPanel->Controls->Add(this->panel7);
-			this->accNumPanel->Location = System::Drawing::Point(26, 55);
-			this->accNumPanel->Margin = System::Windows::Forms::Padding(2);
+			this->accNumPanel->Location = System::Drawing::Point(35, 68);
+			this->accNumPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->accNumPanel->Name = L"accNumPanel";
-			this->accNumPanel->Size = System::Drawing::Size(345, 57);
+			this->accNumPanel->Size = System::Drawing::Size(460, 70);
 			this->accNumPanel->TabIndex = 5;
 			// 
 			// customerAccInput
@@ -139,11 +139,11 @@ namespace GoBanking {
 			this->customerAccInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->customerAccInput->ForeColor = System::Drawing::Color::White;
-			this->customerAccInput->Location = System::Drawing::Point(4, 25);
-			this->customerAccInput->Margin = System::Windows::Forms::Padding(2);
+			this->customerAccInput->Location = System::Drawing::Point(5, 31);
+			this->customerAccInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->customerAccInput->MaxLength = 50;
 			this->customerAccInput->Name = L"customerAccInput";
-			this->customerAccInput->Size = System::Drawing::Size(338, 16);
+			this->customerAccInput->Size = System::Drawing::Size(451, 20);
 			this->customerAccInput->TabIndex = 20;
 			this->customerAccInput->TextChanged += gcnew System::EventHandler(this, &Withdraw::customerAccInput_TextChanged);
 			// 
@@ -153,20 +153,19 @@ namespace GoBanking {
 			this->customerAccNum->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
 			this->customerAccNum->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->customerAccNum->Location = System::Drawing::Point(2, 0);
-			this->customerAccNum->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->customerAccNum->Location = System::Drawing::Point(3, 0);
 			this->customerAccNum->Name = L"customerAccNum";
-			this->customerAccNum->Size = System::Drawing::Size(161, 16);
+			this->customerAccNum->Size = System::Drawing::Size(196, 20);
 			this->customerAccNum->TabIndex = 21;
 			this->customerAccNum->Text = L"No. Rekening Nasabah";
 			// 
 			// panel7
 			// 
 			this->panel7->BackColor = System::Drawing::Color::White;
-			this->panel7->Location = System::Drawing::Point(4, 50);
-			this->panel7->Margin = System::Windows::Forms::Padding(2);
+			this->panel7->Location = System::Drawing::Point(5, 62);
+			this->panel7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(338, 4);
+			this->panel7->Size = System::Drawing::Size(451, 5);
 			this->panel7->TabIndex = 31;
 			// 
 			// nominalPanel
@@ -175,10 +174,10 @@ namespace GoBanking {
 			this->nominalPanel->Controls->Add(this->nominalWithdrawInput);
 			this->nominalPanel->Controls->Add(this->nominalWithdraw);
 			this->nominalPanel->Controls->Add(this->panel3);
-			this->nominalPanel->Location = System::Drawing::Point(26, 140);
-			this->nominalPanel->Margin = System::Windows::Forms::Padding(2);
+			this->nominalPanel->Location = System::Drawing::Point(35, 172);
+			this->nominalPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->nominalPanel->Name = L"nominalPanel";
-			this->nominalPanel->Size = System::Drawing::Size(345, 57);
+			this->nominalPanel->Size = System::Drawing::Size(460, 70);
 			this->nominalPanel->TabIndex = 7;
 			// 
 			// label2
@@ -186,10 +185,9 @@ namespace GoBanking {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(3, 25);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(4, 31);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(30, 16);
+			this->label2->Size = System::Drawing::Size(37, 20);
 			this->label2->TabIndex = 35;
 			this->label2->Text = L"Rp.";
 			// 
@@ -201,11 +199,11 @@ namespace GoBanking {
 			this->nominalWithdrawInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->nominalWithdrawInput->ForeColor = System::Drawing::Color::White;
-			this->nominalWithdrawInput->Location = System::Drawing::Point(34, 25);
-			this->nominalWithdrawInput->Margin = System::Windows::Forms::Padding(2);
+			this->nominalWithdrawInput->Location = System::Drawing::Point(45, 31);
+			this->nominalWithdrawInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->nominalWithdrawInput->MaxLength = 100;
 			this->nominalWithdrawInput->Name = L"nominalWithdrawInput";
-			this->nominalWithdrawInput->Size = System::Drawing::Size(308, 16);
+			this->nominalWithdrawInput->Size = System::Drawing::Size(411, 20);
 			this->nominalWithdrawInput->TabIndex = 24;
 			this->nominalWithdrawInput->TextChanged += gcnew System::EventHandler(this, &Withdraw::nominalWithdrawInput_TextChanged);
 			// 
@@ -215,20 +213,19 @@ namespace GoBanking {
 			this->nominalWithdraw->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
 			this->nominalWithdraw->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->nominalWithdraw->Location = System::Drawing::Point(2, 0);
-			this->nominalWithdraw->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->nominalWithdraw->Location = System::Drawing::Point(3, 0);
 			this->nominalWithdraw->Name = L"nominalWithdraw";
-			this->nominalWithdraw->Size = System::Drawing::Size(142, 16);
+			this->nominalWithdraw->Size = System::Drawing::Size(174, 20);
 			this->nominalWithdraw->TabIndex = 25;
 			this->nominalWithdraw->Text = L"Nominal Tarik Tunai";
 			// 
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::Color::White;
-			this->panel3->Location = System::Drawing::Point(4, 50);
-			this->panel3->Margin = System::Windows::Forms::Padding(2);
+			this->panel3->Location = System::Drawing::Point(5, 62);
+			this->panel3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(338, 4);
+			this->panel3->Size = System::Drawing::Size(451, 5);
 			this->panel3->TabIndex = 33;
 			// 
 			// btnWithdraw
@@ -238,10 +235,10 @@ namespace GoBanking {
 			this->btnWithdraw->FlatAppearance->BorderSize = 0;
 			this->btnWithdraw->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnWithdraw->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 14));
-			this->btnWithdraw->Location = System::Drawing::Point(26, 309);
-			this->btnWithdraw->Margin = System::Windows::Forms::Padding(2);
+			this->btnWithdraw->Location = System::Drawing::Point(35, 380);
+			this->btnWithdraw->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnWithdraw->Name = L"btnWithdraw";
-			this->btnWithdraw->Size = System::Drawing::Size(158, 49);
+			this->btnWithdraw->Size = System::Drawing::Size(211, 60);
 			this->btnWithdraw->TabIndex = 38;
 			this->btnWithdraw->Text = L"Tarik";
 			this->btnWithdraw->UseVisualStyleBackColor = false;
@@ -252,10 +249,10 @@ namespace GoBanking {
 			this->pinPanel->Controls->Add(this->pin);
 			this->pinPanel->Controls->Add(this->panel4);
 			this->pinPanel->Controls->Add(this->pinInput);
-			this->pinPanel->Location = System::Drawing::Point(26, 224);
-			this->pinPanel->Margin = System::Windows::Forms::Padding(2);
+			this->pinPanel->Location = System::Drawing::Point(35, 276);
+			this->pinPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pinPanel->Name = L"pinPanel";
-			this->pinPanel->Size = System::Drawing::Size(158, 57);
+			this->pinPanel->Size = System::Drawing::Size(211, 70);
 			this->pinPanel->TabIndex = 6;
 			// 
 			// pin
@@ -264,20 +261,19 @@ namespace GoBanking {
 			this->pin->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
 			this->pin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->pin->Location = System::Drawing::Point(2, 0);
-			this->pin->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->pin->Location = System::Drawing::Point(3, 0);
 			this->pin->Name = L"pin";
-			this->pin->Size = System::Drawing::Size(31, 16);
+			this->pin->Size = System::Drawing::Size(38, 20);
 			this->pin->TabIndex = 27;
 			this->pin->Text = L"PIN";
 			// 
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::Color::White;
-			this->panel4->Location = System::Drawing::Point(3, 50);
-			this->panel4->Margin = System::Windows::Forms::Padding(2);
+			this->panel4->Location = System::Drawing::Point(4, 62);
+			this->panel4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(150, 4);
+			this->panel4->Size = System::Drawing::Size(200, 5);
 			this->panel4->TabIndex = 34;
 			// 
 			// pinInput
@@ -288,11 +284,11 @@ namespace GoBanking {
 			this->pinInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->pinInput->ForeColor = System::Drawing::Color::White;
-			this->pinInput->Location = System::Drawing::Point(3, 25);
-			this->pinInput->Margin = System::Windows::Forms::Padding(2);
+			this->pinInput->Location = System::Drawing::Point(4, 31);
+			this->pinInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pinInput->MaxLength = 15;
 			this->pinInput->Name = L"pinInput";
-			this->pinInput->Size = System::Drawing::Size(150, 16);
+			this->pinInput->Size = System::Drawing::Size(200, 20);
 			this->pinInput->TabIndex = 26;
 			this->pinInput->UseSystemPasswordChar = true;
 			this->pinInput->TextChanged += gcnew System::EventHandler(this, &Withdraw::pinInput_TextChanged);
@@ -304,23 +300,22 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->withdrw->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->withdrw->Location = System::Drawing::Point(48, 49);
-			this->withdrw->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->withdrw->Location = System::Drawing::Point(64, 60);
 			this->withdrw->Name = L"withdrw";
-			this->withdrw->Size = System::Drawing::Size(287, 55);
+			this->withdrw->Size = System::Drawing::Size(357, 70);
 			this->withdrw->TabIndex = 3;
 			this->withdrw->Text = L"Tarik Tunai";
 			// 
 			// Withdraw
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->ClientSize = System::Drawing::Size(1040, 640);
+			this->ClientSize = System::Drawing::Size(1400, 900);
 			this->Controls->Add(this->withdrawMainPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Withdraw";
 			this->Text = L"Withdraw";
 			this->withdrawMainPanel->ResumeLayout(false);
@@ -345,6 +340,8 @@ namespace GoBanking {
 		System::Void ProcessWithdraw();
 
 		System::Void ShowResultPopup(bool isSuccess, String^ message);
+		System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e);
+		System::Void OnRetryWithdraw(System::Object^ sender, System::EventArgs^ e);
 
 		System::Void OnClose(System::Object^ sender, System::EventArgs^ e);
 		System::Void CloseCurrentPopup();

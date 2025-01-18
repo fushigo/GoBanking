@@ -1,4 +1,5 @@
 #pragma once
+#include "PopupForm.h"
 
 namespace GoBanking {
 
@@ -123,6 +124,7 @@ namespace GoBanking {
 			this->btnAddSavings->TabIndex = 38;
 			this->btnAddSavings->Text = L"Tabung";
 			this->btnAddSavings->UseVisualStyleBackColor = false;
+			this->btnAddSavings->Click += gcnew System::EventHandler(this, &AddSavingsFunds::btnAddSavings_Click);
 			// 
 			// panel4
 			// 
@@ -259,5 +261,20 @@ namespace GoBanking {
 
 		}
 #pragma endregion
-	};
+	private: 
+		PopupForm^ currentPopup;
+
+		System::Void ShowConfirmationPopup();
+
+		System::Void OnConfirmAddSavings(System::Object^ sender, System::EventArgs^ e);
+		System::Void ProcessAddSavings();
+
+		System::Void ShowResultPopup(bool isSuccess, String^ message);
+		System::Void OnResultConfirmed(System::Object^ sender, System::EventArgs^ e);
+		System::Void OnRetryAddSavings(System::Object^ sender, System::EventArgs^ e);
+
+		System::Void OnClose(System::Object^ sender, System::EventArgs^ e);
+		System::Void CloseCurrentPopup();
+		System::Void btnAddSavings_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }

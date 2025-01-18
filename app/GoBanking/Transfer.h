@@ -160,10 +160,10 @@ namespace GoBanking {
 			this->transferMainPanel->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->transferMainPanel->ForeColor = System::Drawing::Color::White;
-			this->transferMainPanel->Location = System::Drawing::Point(222, 0);
-			this->transferMainPanel->Margin = System::Windows::Forms::Padding(2);
+			this->transferMainPanel->Location = System::Drawing::Point(309, 0);
+			this->transferMainPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->transferMainPanel->Name = L"transferMainPanel";
-			this->transferMainPanel->Size = System::Drawing::Size(818, 640);
+			this->transferMainPanel->Size = System::Drawing::Size(1091, 900);
 			this->transferMainPanel->TabIndex = 0;
 			// 
 			// transferInputPanel
@@ -175,10 +175,10 @@ namespace GoBanking {
 			this->transferInputPanel->Controls->Add(this->recipientsAccInputPanel);
 			this->transferInputPanel->Controls->Add(this->btnTransfer);
 			this->transferInputPanel->Controls->Add(this->customerAccInputPanel);
-			this->transferInputPanel->Location = System::Drawing::Point(34, 173);
-			this->transferInputPanel->Margin = System::Windows::Forms::Padding(2);
+			this->transferInputPanel->Location = System::Drawing::Point(45, 213);
+			this->transferInputPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->transferInputPanel->Name = L"transferInputPanel";
-			this->transferInputPanel->Size = System::Drawing::Size(750, 385);
+			this->transferInputPanel->Size = System::Drawing::Size(1000, 474);
 			this->transferInputPanel->TabIndex = 2;
 			// 
 			// panel2
@@ -186,10 +186,10 @@ namespace GoBanking {
 			this->panel2->Controls->Add(this->label6);
 			this->panel2->Controls->Add(this->dropDownRekReceive);
 			this->panel2->Controls->Add(this->label5);
-			this->panel2->Location = System::Drawing::Point(385, 92);
-			this->panel2->Margin = System::Windows::Forms::Padding(2);
+			this->panel2->Location = System::Drawing::Point(513, 113);
+			this->panel2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(345, 57);
+			this->panel2->Size = System::Drawing::Size(460, 70);
 			this->panel2->TabIndex = 44;
 			// 
 			// label6
@@ -198,10 +198,9 @@ namespace GoBanking {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->label6->Location = System::Drawing::Point(102, 0);
-			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label6->Location = System::Drawing::Point(136, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(53, 16);
+			this->label6->Size = System::Drawing::Size(65, 20);
 			this->label6->TabIndex = 23;
 			this->label6->Text = L"Saldo :";
 			// 
@@ -213,11 +212,11 @@ namespace GoBanking {
 			this->dropDownRekReceive->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->dropDownRekReceive->ForeColor = System::Drawing::Color::White;
 			this->dropDownRekReceive->FormattingEnabled = true;
-			this->dropDownRekReceive->Location = System::Drawing::Point(4, 32);
-			this->dropDownRekReceive->Margin = System::Windows::Forms::Padding(2);
+			this->dropDownRekReceive->Location = System::Drawing::Point(5, 39);
+			this->dropDownRekReceive->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dropDownRekReceive->MaxDropDownItems = 100;
 			this->dropDownRekReceive->Name = L"dropDownRekReceive";
-			this->dropDownRekReceive->Size = System::Drawing::Size(338, 24);
+			this->dropDownRekReceive->Size = System::Drawing::Size(449, 28);
 			this->dropDownRekReceive->TabIndex = 43;
 			this->dropDownRekReceive->Tag = L"";
 			this->dropDownRekReceive->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &Transfer::dropDownRekReceive_DrawItem);
@@ -230,9 +229,8 @@ namespace GoBanking {
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->label5->Location = System::Drawing::Point(0, 0);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(70, 16);
+			this->label5->Size = System::Drawing::Size(87, 20);
 			this->label5->TabIndex = 23;
 			this->label5->Text = L"Rekening";
 			// 
@@ -241,10 +239,10 @@ namespace GoBanking {
 			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->dropDownDana);
 			this->panel1->Controls->Add(this->label3);
-			this->panel1->Location = System::Drawing::Point(385, 16);
-			this->panel1->Margin = System::Windows::Forms::Padding(2);
+			this->panel1->Location = System::Drawing::Point(513, 20);
+			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(345, 57);
+			this->panel1->Size = System::Drawing::Size(460, 70);
 			this->panel1->TabIndex = 40;
 			// 
 			// label4
@@ -253,10 +251,9 @@ namespace GoBanking {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->label4->Location = System::Drawing::Point(102, 0);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Location = System::Drawing::Point(136, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(53, 16);
+			this->label4->Size = System::Drawing::Size(65, 20);
 			this->label4->TabIndex = 22;
 			this->label4->Text = L"Saldo :";
 			// 
@@ -269,11 +266,11 @@ namespace GoBanking {
 			this->dropDownDana->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->dropDownDana->ForeColor = System::Drawing::Color::White;
 			this->dropDownDana->FormattingEnabled = true;
-			this->dropDownDana->Location = System::Drawing::Point(4, 32);
-			this->dropDownDana->Margin = System::Windows::Forms::Padding(2);
+			this->dropDownDana->Location = System::Drawing::Point(5, 39);
+			this->dropDownDana->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dropDownDana->MaxDropDownItems = 100;
 			this->dropDownDana->Name = L"dropDownDana";
-			this->dropDownDana->Size = System::Drawing::Size(338, 24);
+			this->dropDownDana->Size = System::Drawing::Size(449, 28);
 			this->dropDownDana->TabIndex = 3;
 			this->dropDownDana->Tag = L"";
 			this->dropDownDana->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &Transfer::dropDownDana_DrawItem);
@@ -286,9 +283,8 @@ namespace GoBanking {
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->label3->Location = System::Drawing::Point(1, 0);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(97, 16);
+			this->label3->Size = System::Drawing::Size(120, 20);
 			this->label3->TabIndex = 21;
 			this->label3->Text = L"Sumber Dana";
 			// 
@@ -297,10 +293,10 @@ namespace GoBanking {
 			this->pinInputPanel->Controls->Add(this->pin);
 			this->pinInputPanel->Controls->Add(this->pinInput);
 			this->pinInputPanel->Controls->Add(this->panel4);
-			this->pinInputPanel->Location = System::Drawing::Point(16, 243);
-			this->pinInputPanel->Margin = System::Windows::Forms::Padding(2);
+			this->pinInputPanel->Location = System::Drawing::Point(21, 299);
+			this->pinInputPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pinInputPanel->Name = L"pinInputPanel";
-			this->pinInputPanel->Size = System::Drawing::Size(158, 57);
+			this->pinInputPanel->Size = System::Drawing::Size(211, 70);
 			this->pinInputPanel->TabIndex = 42;
 			// 
 			// pin
@@ -310,9 +306,8 @@ namespace GoBanking {
 			this->pin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->pin->Location = System::Drawing::Point(0, 0);
-			this->pin->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->pin->Name = L"pin";
-			this->pin->Size = System::Drawing::Size(31, 16);
+			this->pin->Size = System::Drawing::Size(38, 20);
 			this->pin->TabIndex = 27;
 			this->pin->Text = L"PIN";
 			// 
@@ -324,21 +319,21 @@ namespace GoBanking {
 			this->pinInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->pinInput->ForeColor = System::Drawing::Color::White;
-			this->pinInput->Location = System::Drawing::Point(3, 25);
-			this->pinInput->Margin = System::Windows::Forms::Padding(2);
+			this->pinInput->Location = System::Drawing::Point(4, 31);
+			this->pinInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pinInput->MaxLength = 15;
 			this->pinInput->Name = L"pinInput";
-			this->pinInput->Size = System::Drawing::Size(150, 16);
+			this->pinInput->Size = System::Drawing::Size(200, 20);
 			this->pinInput->TabIndex = 26;
 			this->pinInput->UseSystemPasswordChar = true;
 			// 
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::Color::White;
-			this->panel4->Location = System::Drawing::Point(3, 50);
-			this->panel4->Margin = System::Windows::Forms::Padding(2);
+			this->panel4->Location = System::Drawing::Point(4, 62);
+			this->panel4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(150, 4);
+			this->panel4->Size = System::Drawing::Size(200, 5);
 			this->panel4->TabIndex = 34;
 			// 
 			// nominalInputPanel
@@ -347,10 +342,10 @@ namespace GoBanking {
 			this->nominalInputPanel->Controls->Add(this->nominal);
 			this->nominalInputPanel->Controls->Add(this->nominalInput);
 			this->nominalInputPanel->Controls->Add(this->panel3);
-			this->nominalInputPanel->Location = System::Drawing::Point(16, 167);
-			this->nominalInputPanel->Margin = System::Windows::Forms::Padding(2);
+			this->nominalInputPanel->Location = System::Drawing::Point(21, 206);
+			this->nominalInputPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->nominalInputPanel->Name = L"nominalInputPanel";
-			this->nominalInputPanel->Size = System::Drawing::Size(345, 57);
+			this->nominalInputPanel->Size = System::Drawing::Size(460, 70);
 			this->nominalInputPanel->TabIndex = 41;
 			// 
 			// label2
@@ -358,10 +353,9 @@ namespace GoBanking {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(0, 25);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(0, 31);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(30, 16);
+			this->label2->Size = System::Drawing::Size(37, 20);
 			this->label2->TabIndex = 34;
 			this->label2->Text = L"Rp.";
 			// 
@@ -372,9 +366,8 @@ namespace GoBanking {
 			this->nominal->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->nominal->Location = System::Drawing::Point(0, 0);
-			this->nominal->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->nominal->Name = L"nominal";
-			this->nominal->Size = System::Drawing::Size(124, 16);
+			this->nominal->Size = System::Drawing::Size(151, 20);
 			this->nominal->TabIndex = 25;
 			this->nominal->Text = L"Nominal Transfer";
 			// 
@@ -386,31 +379,31 @@ namespace GoBanking {
 			this->nominalInput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->nominalInput->ForeColor = System::Drawing::Color::White;
-			this->nominalInput->Location = System::Drawing::Point(33, 25);
-			this->nominalInput->Margin = System::Windows::Forms::Padding(2);
+			this->nominalInput->Location = System::Drawing::Point(44, 31);
+			this->nominalInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->nominalInput->MaxLength = 100;
 			this->nominalInput->Name = L"nominalInput";
-			this->nominalInput->Size = System::Drawing::Size(308, 16);
+			this->nominalInput->Size = System::Drawing::Size(411, 20);
 			this->nominalInput->TabIndex = 24;
 			this->nominalInput->TextChanged += gcnew System::EventHandler(this, &Transfer::nominalInput_TextChanged);
 			// 
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::Color::White;
-			this->panel3->Location = System::Drawing::Point(3, 50);
-			this->panel3->Margin = System::Windows::Forms::Padding(2);
+			this->panel3->Location = System::Drawing::Point(4, 62);
+			this->panel3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(338, 4);
+			this->panel3->Size = System::Drawing::Size(451, 5);
 			this->panel3->TabIndex = 33;
 			// 
 			// recipientsAccInputPanel
 			// 
 			this->recipientsAccInputPanel->Controls->Add(this->dropDownMenuReceive);
 			this->recipientsAccInputPanel->Controls->Add(this->recipientsAccNum);
-			this->recipientsAccInputPanel->Location = System::Drawing::Point(16, 92);
-			this->recipientsAccInputPanel->Margin = System::Windows::Forms::Padding(2);
+			this->recipientsAccInputPanel->Location = System::Drawing::Point(21, 113);
+			this->recipientsAccInputPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->recipientsAccInputPanel->Name = L"recipientsAccInputPanel";
-			this->recipientsAccInputPanel->Size = System::Drawing::Size(345, 57);
+			this->recipientsAccInputPanel->Size = System::Drawing::Size(460, 70);
 			this->recipientsAccInputPanel->TabIndex = 40;
 			// 
 			// dropDownMenuReceive
@@ -421,11 +414,11 @@ namespace GoBanking {
 			this->dropDownMenuReceive->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->dropDownMenuReceive->ForeColor = System::Drawing::Color::White;
 			this->dropDownMenuReceive->FormattingEnabled = true;
-			this->dropDownMenuReceive->Location = System::Drawing::Point(4, 32);
-			this->dropDownMenuReceive->Margin = System::Windows::Forms::Padding(2);
+			this->dropDownMenuReceive->Location = System::Drawing::Point(5, 39);
+			this->dropDownMenuReceive->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dropDownMenuReceive->MaxDropDownItems = 100;
 			this->dropDownMenuReceive->Name = L"dropDownMenuReceive";
-			this->dropDownMenuReceive->Size = System::Drawing::Size(338, 24);
+			this->dropDownMenuReceive->Size = System::Drawing::Size(449, 28);
 			this->dropDownMenuReceive->TabIndex = 43;
 			this->dropDownMenuReceive->Tag = L"";
 			this->dropDownMenuReceive->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &Transfer::dropDownMenuReceive_DrawItem);
@@ -438,9 +431,8 @@ namespace GoBanking {
 			this->recipientsAccNum->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->recipientsAccNum->Location = System::Drawing::Point(0, 0);
-			this->recipientsAccNum->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->recipientsAccNum->Name = L"recipientsAccNum";
-			this->recipientsAccNum->Size = System::Drawing::Size(160, 16);
+			this->recipientsAccNum->Size = System::Drawing::Size(195, 20);
 			this->recipientsAccNum->TabIndex = 23;
 			this->recipientsAccNum->Text = L"No. Identitas Penerima";
 			// 
@@ -451,10 +443,10 @@ namespace GoBanking {
 			this->btnTransfer->FlatAppearance->BorderSize = 0;
 			this->btnTransfer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnTransfer->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 14));
-			this->btnTransfer->Location = System::Drawing::Point(16, 318);
-			this->btnTransfer->Margin = System::Windows::Forms::Padding(2);
+			this->btnTransfer->Location = System::Drawing::Point(21, 391);
+			this->btnTransfer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnTransfer->Name = L"btnTransfer";
-			this->btnTransfer->Size = System::Drawing::Size(165, 49);
+			this->btnTransfer->Size = System::Drawing::Size(220, 60);
 			this->btnTransfer->TabIndex = 38;
 			this->btnTransfer->Text = L"Transfer";
 			this->btnTransfer->UseVisualStyleBackColor = false;
@@ -464,10 +456,10 @@ namespace GoBanking {
 			// 
 			this->customerAccInputPanel->Controls->Add(this->dropDownMenuSend);
 			this->customerAccInputPanel->Controls->Add(this->customerAccNum);
-			this->customerAccInputPanel->Location = System::Drawing::Point(16, 16);
-			this->customerAccInputPanel->Margin = System::Windows::Forms::Padding(2);
+			this->customerAccInputPanel->Location = System::Drawing::Point(21, 20);
+			this->customerAccInputPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->customerAccInputPanel->Name = L"customerAccInputPanel";
-			this->customerAccInputPanel->Size = System::Drawing::Size(345, 57);
+			this->customerAccInputPanel->Size = System::Drawing::Size(460, 70);
 			this->customerAccInputPanel->TabIndex = 39;
 			// 
 			// dropDownMenuSend
@@ -478,11 +470,11 @@ namespace GoBanking {
 			this->dropDownMenuSend->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->dropDownMenuSend->ForeColor = System::Drawing::Color::White;
 			this->dropDownMenuSend->FormattingEnabled = true;
-			this->dropDownMenuSend->Location = System::Drawing::Point(4, 32);
-			this->dropDownMenuSend->Margin = System::Windows::Forms::Padding(2);
+			this->dropDownMenuSend->Location = System::Drawing::Point(5, 39);
+			this->dropDownMenuSend->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dropDownMenuSend->MaxDropDownItems = 100;
 			this->dropDownMenuSend->Name = L"dropDownMenuSend";
-			this->dropDownMenuSend->Size = System::Drawing::Size(338, 24);
+			this->dropDownMenuSend->Size = System::Drawing::Size(449, 28);
 			this->dropDownMenuSend->TabIndex = 3;
 			this->dropDownMenuSend->Tag = L"";
 			this->dropDownMenuSend->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &Transfer::dropDownMenuSend_DrawItem);
@@ -495,9 +487,8 @@ namespace GoBanking {
 			this->customerAccNum->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->customerAccNum->Location = System::Drawing::Point(1, 0);
-			this->customerAccNum->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->customerAccNum->Name = L"customerAccNum";
-			this->customerAccNum->Size = System::Drawing::Size(157, 16);
+			this->customerAccNum->Size = System::Drawing::Size(191, 20);
 			this->customerAccNum->TabIndex = 21;
 			this->customerAccNum->Text = L"No. Identitas Pengirim";
 			// 
@@ -508,23 +499,22 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(25, 50);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(33, 62);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(225, 55);
+			this->label1->Size = System::Drawing::Size(281, 70);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Transfer";
 			// 
 			// Transfer
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->ClientSize = System::Drawing::Size(1040, 640);
+			this->ClientSize = System::Drawing::Size(1400, 900);
 			this->Controls->Add(this->transferMainPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Transfer";
 			this->Text = L"Transfer";
 			this->Load += gcnew System::EventHandler(this, &Transfer::Transfer_Load);
