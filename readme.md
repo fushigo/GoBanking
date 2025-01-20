@@ -55,6 +55,6 @@ jalankan perintah di bawah ini menggunakan terminal (command promp) di komputer 
 
 ## Kontributor
  - [Rizky Andika Sukma](https://github.com/fushigo)
- - [Anang Setiaji]("https://github.com/iKzuu")
- - [Adhi Kurniawan]("https://github.com/Strangerr01")
+ - [Anang Setaji](https://github.com/iKzuu)
+ - [Ahi Kurniawan](https://github.com/Strangerr01)
  - [Rizal Tegar]("/")
