@@ -38,7 +38,7 @@ jalankan perintah di bawah ini menggunakan terminal (command promp) di komputer 
 - Tekan tombol run
 
 ### Rest-API
-- Clone repository ini ```git clone https://github.com/fushigo/GoBanking```
+- Clone repository ini ```git clone https://github.com/fushigo/go-banking-api```
 - Masuk ke folder rest-api ```cd rest-api```
 - Buat file .env dan tambahkan ```DATABASE_URL= "URL DATABASE ANDA"```
 - ``` bash
