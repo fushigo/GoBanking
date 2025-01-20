@@ -53,8 +53,8 @@ jalankan perintah di bawah ini menggunakan terminal (command promp) di komputer 
   ```
 - Buka browser dan akses rest-api di http://localhost::3000
 
-## Kontributor
- - [Rizky Andika Sukma](https://github.com/fushigo)
- - [Anang Setaji](https://github.com/iKzuu)
- - [Ahi Kurniawan](https://github.com/Strangerr01)
- - [Rizal Tegar]("/")
+## Tim Pengembang
+ - Rizky Andika Sukma ([@rizkyandikas](https://github.com/fushigo))
+ - Anang Setiaji ([@iKzuu](https://github.com/iKzuu))
+ - Adhi Kurniawan ([@strangger](https://github.com/Strangerr01))
+ - Rizal Tegar Hermawan ([@tegar]("/"))
