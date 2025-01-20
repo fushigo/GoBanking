@@ -25,7 +25,7 @@ Project ini dibuat sebagai kelengkapan tugas akhir dari mata kuliah Algoritma Pe
 - Bahasa pemrograman: C++ (untuk sistem aplikasi) dan Typescript (untuk sistem rest api)
 - Framework: .NET Framework (untuk membuat antar muka aplikasi) dan Express.js (untuk membuat rest-api)
 - Library: Prisma.js (untuk penghubung database)
-- Databse: MySQL (menyimpan data)
+- Database: MySQL (menyimpan data)
 
 ## Cara Menjalankan
 jalankan perintah di bawah ini menggunakan terminal (command promp) di komputer anda!, **pastikan juga komputer anda telah terinstall Microsoft Visual Studio 2022 (Desktop development with c++, .NET desktop development & Build tools), Database MySQL dan tools tambahakan seperti: [nlohmann/json](https://github.com/nlohmann/json) serta [libcurl](https://github.com/curl/curl)**
