@@ -97,10 +97,10 @@ namespace GoBanking {
 			this->dataRekeningMainPanel->Controls->Add(this->dataGridViewRekening);
 			this->dataRekeningMainPanel->Controls->Add(this->panel1);
 			this->dataRekeningMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
-			this->dataRekeningMainPanel->Location = System::Drawing::Point(309, 0);
-			this->dataRekeningMainPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataRekeningMainPanel->Location = System::Drawing::Point(222, 0);
+			this->dataRekeningMainPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataRekeningMainPanel->Name = L"dataRekeningMainPanel";
-			this->dataRekeningMainPanel->Size = System::Drawing::Size(1091, 900);
+			this->dataRekeningMainPanel->Size = System::Drawing::Size(818, 640);
 			this->dataRekeningMainPanel->TabIndex = 0;
 			// 
 			// dataGridViewRekening
@@ -127,8 +127,8 @@ namespace GoBanking {
 			});
 			this->dataGridViewRekening->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->dataGridViewRekening->Location = System::Drawing::Point(52, 220);
-			this->dataGridViewRekening->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridViewRekening->Location = System::Drawing::Point(39, 179);
+			this->dataGridViewRekening->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridViewRekening->Name = L"dataGridViewRekening";
 			this->dataGridViewRekening->ReadOnly = true;
 			this->dataGridViewRekening->RowHeadersVisible = false;
@@ -154,8 +154,10 @@ namespace GoBanking {
 			this->dataGridViewRekening->RowTemplate->DefaultCellStyle->SelectionForeColor = System::Drawing::Color::White;
 			this->dataGridViewRekening->RowTemplate->Height = 50;
 			this->dataGridViewRekening->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridViewRekening->Size = System::Drawing::Size(987, 606);
+			this->dataGridViewRekening->Size = System::Drawing::Size(740, 492);
 			this->dataGridViewRekening->TabIndex = 5;
+			this->dataGridViewRekening->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &DataRekening::dataGridViewRekening_CellContentClick);
+
 			// 
 			// numberAccount
 			// 
@@ -261,23 +263,23 @@ namespace GoBanking {
 			this->panel1->Controls->Add(this->textBox1);
 			this->panel1->Controls->Add(this->dateTimePicker);
 			this->panel1->Controls->Add(this->btnSearch);
-			this->panel1->Location = System::Drawing::Point(51, 75);
-			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel1->Location = System::Drawing::Point(38, 61);
+			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(989, 95);
+			this->panel1->Size = System::Drawing::Size(742, 77);
 			this->panel1->TabIndex = 6;
 			// 
 			// btn_reset
 			// 
 			this->btn_reset->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_reset->Location = System::Drawing::Point(0, 47);
-			this->btn_reset->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_reset->Location = System::Drawing::Point(0, 38);
 			this->btn_reset->Name = L"btn_reset";
-			this->btn_reset->Size = System::Drawing::Size(153, 44);
+			this->btn_reset->Size = System::Drawing::Size(115, 36);
 			this->btn_reset->TabIndex = 3;
 			this->btn_reset->Text = L"Reset Filter";
 			this->btn_reset->UseVisualStyleBackColor = true;
+			this->btn_reset->Click += gcnew System::EventHandler(this, &DataRekening::btn_reset_Click);
 			// 
 			// textBox1
 			// 
@@ -287,12 +289,13 @@ namespace GoBanking {
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->ForeColor = System::Drawing::Color::White;
-			this->textBox1->Location = System::Drawing::Point(651, 12);
-			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox1->Location = System::Drawing::Point(488, 10);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->MaxLength = 255;
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(301, 27);
+			this->textBox1->Size = System::Drawing::Size(226, 23);
 			this->textBox1->TabIndex = 1;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &DataRekening::textBox1_TextChanged);
 			// 
 			// dateTimePicker
 			// 
@@ -303,14 +306,15 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->dateTimePicker->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateTimePicker->Location = System::Drawing::Point(0, 12);
-			this->dateTimePicker->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dateTimePicker->Location = System::Drawing::Point(0, 10);
+			this->dateTimePicker->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dateTimePicker->MaxDate = System::DateTime(2045, 12, 31, 0, 0, 0, 0);
 			this->dateTimePicker->MinDate = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
 			this->dateTimePicker->Name = L"dateTimePicker";
-			this->dateTimePicker->Size = System::Drawing::Size(325, 27);
+			this->dateTimePicker->Size = System::Drawing::Size(245, 23);
 			this->dateTimePicker->TabIndex = 0;
 			this->dateTimePicker->Value = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
+			this->dateTimePicker->ValueChanged += gcnew System::EventHandler(this, &DataRekening::dateTimePicker_ValueChanged);
 			// 
 			// btnSearch
 			// 
@@ -321,23 +325,24 @@ namespace GoBanking {
 			this->btnSearch->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnSearch->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearch.Image")));
-			this->btnSearch->Location = System::Drawing::Point(949, 12);
-			this->btnSearch->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnSearch->Location = System::Drawing::Point(712, 10);
+			this->btnSearch->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnSearch->Name = L"btnSearch";
-			this->btnSearch->Size = System::Drawing::Size(40, 27);
+			this->btnSearch->Size = System::Drawing::Size(30, 22);
 			this->btnSearch->TabIndex = 2;
 			this->btnSearch->UseVisualStyleBackColor = false;
+			this->btnSearch->Click += gcnew System::EventHandler(this, &DataRekening::btnSearch_Click);
 			// 
 			// DataRekening
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->ClientSize = System::Drawing::Size(1400, 900);
+			this->ClientSize = System::Drawing::Size(1040, 640);
 			this->Controls->Add(this->dataRekeningMainPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"DataRekening";
 			this->Text = L"DataRekening";
 			this->Load += gcnew System::EventHandler(this, &DataRekening::DataRekening_Load);
@@ -369,8 +374,8 @@ namespace GoBanking {
 	private:
 		System::Void DataRekening_Load(System::Object^ sender, System::EventArgs^ e);
 		System::Void dateTimePicker_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
 		System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e);
-	};
+		System::Void btn_reset_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }

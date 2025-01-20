@@ -295,7 +295,7 @@ namespace GoBanking {
             string response = updateKaryawan(payjson.dump());
 
             auto jsonData = json::parse(response);
-            auto& statusCode = jsonData["statusCode"], message = jsonData["message"];
+            auto& statusCode = jsonData["statusCode"], & message = jsonData["message"];
 
             if (statusCode.get<int>() == 500) {
                 System::Windows::Forms::MessageBox::Show(gcnew System::String(msclr::interop::marshal_as<String^>(message.get<string>())), "Terjadi kesalahan");
