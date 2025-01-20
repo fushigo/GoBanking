@@ -57,4 +57,4 @@ jalankan perintah di bawah ini menggunakan terminal (command promp) di komputer 
  - [Rizky Andika Sukma](https://github.com/fushigo)
  - [Anang Setiaji]("https://github.com/iKzuu")
  - [Adhi Kurniawan]("https://github.com/Strangerr01")
- - [Rizal Tegar]("#")
+ - [Rizal Tegar]("/")
