@@ -32,7 +32,7 @@ jalankan perintah di bawah ini menggunakan terminal (command promp) di komputer 
 
 ### Aplikasi
 - Clone repository ini ```git clone https://github.com/fushigo/GoBanking```
-- Pindahkan folder aplikasi ke dalam ```C:\Users\nama device anda\source\repos```
+- Pindahkan folder app ke dalam ```C:\Users\nama device anda\source\repos```
 - Buka aplikasi microsoft visual studio 2022
 - Buka folder project
 - Tekan tombol run
