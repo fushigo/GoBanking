@@ -4,19 +4,19 @@ Project ini dibuat sebagai kelengkapan tugas akhir dari mata kuliah Algoritma Pe
 
 ## Fitur Utama
 
-1. ### Management Nasabah
+### 1. Management Nasabah
    - Pembuatan akun dan rekening baru
    - Mengelola data nasabah
    - Pencarian data nasabah
-2. ### Transaksi Perbankan
+### 2. Transaksi Perbankan
    - Penarikan tunai
    - Setoran tunai
    - Transfer rekening
-3. ### Management Rekening
+### 3. Management Rekening
    - Mengelola data rekening
    - Pencarian data rekening
    - Cek saldo dan aktivitas rekening
-4. ### Management Karyawan
+### 4. Management Karyawan
    - Mengelola data karyawan
    - Pencarian data karyawan
 
