@@ -7,8 +7,10 @@ namespace GoBanking {
     using namespace std;
     using json = nlohmann::json;
 
-    string dateFilterRekening;
-    string searchFilterRekening;
+    struct {
+        string dateFilterRekening;
+        string searchFilterRekening;
+    }filter;
 
     string nomorRek;
 
@@ -88,14 +90,14 @@ namespace GoBanking {
                     string jenisTabungan = item["jenisTabungan"].get<string>();
 
                     // Filter data berdasarkan tanggal dibuat
-                    if (!dateFilterRekening.empty() && createAt.substr(0, 10) != dateFilterRekening) {
+                    if (!filter.dateFilterRekening.empty() && createAt.substr(0, 10) != filter.dateFilterRekening) {
                         continue;
                     }
 
                     // Filter data berdasarkan kata pencarian
-                    if (!searchFilterRekening.empty()) {
+                    if (!filter.searchFilterRekening.empty()) {
                         // Mengubah namaLengkap, nomorRekening, dan searchQuery menjadi lowercase
-                        string jenis_lower = jenisTabungan, nomor_lower = nomorRekening, search_lower = searchFilterRekening;
+                        string jenis_lower = jenisTabungan, nomor_lower = nomorRekening, search_lower = filter.searchFilterRekening;
                         transform(jenis_lower.begin(), jenis_lower.end(), jenis_lower.begin(), tolower);
                         transform(nomor_lower.begin(), nomor_lower.end(), nomor_lower.begin(), tolower);
                         transform(search_lower.begin(), search_lower.end(), search_lower.begin(), tolower);
@@ -133,7 +135,7 @@ namespace GoBanking {
     System::Void DataRekening::dateTimePicker_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
         DateTime datetime = dateTimePicker->Value;
         String^ isoFormatted = datetime.ToUniversalTime().ToString("yyyy-MM-dd");
-        dateFilterRekening = msclr::interop::marshal_as<string>(isoFormatted);
+        filter.dateFilterRekening = msclr::interop::marshal_as<string>(isoFormatted);
 
         DataRekening_Load(nullptr, nullptr);
     }
@@ -141,7 +143,7 @@ namespace GoBanking {
     // Menangani ketika nilai textBox1 (Filter Pencarian) berubah
     System::Void DataRekening::textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
         String^ textValue = textBox1->Text;
-        searchFilterRekening = msclr::interop::marshal_as<string>(textValue);
+        filter.searchFilterRekening = msclr::interop::marshal_as<string>(textValue);
     }
 
     // Menangani ketika tombol pencarian ditekan
@@ -152,8 +154,8 @@ namespace GoBanking {
     // Menangani ketika tombol reset filter ditekan
     System::Void DataRekening::btn_reset_Click(System::Object^ sender, System::EventArgs^ e)
     {
-        dateFilterRekening = "";
-        searchFilterRekening = "";
+        filter.dateFilterRekening = "";
+        filter.searchFilterRekening = "";
 
         DataRekening_Load(nullptr, nullptr);
     }

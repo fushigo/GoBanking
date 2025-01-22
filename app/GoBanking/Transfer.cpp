@@ -8,7 +8,9 @@ namespace GoBanking {
 	using json = nlohmann::json;
 
 	double tSaldo, saldoTf;
-	string rekSender, rekReceiver, pinRek;
+	struct {
+		string rekSender, rekReceiver, pinRek;
+	}rekening;
 
 	static string getNasabah() {
 		API api;
@@ -183,8 +185,8 @@ namespace GoBanking {
 
 				double totalSaldo = dana + bunga;
 				tSaldo = totalSaldo;
-				pinRek = msclr::interop::marshal_as<string>(dataPin.ToString());
-				rekSender = dataNorek;
+				rekening.pinRek = msclr::interop::marshal_as<string>(dataPin.ToString());
+				rekening.rekSender = dataNorek;
 
 				System::Globalization::CultureInfo^ culture = gcnew System::Globalization::CultureInfo("id-ID");
 				String^ formattedSaldo = String::Format(culture, "{0:c2}", totalSaldo);
@@ -256,7 +258,7 @@ namespace GoBanking {
 
 				double totalSaldo = dana + bunga;
 
-				rekReceiver = dataNorek;
+				rekening.rekReceiver = dataNorek;
 
 				System::Globalization::CultureInfo^ culture = gcnew System::Globalization::CultureInfo("id-ID");
 				String^ formattedSaldo = String::Format(culture, "{0:c2}", totalSaldo);
@@ -296,10 +298,10 @@ namespace GoBanking {
 	System::Void Transfer::ProcessTransfer() {
 		json payjson;
 
-		payjson["rekSend"] = rekSender;
-		payjson["rekReceive"] = rekReceiver;
+		payjson["rekSend"] = rekening.rekSender;
+		payjson["rekReceive"] = rekening.rekReceiver;
 		payjson["nominalTf"] = saldoTf;
-		payjson["pin"] = pinRek;
+		payjson["pin"] = rekening.pinRek;
 
 		try {
 			string response = postData(payjson.dump());

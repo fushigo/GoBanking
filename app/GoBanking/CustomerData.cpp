@@ -7,8 +7,10 @@ namespace GoBanking {
 	using namespace std;
 	using json = nlohmann::json;
 
-	string dateFilter;
-	string searchFilter;
+    struct {
+        string dateFilter;
+        string searchFilter;
+    }filter;
 
     string nomorNik;
 
@@ -69,14 +71,14 @@ namespace GoBanking {
                     string nik = item["nik"].get<string>();
 
                     // Filter data berdasarkan tanggal dibuat
-                    if (!dateFilter.empty() && createAt.substr(0, 10) != dateFilter) {
+                    if (!filter.dateFilter.empty() && createAt.substr(0, 10) != filter.dateFilter) {
                         continue;
                     }
 
                     // Filter data berdasarkan query nama lengkap atau nomor identitas (nik)
-                    if (!searchFilter.empty()) {
+                    if (!filter.searchFilter.empty()) {
                         // Mengubah namaLengkap, nik, dan searchQuery menjadi lowercase
-                        string nama_lower = namaLengkap, nik_lower = nik, search_lower = searchFilter;
+                        string nama_lower = namaLengkap, nik_lower = nik, search_lower = filter.searchFilter;
                         transform(nama_lower.begin(), nama_lower.end(), nama_lower.begin(), tolower);
                         transform(nik_lower.begin(), nik_lower.end(), nik_lower.begin(), tolower);
                         transform(search_lower.begin(), search_lower.end(), search_lower.begin(), tolower);
@@ -110,15 +112,14 @@ namespace GoBanking {
 	System::Void CustomerData::dateTimePicker_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 		DateTime datetime = dateTimePicker->Value;
         String^ isoFormatted = datetime.ToUniversalTime().ToString("yyyy-MM-dd");
-		dateFilter = msclr::interop::marshal_as<string>(isoFormatted);
+		filter.dateFilter = msclr::interop::marshal_as<string>(isoFormatted);
 
 		CustomerData_Load(nullptr, nullptr);
 	}
 
     // Menangani ketika nilai textBox1 (Filter Pencarian) berubah
     System::Void CustomerData::textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-        String^ textValue = textBox1->Text;
-        searchFilter = msclr::interop::marshal_as<string>(textValue);
+        filter.searchFilter = msclr::interop::marshal_as<string>(textBox1->Text);
     }
 
     System::Void CustomerData::btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -127,8 +128,8 @@ namespace GoBanking {
 
     // Menangani kondisi ketika button reset ditekan
     System::Void CustomerData::button1_Click(System::Object^ sender, System::EventArgs^ e) {
-        dateFilter = "";
-        searchFilter = "";
+        filter.dateFilter = "";
+        filter.searchFilter = "";
 
         CustomerData_Load(nullptr, nullptr);
     }

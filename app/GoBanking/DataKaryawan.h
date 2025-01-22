@@ -97,10 +97,10 @@ namespace GoBanking {
 			this->dataKaryawanMainPanel->Controls->Add(this->dataGridViewKaryawan);
 			this->dataKaryawanMainPanel->Controls->Add(this->panel1);
 			this->dataKaryawanMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
-			this->dataKaryawanMainPanel->Location = System::Drawing::Point(309, 0);
-			this->dataKaryawanMainPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataKaryawanMainPanel->Location = System::Drawing::Point(222, 0);
+			this->dataKaryawanMainPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataKaryawanMainPanel->Name = L"dataKaryawanMainPanel";
-			this->dataKaryawanMainPanel->Size = System::Drawing::Size(1091, 900);
+			this->dataKaryawanMainPanel->Size = System::Drawing::Size(818, 640);
 			this->dataKaryawanMainPanel->TabIndex = 0;
 			// 
 			// dataGridViewKaryawan
@@ -127,8 +127,8 @@ namespace GoBanking {
 			});
 			this->dataGridViewKaryawan->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->dataGridViewKaryawan->Location = System::Drawing::Point(52, 220);
-			this->dataGridViewKaryawan->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridViewKaryawan->Location = System::Drawing::Point(39, 179);
+			this->dataGridViewKaryawan->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridViewKaryawan->Name = L"dataGridViewKaryawan";
 			this->dataGridViewKaryawan->ReadOnly = true;
 			this->dataGridViewKaryawan->RowHeadersVisible = false;
@@ -154,7 +154,7 @@ namespace GoBanking {
 			this->dataGridViewKaryawan->RowTemplate->DefaultCellStyle->SelectionForeColor = System::Drawing::Color::White;
 			this->dataGridViewKaryawan->RowTemplate->Height = 50;
 			this->dataGridViewKaryawan->RowTemplate->Resizable = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridViewKaryawan->Size = System::Drawing::Size(987, 606);
+			this->dataGridViewKaryawan->Size = System::Drawing::Size(740, 492);
 			this->dataGridViewKaryawan->TabIndex = 5;
 			this->dataGridViewKaryawan->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &DataKaryawan::dataGridViewKaryawan_CellContentClick_1);
 			// 
@@ -255,20 +255,19 @@ namespace GoBanking {
 			this->panel1->Controls->Add(this->textBox1);
 			this->panel1->Controls->Add(this->dateTimePicker);
 			this->panel1->Controls->Add(this->btnSearch);
-			this->panel1->Location = System::Drawing::Point(51, 75);
-			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel1->Location = System::Drawing::Point(38, 61);
+			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(989, 95);
+			this->panel1->Size = System::Drawing::Size(742, 77);
 			this->panel1->TabIndex = 6;
 			// 
 			// btnCreate
 			// 
 			this->btnCreate->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnCreate->Location = System::Drawing::Point(835, 47);
-			this->btnCreate->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnCreate->Location = System::Drawing::Point(626, 38);
 			this->btnCreate->Name = L"btnCreate";
-			this->btnCreate->Size = System::Drawing::Size(153, 44);
+			this->btnCreate->Size = System::Drawing::Size(115, 36);
 			this->btnCreate->TabIndex = 4;
 			this->btnCreate->Text = L"Tambah Data";
 			this->btnCreate->UseVisualStyleBackColor = true;
@@ -278,10 +277,9 @@ namespace GoBanking {
 			// 
 			this->btn_reset->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_reset->Location = System::Drawing::Point(0, 47);
-			this->btn_reset->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_reset->Location = System::Drawing::Point(0, 38);
 			this->btn_reset->Name = L"btn_reset";
-			this->btn_reset->Size = System::Drawing::Size(153, 44);
+			this->btn_reset->Size = System::Drawing::Size(115, 36);
 			this->btn_reset->TabIndex = 3;
 			this->btn_reset->Text = L"Reset Filter";
 			this->btn_reset->UseVisualStyleBackColor = true;
@@ -294,11 +292,11 @@ namespace GoBanking {
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->ForeColor = System::Drawing::Color::White;
-			this->textBox1->Location = System::Drawing::Point(651, 12);
-			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox1->Location = System::Drawing::Point(488, 10);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->MaxLength = 255;
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(301, 27);
+			this->textBox1->Size = System::Drawing::Size(226, 23);
 			this->textBox1->TabIndex = 1;
 			// 
 			// dateTimePicker
@@ -310,12 +308,12 @@ namespace GoBanking {
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->dateTimePicker->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateTimePicker->Location = System::Drawing::Point(0, 12);
-			this->dateTimePicker->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dateTimePicker->Location = System::Drawing::Point(0, 10);
+			this->dateTimePicker->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dateTimePicker->MaxDate = System::DateTime(2045, 12, 31, 0, 0, 0, 0);
 			this->dateTimePicker->MinDate = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
 			this->dateTimePicker->Name = L"dateTimePicker";
-			this->dateTimePicker->Size = System::Drawing::Size(325, 27);
+			this->dateTimePicker->Size = System::Drawing::Size(245, 23);
 			this->dateTimePicker->TabIndex = 0;
 			this->dateTimePicker->Value = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
 			// 
@@ -328,23 +326,24 @@ namespace GoBanking {
 			this->btnSearch->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnSearch->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearch.Image")));
-			this->btnSearch->Location = System::Drawing::Point(949, 12);
-			this->btnSearch->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnSearch->Location = System::Drawing::Point(712, 10);
+			this->btnSearch->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnSearch->Name = L"btnSearch";
-			this->btnSearch->Size = System::Drawing::Size(40, 27);
+			this->btnSearch->Size = System::Drawing::Size(30, 22);
 			this->btnSearch->TabIndex = 2;
 			this->btnSearch->UseVisualStyleBackColor = false;
+			this->btnSearch->Click += gcnew System::EventHandler(this, &DataKaryawan::btnSearch_Click);
 			// 
 			// DataKaryawan
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
-			this->ClientSize = System::Drawing::Size(1400, 900);
+			this->ClientSize = System::Drawing::Size(1040, 640);
 			this->Controls->Add(this->dataKaryawanMainPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"DataKaryawan";
 			this->Text = L"DataKaryawan";
 			this->Load += gcnew System::EventHandler(this, &DataKaryawan::DataKaryawan_load);
@@ -378,5 +377,6 @@ namespace GoBanking {
 		System::Void btnCreate_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void DataKaryawan_load(System::Object^ sender, System::EventArgs^ e);
 		System::Void dataGridViewKaryawan_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+		System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

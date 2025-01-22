@@ -9,7 +9,7 @@ namespace GoBanking {
 	using namespace std;
 	using json = nlohmann::json;
 
-	struct Create
+	struct 
 	{
 		string textFullname, textNik, textEmail, textTelepone, textJnKelamin, textDpAwal, textPinRekening;
 	}nasabah;

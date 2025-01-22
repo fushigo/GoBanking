@@ -9,7 +9,7 @@ namespace GoBanking {
     using namespace std;
     using json = nlohmann::json;
 
-    struct Filtering {
+    struct {
         string date;
         string search;
     }filter;
@@ -459,5 +459,9 @@ namespace GoBanking {
                 }
             }
         }
+    }
+    System::Void DataKaryawan::btnSearch_Click(System::Object^ sender, System::EventArgs^ e)
+    {
+        DataKaryawan_load(nullptr, nullptr);
     }
 }
