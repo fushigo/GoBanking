@@ -14,51 +14,28 @@ namespace GoBanking {
 
     string nomorRek;
 
-    // request data dari API
-    static string getData() {
+    // Fungsi untuk menangani permintaan ke API
+    static string apiRequester(const string& endpoint, const string& params, const string& payload, const string& method) {
         API api;
-        string endpoint = "/rekening";
-        string response;
-
-        try {
-            response = api.GET(endpoint);
-        }
-        catch (System::String^ err) {
-            System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
-        }
-
-        return response.data();
-    }
-
-    // request memperbaharui data ke API
-    static string updateData(const string& norek, const string& payload) {
-        API api;
-        string endpoint = "/rekening/norek/" + norek;
         string response;
 
         try
         {
-            response = api.REQPATCH(endpoint,payload);
+            if (method == "GET") {
+                response = api.GET(!params.empty() ? endpoint + params : endpoint);
+            }
+            else if (method == "POST") {
+                response = api.POST(endpoint, payload);
+            }
+            else if (method == "PATCH") {
+                response = api.REQPATCH(endpoint + params, payload);
+            }
+            else if (method == "DELETE") {
+                response = api.REQDELETE(endpoint + params);
+            }
         }
-        catch (String^ err)
-        {
-            System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
-        }
-
-        return response.data();
-    }
-
-    // request menghapus data ke API
-    static string deleteData(const string& norek) {
-        API api;
-        string endpoint = "/rekening/norek/" + norek;
-        string response;
-
-        try {
-            response = api.REQDELETE(endpoint);
-        }
-        catch (System::String^ err) {
-            System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
+        catch (String^ e) {
+            System::Windows::Forms::MessageBox::Show(e, "Terjadi kesalahan");
         }
 
         return response.data();
@@ -67,7 +44,7 @@ namespace GoBanking {
     // Menampilkan data nasabah
     System::Void DataRekening::DataRekening_Load(System::Object^ sender, System::EventArgs^ e) {
 
-        string dataRekening = getData();
+        string dataRekening = apiRequester("/rekening", "", "", "GET");
 
         if (dataRekening.empty()) {
             System::Windows::Forms::MessageBox::Show("Gagal mengambil data!.", "Terjadi kesalahan");
@@ -293,7 +270,7 @@ namespace GoBanking {
 
         try {
             // Membuat variable dengan tipe auto agar bisa menyesuaikan dengan tipe data json
-            auto jsonData = json::parse(updateData(nomorRek, payjson.dump()));
+            auto jsonData = json::parse(apiRequester("/rekening/norek/", nomorRek, payjson.dump(), "PATCH"));
             auto& statusCode = jsonData["statusCode"], & message = jsonData["message"];
 
             // Menangani ketika nilai dari statusCode adalah 200
@@ -328,7 +305,7 @@ namespace GoBanking {
     System::Void DataRekening::ProcessDelete() {
         try
         {
-            auto jsonData = json::parse(deleteData(nomorRek));
+            auto jsonData = json::parse(apiRequester("/rekening/norek/", nomorRek, "", "DELETE"));
             auto& statusCode = jsonData["statusCode"], & message = jsonData["message"];
 
             if (statusCode.get<int>() == 200) {

@@ -16,59 +16,25 @@ namespace GoBanking {
 
     string nm_karyawan;
 
-    static string getKaryawan() {
+    // Fungsi untuk menangani permintaan ke API
+    static string apiRequester(const string& endpoint, const string& params, const string& payload, const string& method) {
         API api;
-        string endpoint = "/karyawan";
         string response;
-
-        try {
-            response = api.GET(endpoint);
-        }
-        catch (String^ e) {
-            System::Windows::Forms::MessageBox::Show(e, "Terjadi kesalahan");
-        }
-
-        return response.data();
-    }
-
-    static string postKaryawan(const string& payload) {
-        API api;
-        string endpoint = "/karyawan";
-        string response;
-
-        try {
-            response = api.POST(endpoint, payload);
-        }
-        catch (String^ e) {
-            System::Windows::Forms::MessageBox::Show(e, "Terjadi kesalahan");
-        }
-
-        return response.data();
-    }
-
-
-    static string updateKaryawan(const string& payload) {
-        API api;
-        string endpoint = "/karyawan/nokrywn/" + nm_karyawan;
-        string response;
-
-        try {
-            response = api.REQPATCH(endpoint, payload);
-        }
-        catch (String^ e) {
-            System::Windows::Forms::MessageBox::Show(e, "Terjadi kesalahan");
-        }
-
-        return response.data();
-    }
-
-    static string deleteKaryawan() {
-        API api;
-        string endpoint = "/karyawan/nokrywn/" + nm_karyawan;
-        string response;
-
-        try {
-            response = api.REQDELETE(endpoint);
+        
+        try
+        {
+            if (method == "GET") {
+                response = api.GET(!params.empty() ? endpoint + params : endpoint);
+            }
+            else if (method == "POST") {
+                response = api.POST(endpoint, payload);
+            }
+            else if (method == "PATCH") {
+                response = api.REQPATCH(endpoint + params, payload);
+            }
+            else if (method == "DELETE") {
+                response = api.REQDELETE(endpoint + params);
+            }
         }
         catch (String^ e) {
             System::Windows::Forms::MessageBox::Show(e, "Terjadi kesalahan");
@@ -217,7 +183,7 @@ namespace GoBanking {
         payjson["role"] = msclr::interop::marshal_as<string>(data["Role"]);
 
         try {
-            string response = postKaryawan(payjson.dump());
+            string response = apiRequester("/karyawan", "", payjson.dump(), "POST");
 
             auto jsonData = json::parse(response);
             auto& statusCode = jsonData["statusCode"], & message = jsonData["message"];
@@ -243,7 +209,7 @@ namespace GoBanking {
     System::Void DataKaryawan::ProcessDelete()
     {
         try {
-            auto jsonData = json::parse(deleteKaryawan());
+            auto jsonData = json::parse(apiRequester("/karyawan/nokrywn/", nm_karyawan, "", "DELETE"));
             auto& statusCode = jsonData["statusCode"], & message = jsonData["message"];
 
             if (statusCode == 200) {
@@ -292,7 +258,7 @@ namespace GoBanking {
         }
 
         try {
-            string response = updateKaryawan(payjson.dump());
+            string response = apiRequester("/karyawan/nokrywn/", nm_karyawan, payjson.dump(), "PATCH");
 
             auto jsonData = json::parse(response);
             auto& statusCode = jsonData["statusCode"], & message = jsonData["message"];
@@ -366,7 +332,7 @@ namespace GoBanking {
 
     System::Void DataKaryawan::DataKaryawan_load(System::Object^ sender, System::EventArgs^ e)
     {
-        string dataKaryawan = getKaryawan();
+        string dataKaryawan = apiRequester("/karyawan", "", "", "GET");
 
         if (dataKaryawan.empty()) {
             System::Windows::Forms::MessageBox::Show("Gagal mengambil data!.", "Terjadi kesalahan");

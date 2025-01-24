@@ -7,12 +7,14 @@ namespace GoBanking {
 	using namespace std;
 	using json = nlohmann::json;
 
+	// Membuat struct rekening
 	struct {
 		string nomorRekening;
 		string nominal;
 		string pinRekening;
 	}rekening;
 
+	// Fungsi untuk request post data ke API
 	static string postAddSavingsFunds(const string& payload) {
 		API api;
 		string endpoint = "/rekening/saving-funds";
@@ -28,26 +30,31 @@ namespace GoBanking {
 		return response.data();
 	}
 
+	// Fungsi untuk menangani ketika tombol di tekan
 	System::Void AddSavingsFunds::btnAddSavings_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		ShowConfirmationPopup();
 	}
 
+	// Fungsi untuk menangani ketika nilai text field berubah
 	System::Void AddSavingsFunds::customerAccInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		rekening.nomorRekening = msclr::interop::marshal_as<string>(customerAccInput->Text);
 	}
 
+	// Fungsi untuk menangani ketika nilai text field berubah
 	System::Void AddSavingsFunds::addSavingsInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		rekening.nominal = msclr::interop::marshal_as<string>(addSavingsInput->Text);
 	}
 
+	// Fungsi untuk menangani ketika nilai text field berubah
 	System::Void AddSavingsFunds::pinInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		rekening.pinRekening = msclr::interop::marshal_as<string>(pinInput->Text);
 	}
 
+	// Fungsi untuk menampilkan 
 	System::Void AddSavingsFunds::ShowConfirmationPopup() {
 		CloseCurrentPopup();
 		currentPopup = gcnew PopupForm();
@@ -58,6 +65,7 @@ namespace GoBanking {
 		currentPopup->ShowPopup();
 	}
 
+	// Fungsi untuk menagani ketika tombol konfirmasi ditekan
 	System::Void AddSavingsFunds::OnConfirmAddSavings(System::Object^ sender, System::EventArgs^ e)
 	{
 		if (currentPopup != nullptr) {
@@ -69,19 +77,23 @@ namespace GoBanking {
 		}
 	}
 
+	// Fungsi untuk menangani proses menambah tabungan
 	System::Void AddSavingsFunds::ProcessAddSavings()
 	{
+		// Kondisi jika nomorRekening, nominal, pinRekening tidak bernilai
 		if (rekening.nomorRekening.empty() || rekening.nominal.empty() || rekening.pinRekening.empty()) {
 			ShowResultPopup(false, "Tidak boleh ada formulir yang kosong");
 			return;
 		}
 
 		try {
+			// Membuat variable payjson dengan tipe data json;
 			json payjson;
 			payjson["nomorRekening"] = rekening.nomorRekening;
 			payjson["nominal"] = rekening.nominal;
 			payjson["pinRekening"] = rekening.pinRekening;
 
+			// Membuat variable dengan tipe data auto agar dapat menyesuaikan dengan data json;
 			auto jsonData = json::parse(postAddSavingsFunds(payjson.dump()));
 			auto& statusCode = jsonData["statusCode"], & message = jsonData["message"];
 
@@ -97,6 +109,7 @@ namespace GoBanking {
 		}
 	}
 
+	// Fungsi untuk menampilkan pop-up hasil
 	System::Void AddSavingsFunds::ShowResultPopup(bool isSuccess, String^ message) {
 		currentPopup = gcnew PopupForm();
 		if (isSuccess) {
@@ -111,6 +124,7 @@ namespace GoBanking {
 		currentPopup->ShowPopup();
 	}
 
+	// Fungsi untuk menangani ketika tombol konfirmasi ditekan
 	System::Void AddSavingsFunds::OnResultConfirmed(System::Object^ sender, System::EventArgs^ e) {
 		if (currentPopup != nullptr) {
 			currentPopup->ClosePopup();

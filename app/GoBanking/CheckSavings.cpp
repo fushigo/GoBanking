@@ -9,28 +9,13 @@ namespace GoBanking {
 
 	string textValue;
 
-	static string getData(const string& nik) {
+	// Fungsi untuk mengambil data dari API
+	static string getData(const string& endpoint,const string& params) {
 		API api;
-		string endpoint = "/nasabah/nik/"+nik;
 		string response;
 
 		try {
-			response = api.GET(endpoint);
-		}
-		catch (System::String^ err) {
-			System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
-		}
-
-		return response.data();
-	}
-
-	static string getDataActivity(const string& norek) {
-		API api;
-		string endpoint = "/rekening/norek/"+norek;
-		string response;
-
-		try {
-			response = api.GET(endpoint);
+			response = api.GET(endpoint+params);
 		}
 		catch (System::String^ err) {
 			System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
@@ -42,8 +27,9 @@ namespace GoBanking {
 	// Menangani ketika tombol btnCheckSavings di klik
 	System::Void CheckSavings::btnCheckSavings_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		// Membuat tipe data variable
 		string nikParams = textValue;
-		string allRekeningData = getData(nikParams);
+		string allRekeningData = getData("/nasabah/nik/", nikParams);
 
 		if (allRekeningData.empty()) {
 			System::Windows::Forms::MessageBox::Show("Gagal mengambil data.!", "Terjadi kesalahan");
@@ -58,6 +44,7 @@ namespace GoBanking {
 				// Menghapus data di table
 				dataGridViewAccount->Rows->Clear();
 
+				// Perulangan for-loop untuk mengambil data berupa array
 				for (const auto& item : data) {
 
 					// Konversi data string menggunakan marshal_as menjadi System::String / String^
@@ -93,6 +80,7 @@ namespace GoBanking {
 		}
 	}
 
+	// Fungsi untuk menangani ketika cells di dalam griDataViewAccrount ditekan
 	System::Void CheckSavings::dataGridViewAccount_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		try {
 			if (e->ColumnIndex == dataGridViewAccount->Columns["details"]->Index) {
@@ -107,10 +95,11 @@ namespace GoBanking {
 
 					try {
 						// Fetch data activity rekening
-						string dataActivity = getDataActivity(msclr::interop::marshal_as<string>(norek));
+						string dataActivity = getData("/rekening/norek/", msclr::interop::marshal_as<string>(norek));
 						auto jsonData = json::parse(dataActivity);
 						auto& data = jsonData["data"]["rekeningActivity"];
 
+						// Perulangan for-loop untuk mengambil data berupa array
 						for (const auto& item : data) {
 							String^ jenisAktivitas = msclr::interop::marshal_as<String^>(item["jenisActivity"].get<string>());
 							String^ jumlahDana = msclr::interop::marshal_as<String^>(item["jumlahDana"].get<string>());

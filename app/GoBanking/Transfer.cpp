@@ -12,46 +12,32 @@ namespace GoBanking {
 		string rekSender, rekReceiver, pinRek;
 	}rekening;
 
-	static string getNasabah() {
+	// Fungsi untuk menangani permintaan ke API
+	static string apiRequester(const string& endpoint, const string& params, const string& payload, const string& method) {
 		API api;
-		string endpoint = "/nasabah";
 		string response;
 
-		try {
-			response = api.GET(endpoint);
+		try
+		{
+			if (method == "GET") {
+				response = api.GET(!params.empty() ? endpoint + params : endpoint);
+			}
+			else if (method == "POST") {
+				response = api.POST(endpoint, payload);
+			}
+			else if (method == "PATCH") {
+				response = api.REQPATCH(endpoint + params, payload);
+			}
+			else if (method == "DELETE") {
+				response = api.REQDELETE(endpoint + params);
+			}
+			else {
+				System::Windows::Forms::MessageBox::Show("Method tidak dizinkan", "Terjadi kesalahan pada Api Requester");
+				return;
+			}
 		}
-		catch (String^ err) {
-			System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
-		}
-
-		return response.data();
-	}
-
-	static string getAllRekeningNasabah(const string& nik) {
-		API api;
-		string endpoint = "/nasabah/nik/" + nik;
-		string response;
-
-		try {
-			response = api.GET(endpoint);
-		}
-		catch (System::String^ err) {
-			System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
-		}
-
-		return response.data();
-	}
-
-	static string getRekeningData(const string& norek) {
-		API api;
-		string endpoint = "/rekening/norek/" + norek;
-		string response;
-
-		try {
-			response = api.GET(endpoint);
-		}
-		catch (System::String^ err) {
-			System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
+		catch (String^ e) {
+			System::Windows::Forms::MessageBox::Show(e, "Terjadi kesalahan");
 		}
 
 		return response.data();
@@ -69,23 +55,6 @@ namespace GoBanking {
 		}
 
 		return result;
-	}
-
-	static string postData(string& payload) {
-		API api;
-		string endpoint = "/rekening/transfer";
-		string response;
-
-		try
-		{
-			response = api.POST(endpoint, payload);
-		}
-		catch (String^ err)
-		{
-			System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
-		}
-
-		return response.data();
 	}
 
 	System::Void Transfer::dropDownMenuSend_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
@@ -109,7 +78,7 @@ namespace GoBanking {
 				this->dropDownDana->Items->Insert(0, "-- Pilih Sumber Dana --");
 				this->dropDownDana->SelectedIndex = 0;
 
-				string rekeningData = getAllRekeningNasabah(sendIdentityNumber);
+				string rekeningData = apiRequester("/nasabah/nik/", sendIdentityNumber, "", "GET");
 				auto jsonData = json::parse(rekeningData);
 
 				auto& data = jsonData["data"]["rekening"];
@@ -149,7 +118,7 @@ namespace GoBanking {
 				dropDownRekReceive->Items->Insert(0, "-- Pilih Rekening --");
 				dropDownRekReceive->SelectedIndex = 0;
 
-				string rekeningData = getAllRekeningNasabah(recieveIdentityNumber);
+				string rekeningData = apiRequester("/nasabah/nik/", recieveIdentityNumber, "", "GET");
 				auto jsonData = json::parse(rekeningData);
 
 				auto& data = jsonData["data"]["rekening"];
@@ -170,7 +139,7 @@ namespace GoBanking {
 	{
 		if (dropDownDana->SelectedIndex > 0) {
 			string rekeningNumber = getUniqueItem(msclr::interop::marshal_as<string>(dropDownDana->SelectedItem->ToString()));
-			string rekeningData = getRekeningData(rekeningNumber);
+			string rekeningData = apiRequester("/rekening/norek/", rekeningNumber, "", "GET");
 
 			try {
 				auto jsonData = json::parse(rekeningData);
@@ -203,7 +172,7 @@ namespace GoBanking {
 	}
 
 	void Transfer::loadDropdownData() {
-		string dataNasabah = getNasabah();
+		string dataNasabah = apiRequester("/nasabah", "", "", "GET");
 
 		dropDownMenuSend->Items->Clear();
 		dropDownMenuReceive->Items->Clear();
@@ -244,7 +213,7 @@ namespace GoBanking {
 	{
 		if (dropDownRekReceive->SelectedIndex > 0) {
 			string rekeningNumber = getUniqueItem(msclr::interop::marshal_as<string>(dropDownRekReceive->SelectedItem->ToString()));
-			string rekeningData = getRekeningData(rekeningNumber);
+			string rekeningData = apiRequester("/rekening/norek/", rekeningNumber, "", "GET");
 
 			try {
 				auto jsonData = json::parse(rekeningData);
@@ -304,7 +273,7 @@ namespace GoBanking {
 		payjson["pin"] = rekening.pinRek;
 
 		try {
-			string response = postData(payjson.dump());
+			string response = apiRequester("/rekening/transfer", "", payjson.dump(), "POST");
 
 			auto jsonData = json::parse(response);
 			auto& status = jsonData["statusCode"];

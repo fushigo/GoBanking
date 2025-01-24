@@ -14,32 +14,28 @@ namespace GoBanking {
 
     string nomorNik;
 
-    // Mengambil data dari API
-	static string getData() {
-		API api;
-		string endpoint = "/nasabah";
-		string response;
-
-		try {
-			response = api.GET(endpoint);
-		}
-        catch (System::String^ err) {
-            System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
-        }
-
-		return response.data();
-	}
-
-    static string deleteData(const string& nik) {
+    // Fungsi untuk menangani permintaan ke API
+    static string apiRequester(const string& endpoint, const string& params, const string& payload, const string& method) {
         API api;
-        string endpoint = "/nasabah/nik/" + nik;
         string response;
 
-        try {
-            response = api.REQDELETE(endpoint);
+        try
+        {
+            if (method == "GET") {
+                response = api.GET(!params.empty() ? endpoint + params : endpoint);
+            }
+            else if (method == "POST") {
+                response = api.POST(endpoint, payload);
+            }
+            else if (method == "PATCH") {
+                response = api.REQPATCH(endpoint + params, payload);
+            }
+            else if (method == "DELETE") {
+                response = api.REQDELETE(endpoint + params);
+            }
         }
-        catch (System::String^ err) {
-            System::Windows::Forms::MessageBox::Show(err, "Terjadi kesalahan");
+        catch (String^ e) {
+            System::Windows::Forms::MessageBox::Show(e, "Terjadi kesalahan");
         }
 
         return response.data();
@@ -48,7 +44,7 @@ namespace GoBanking {
     // Menampilkan data nasabah
     System::Void CustomerData::CustomerData_Load(System::Object^ sender, System::EventArgs^ e) {
 
-        string dataNasabah = getData();
+        string dataNasabah = apiRequester("/nasabah", "", "", "GET");
 
         if (dataNasabah.empty()) {
             System::Windows::Forms::MessageBox::Show("Gagal mengambil data!.", "Terjadi kesalahan");
@@ -134,6 +130,7 @@ namespace GoBanking {
         CustomerData_Load(nullptr, nullptr);
     }
 
+    // Fungsi untuk menangani ketika cells di dalam dataGridView ditekan
     System::Void CustomerData::dataGridView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e)
     {
         if (e->RowIndex >= 0 && dataGridView->Rows->Count > 0) {
@@ -255,7 +252,7 @@ namespace GoBanking {
         }
 
         try {
-            auto jsonData = json::parse(deleteData(nomorNik));
+            auto jsonData = json::parse(apiRequester("/nasabah/nik/", "", nomorNik, "DELETE"));
             int statusCode = jsonData["statusCode"].get<int>();
 
             if (statusCode == 200) {

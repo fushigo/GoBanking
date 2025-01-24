@@ -78,10 +78,12 @@ namespace GoBanking {
 					this->Show();
 				}
 				else {
+					// Menampilkan pop-up apabila login tidak valid
 					System::Windows::Forms::MessageBox::Show("Username atau kata sandi salah, silahkan coba kembali!", "Terjadi kesalahan");
 				}
 			}
 			catch (json::exception& e) {
+				// Menampilkan pop-up ketika terjadi error
 				System::Windows::Forms::MessageBox::Show(gcnew System::String(e.what()), "Terjadi kesalahan");
 			}
 		}
