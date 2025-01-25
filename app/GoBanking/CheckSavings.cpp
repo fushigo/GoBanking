@@ -131,6 +131,8 @@ namespace GoBanking {
 	// Menangani ketika nilai Text Input berubah
 	System::Void CheckSavings::customerAccInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		textValue = msclr::interop::marshal_as<string>(customerAccInput->Text);
+		if (customerAccInput != nullptr && !String::IsNullOrWhiteSpace(customerAccInput->Text)) {
+			textValue = msclr::interop::marshal_as<string>(customerAccInput->Text);
+		}
 	}
 }

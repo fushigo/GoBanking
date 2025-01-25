@@ -68,22 +68,30 @@ namespace GoBanking {
 
 	System::Void OpenRek::fullnameInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		nasabah.textFullname = msclr::interop::marshal_as<string>(fullnameInput->Text);
+		if (fullnameInput != nullptr && !String::IsNullOrWhiteSpace(fullnameInput->Text)) {
+			nasabah.textFullname = msclr::interop::marshal_as<string>(fullnameInput->Text);
+		}
 	}
 
 	System::Void OpenRek::nikInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		nasabah.textNik = msclr::interop::marshal_as<string>(nikInput->Text);
+		if (nikInput != nullptr && !String::IsNullOrWhiteSpace(nikInput->Text)) {
+			nasabah.textNik = msclr::interop::marshal_as<string>(nikInput->Text);
+		}
 	}
 
 	System::Void OpenRek::emailInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		nasabah.textEmail = msclr::interop::marshal_as<string>(emailInput->Text);
+		if (emailInput != nullptr && !String::IsNullOrWhiteSpace(emailInput->Text)) {
+			nasabah.textEmail = msclr::interop::marshal_as<string>(emailInput->Text);
+		}
 	}
 
 	System::Void OpenRek::phoneNumberInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		nasabah.textTelepone = msclr::interop::marshal_as<string>(phoneNumberInput->Text);
+		if (phoneNumberInput != nullptr && !String::IsNullOrWhiteSpace(phoneNumberInput->Text)) {
+			nasabah.textTelepone = msclr::interop::marshal_as<string>(phoneNumberInput->Text);
+		}
 	}
 
 	System::Void OpenRek::maleRadButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
@@ -113,7 +121,9 @@ namespace GoBanking {
 
 	System::Void OpenRek::pinInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		nasabah.textPinRekening = msclr::interop::marshal_as<string>(pinInput->Text);
+		if (pinInput != nullptr && !String::IsNullOrWhiteSpace(pinInput->Text)) {
+			nasabah.textPinRekening = msclr::interop::marshal_as<string>(pinInput->Text);
+		}
 	}
 
 	System::Void OpenRek::btnOpenRek_Click(System::Object^ sender, System::EventArgs^ e)

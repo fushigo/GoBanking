@@ -28,12 +28,16 @@ namespace GoBanking {
 
 	// Mengambil nilai username dari Input
 	System::Void Login::usernameInput_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		textUsername = msclr::interop::marshal_as<std::string>(usernameInput->Text);
+		if (usernameInput != nullptr && !String::IsNullOrWhiteSpace(usernameInput->Text)) {
+			textUsername = msclr::interop::marshal_as<std::string>(usernameInput->Text);
+		}
 	}
 
 	// Mengambil nilai password dari Input
 	System::Void Login::passwordInput_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		textPassword = msclr::interop::marshal_as<std::string>(passwordInput->Text);
+		if (passwordInput != nullptr && !String::IsNullOrWhiteSpace(passwordInput->Text)) {
+			textPassword = msclr::interop::marshal_as<std::string>(passwordInput->Text);
+		}
 	}
 
 	// Menangani kondisi apabila loginButton ditekan

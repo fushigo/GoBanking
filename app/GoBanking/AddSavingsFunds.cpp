@@ -41,19 +41,25 @@ namespace GoBanking {
 	// Fungsi untuk menangani ketika nilai text field berubah
 	System::Void AddSavingsFunds::customerAccInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		rekening.nomorRekening = msclr::interop::marshal_as<string>(customerAccInput->Text);
+		if (customerAccInput != nullptr && !String::IsNullOrWhiteSpace(customerAccInput->Text)) {
+			rekening.nomorRekening = msclr::interop::marshal_as<string>(customerAccInput->Text);
+		}
 	}
 
 	// Fungsi untuk menangani ketika nilai text field berubah
 	System::Void AddSavingsFunds::addSavingsInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		rekening.nominal = msclr::interop::marshal_as<string>(addSavingsInput->Text);
+		if (addSavingsInput != nullptr && !String::IsNullOrWhiteSpace(addSavingsInput->Text)) {
+			rekening.nominal = msclr::interop::marshal_as<string>(addSavingsInput->Text);
+		}
 	}
 
 	// Fungsi untuk menangani ketika nilai text field berubah
 	System::Void AddSavingsFunds::pinInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		rekening.pinRekening = msclr::interop::marshal_as<string>(pinInput->Text);
+		if (pinInput != nullptr && !String::IsNullOrWhiteSpace(pinInput->Text)) {
+			rekening.pinRekening = msclr::interop::marshal_as<string>(pinInput->Text);
+		}
 	}
 
 	// Fungsi untuk menampilkan 

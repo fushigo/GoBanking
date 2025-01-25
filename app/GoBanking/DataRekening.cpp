@@ -125,8 +125,9 @@ namespace GoBanking {
 
     // Menangani ketika nilai textBox1 (Filter Pencarian) berubah
     System::Void DataRekening::textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-        String^ textValue = textBox1->Text;
-        filter.searchFilterRekening = msclr::interop::marshal_as<string>(textValue);
+        if (textBox1 != nullptr && !String::IsNullOrWhiteSpace(textBox1->Text)) {
+            filter.searchFilterRekening = msclr::interop::marshal_as<string>(textBox1->Text);
+        }
     }
 
     // Menangani ketika tombol pencarian ditekan

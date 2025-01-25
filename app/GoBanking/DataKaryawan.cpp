@@ -207,9 +207,6 @@ namespace GoBanking {
         }catch(json::exception err) {
             System::Windows::Forms::MessageBox::Show(gcnew System::String(err.what()), "Terjadi kesalahan saat parse JSON");
         }
-        /*for each (auto kvp in data) {
-            System::Windows::Forms::MessageBox::Show("Label: " + kvp.Key + "\nValue: " + kvp.Value);
-        }*/
     }
 
     System::Void DataKaryawan::ProcessDelete()
@@ -432,8 +429,16 @@ namespace GoBanking {
             }
         }
     }
+
     System::Void DataKaryawan::btnSearch_Click(System::Object^ sender, System::EventArgs^ e)
     {
         DataKaryawan_load(nullptr, nullptr);
+    }
+
+    System::Void DataKaryawan::textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e)
+    {
+        if (textBox1 != nullptr && !String::IsNullOrWhiteSpace(textBox1->Text)) {
+            filter.search = msclr::interop::marshal_as<string>(textBox1->Text);
+        }
     }
 }

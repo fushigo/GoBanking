@@ -31,17 +31,23 @@ namespace GoBanking {
 
 	System::Void Withdraw::customerAccInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		rekening.nomorRekening = msclr::interop::marshal_as<string>(customerAccInput->Text);
+		if (customerAccInput != nullptr && !String::IsNullOrWhiteSpace(customerAccInput->Text)) {
+			rekening.nomorRekening = msclr::interop::marshal_as<std::string>(customerAccInput->Text);
+		}
 	}
 
 	System::Void Withdraw::nominalWithdrawInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		rekening.nominal = msclr::interop::marshal_as<string>(nominalWithdrawInput->Text);
+		if (nominalWithdrawInput != nullptr && !String::IsNullOrWhiteSpace(nominalWithdrawInput->Text)) {
+			rekening.nominal = msclr::interop::marshal_as<string>(nominalWithdrawInput->Text);
+		}
 	}
 
 	System::Void Withdraw::pinInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		rekening.pin = msclr::interop::marshal_as<string>(pinInput->Text);
+		if (pinInput != nullptr && !String::IsNullOrWhiteSpace(pinInput->Text)) {
+			rekening.pin = msclr::interop::marshal_as<string>(pinInput->Text);
+		}
 	}
 
 	System::Void Withdraw::btnWithdraw_Click(System::Object^ sender, System::EventArgs^ e)

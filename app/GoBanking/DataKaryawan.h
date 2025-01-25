@@ -98,7 +98,7 @@ namespace GoBanking {
 			this->dataKaryawanMainPanel->Controls->Add(this->panel1);
 			this->dataKaryawanMainPanel->Dock = System::Windows::Forms::DockStyle::Right;
 			this->dataKaryawanMainPanel->Location = System::Drawing::Point(222, 0);
-			this->dataKaryawanMainPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataKaryawanMainPanel->Margin = System::Windows::Forms::Padding(2);
 			this->dataKaryawanMainPanel->Name = L"dataKaryawanMainPanel";
 			this->dataKaryawanMainPanel->Size = System::Drawing::Size(818, 640);
 			this->dataKaryawanMainPanel->TabIndex = 0;
@@ -128,7 +128,7 @@ namespace GoBanking {
 			this->dataGridViewKaryawan->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(181)));
 			this->dataGridViewKaryawan->Location = System::Drawing::Point(39, 179);
-			this->dataGridViewKaryawan->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridViewKaryawan->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridViewKaryawan->Name = L"dataGridViewKaryawan";
 			this->dataGridViewKaryawan->ReadOnly = true;
 			this->dataGridViewKaryawan->RowHeadersVisible = false;
@@ -256,7 +256,7 @@ namespace GoBanking {
 			this->panel1->Controls->Add(this->dateTimePicker);
 			this->panel1->Controls->Add(this->btnSearch);
 			this->panel1->Location = System::Drawing::Point(38, 61);
-			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(742, 77);
 			this->panel1->TabIndex = 6;
@@ -293,11 +293,12 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->textBox1->ForeColor = System::Drawing::Color::White;
 			this->textBox1->Location = System::Drawing::Point(488, 10);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->MaxLength = 255;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(226, 23);
 			this->textBox1->TabIndex = 1;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &DataKaryawan::textBox1_TextChanged);
 			// 
 			// dateTimePicker
 			// 
@@ -309,7 +310,7 @@ namespace GoBanking {
 			this->dateTimePicker->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dateTimePicker->Location = System::Drawing::Point(0, 10);
-			this->dateTimePicker->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dateTimePicker->Margin = System::Windows::Forms::Padding(2);
 			this->dateTimePicker->MaxDate = System::DateTime(2045, 12, 31, 0, 0, 0, 0);
 			this->dateTimePicker->MinDate = System::DateTime(2024, 12, 21, 0, 0, 0, 0);
 			this->dateTimePicker->Name = L"dateTimePicker";
@@ -327,7 +328,7 @@ namespace GoBanking {
 				static_cast<System::Byte>(0)));
 			this->btnSearch->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearch.Image")));
 			this->btnSearch->Location = System::Drawing::Point(712, 10);
-			this->btnSearch->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnSearch->Margin = System::Windows::Forms::Padding(2);
 			this->btnSearch->Name = L"btnSearch";
 			this->btnSearch->Size = System::Drawing::Size(30, 22);
 			this->btnSearch->TabIndex = 2;
@@ -343,7 +344,7 @@ namespace GoBanking {
 			this->ClientSize = System::Drawing::Size(1040, 640);
 			this->Controls->Add(this->dataKaryawanMainPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"DataKaryawan";
 			this->Text = L"DataKaryawan";
 			this->Load += gcnew System::EventHandler(this, &DataKaryawan::DataKaryawan_load);
@@ -378,5 +379,6 @@ namespace GoBanking {
 		System::Void DataKaryawan_load(System::Object^ sender, System::EventArgs^ e);
 		System::Void dataGridViewKaryawan_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
 		System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }
