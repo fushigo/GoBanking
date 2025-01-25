@@ -8,11 +8,13 @@ namespace GoBanking {
 	using json = nlohmann::json;
 
 	// Membuat struct rekening
-	struct {
+	struct rekeningAdd{
 		string nomorRekening;
 		string nominal;
 		string pinRekening;
-	}rekening;
+	};
+
+	rekeningAdd rekening;
 
 	// Fungsi untuk request post data ke API
 	static string postAddSavingsFunds(const string& payload) {

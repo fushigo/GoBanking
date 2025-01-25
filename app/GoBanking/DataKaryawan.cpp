@@ -9,10 +9,12 @@ namespace GoBanking {
     using namespace std;
     using json = nlohmann::json;
 
-    struct {
+    struct filteringKaryawan{
         string date;
         string search;
-    }filter;
+    };
+
+    filteringKaryawan filter;
 
     string nm_karyawan;
 
@@ -34,6 +36,10 @@ namespace GoBanking {
             }
             else if (method == "DELETE") {
                 response = api.REQDELETE(endpoint + params);
+            }
+            else {
+                System::Windows::Forms::MessageBox::Show("Method tidak dizinkan", "Terjadi kesalahan pada Api Requester");
+                return "";
             }
         }
         catch (String^ e) {

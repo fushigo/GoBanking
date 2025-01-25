@@ -8,9 +8,11 @@ namespace GoBanking {
 	using json = nlohmann::json;
 
 	double tSaldo, saldoTf;
-	struct {
+	struct rekeningTranfer{
 		string rekSender, rekReceiver, pinRek;
-	}rekening;
+	};
+
+	rekeningTranfer rekening;
 
 	// Fungsi untuk menangani permintaan ke API
 	static string apiRequester(const string& endpoint, const string& params, const string& payload, const string& method) {
@@ -33,7 +35,7 @@ namespace GoBanking {
 			}
 			else {
 				System::Windows::Forms::MessageBox::Show("Method tidak dizinkan", "Terjadi kesalahan pada Api Requester");
-				return;
+				return "";
 			}
 		}
 		catch (String^ e) {
