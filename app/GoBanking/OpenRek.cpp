@@ -123,6 +123,11 @@ namespace GoBanking {
 			return;
 		}
 
+		if (stod(nasabah.textDpAwal) < 1500000) {
+			MessageBox::Show("Data deposit tidak bisa kurang dari Rp 1.500.000", "Terjadi kesalahan", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return;
+		}
+
 		if (nasabah.textEmail.empty()) {
 			System::Windows::Forms::MessageBox::Show("Data email tidak boleh kosong", "Terjadi kesalahan");
 			return;

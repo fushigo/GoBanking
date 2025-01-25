@@ -202,9 +202,27 @@ namespace GoBanking {
 	}
 	System::Void Transfer::nominalInput_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		double inpSaldo = Convert::ToDouble(nominalInput->Text);
+		if (String::IsNullOrEmpty(nominalInput->Text)) {
+			return;
+		}
+
+		double inpSaldo;
+		if (!Double::TryParse(nominalInput->Text, inpSaldo)) {
+			currentPopup = gcnew PopupForm();
+			currentPopup->SetMessage("Masukkan nominal yang valid");
+			currentPopup->SetActionButton1("OK", gcnew EventHandler(this, &Transfer::OnRetryTransfer));
+			currentPopup->SetActionButton2("Tutup", gcnew EventHandler(this, &Transfer::OnClose));
+			currentPopup->ShowPopup();
+			nominalInput->Text = "";
+			return;
+		}
+
 		if (tSaldo && inpSaldo >= tSaldo) {
-			System::Windows::Forms::MessageBox::Show("Saldo rekening nasabah tidak cukup", "Terjadi kesalahan");
+			currentPopup = gcnew PopupForm();
+			currentPopup->SetMessage("Saldo rekening nasabah tidak cukup");
+			currentPopup->SetActionButton1("OK", gcnew EventHandler(this, &Transfer::OnRetryTransfer));
+			currentPopup->SetActionButton2("Tutup", gcnew EventHandler(this, &Transfer::OnClose));
+			currentPopup->ShowPopup();
 			nominalInput->Text = (tSaldo - 10000).ToString();
 			return;
 		}
@@ -318,6 +336,7 @@ namespace GoBanking {
 	System::Void Transfer::OnRetryTransfer(System::Object^ sender, System::EventArgs^ e) {
 		if (currentPopup != nullptr) {
 			currentPopup->ClosePopup();
+			nominalInput->Focus();
 			ShowConfirmationPopup();
 		}
 	}
