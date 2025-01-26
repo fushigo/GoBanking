@@ -1,6 +1,6 @@
 # Sistem Aplikasi Administrasi Bank GoBanking
 
-Project ini dibuat sebagai kelengkapan tugas akhir dari mata kuliah Algoritma Pemrograman pada bidang studi Informatika di STMIK Amikom Surakarta. Sistem Aplikasi Administrasi Bank GoBanking dirancang untuk membantu pengelolaan administrasi perbankan secara efisien dan terstruktur.
+Project ini dibuat sebagai kelengkapan tugas akhir semester satu dari mata kuliah Algoritma Pemrograman pada bidang studi Informatika di STMIK Amikom Surakarta. Sistem Aplikasi Administrasi Bank GoBanking dirancang untuk membantu pengelolaan administrasi perbankan secara efisien dan terstruktur.
 
 ## Fitur Utama
 
